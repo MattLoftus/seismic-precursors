@@ -1,0 +1,54 @@
+[13:08:33] [exp05] start, region=California
+[13:08:33] [exp05] bbox lat=[32.0,42.0] lon=[-125.0,-114.0]
+[13:08:33] [exp05] catalog M_min=2.5 (PREVIEW deviation; pre-reg says 1.5)
+[13:08:33] [data] loading cached catalog from /Users/Loftus/workspace/seismic-precursors/experiments/exp05_california_features/catalog.csv
+[13:08:33] [exp05] catalog has 37777 events
+[13:08:33] [Mc] raw=2.55, woessner=2.75, chosen=2.75 via plateau-stop
+[13:08:33] [Mc] b-vs-Mc grid: [(2.5, 0.9158589329746873), (2.7, 0.9220058742027663), (2.9, 0.9244782682397756), (3.1, 0.9142892532023057), (3.3, 0.9527963305447817), (3.5, 0.9669140626766471)]
+[13:08:33] [zbz] declustering catalog (N=37777, log10(η_0)=-5.0)
+[13:08:33] [zbz] computing NN proximity for N=37777 (temporal_max=2.0 yr, spatial_max=400.0 km)
+[13:08:33] [zbz]     1888 / 37777  (  5.0%)  fallbacks=2
+[13:08:33] [zbz]     3776 / 37777  ( 10.0%)  fallbacks=2
+[13:08:33] [zbz]     5664 / 37777  ( 15.0%)  fallbacks=2
+[13:08:33] [zbz]     7552 / 37777  ( 20.0%)  fallbacks=2
+[13:08:33] [zbz]     9440 / 37777  ( 25.0%)  fallbacks=2
+[13:08:34] [zbz]    11328 / 37777  ( 30.0%)  fallbacks=2
+[13:08:34] [zbz]    13216 / 37777  ( 35.0%)  fallbacks=2
+[13:08:34] [zbz]    15104 / 37777  ( 40.0%)  fallbacks=2
+[13:08:34] [zbz]    16992 / 37777  ( 45.0%)  fallbacks=2
+[13:08:35] [zbz]    18880 / 37777  ( 50.0%)  fallbacks=2
+[13:08:35] [zbz]    20768 / 37777  ( 55.0%)  fallbacks=2
+[13:08:35] [zbz]    22656 / 37777  ( 60.0%)  fallbacks=2
+[13:08:35] [zbz]    24544 / 37777  ( 65.0%)  fallbacks=2
+[13:08:35] [zbz]    26432 / 37777  ( 70.0%)  fallbacks=2
+[13:08:35] [zbz]    28320 / 37777  ( 75.0%)  fallbacks=2
+[13:08:36] [zbz]    30208 / 37777  ( 80.0%)  fallbacks=2
+[13:08:36] [zbz]    32096 / 37777  ( 85.0%)  fallbacks=2
+[13:08:36] [zbz]    33984 / 37777  ( 90.0%)  fallbacks=2
+[13:08:37] [zbz]    35872 / 37777  ( 95.0%)  fallbacks=2
+[13:08:37] [zbz]    37760 / 37777  (100.0%)  fallbacks=2
+[13:08:37] [zbz] 2/37777 events fell back to no-spatial-filter (no parents within 400.0 km in 2.0 yr)
+[13:08:37] [zbz] user threshold log10(eta_0) = -5.000
+[13:08:37] [zbz] background = 16868 / 37777  (44.7%); clustered = 20909
+[13:08:37] [zbz] background events: 16868 / 37777
+[13:08:37] [targets] M>=4.5 total=329, background-only=116
+[13:08:37] [windows] building precursor windows with overlap rejection (forbidden zone per target = [-30d, +60d])
+[13:08:37] [windows] precursor: kept 25, rejected 91
+[13:08:37] [windows] sampling Null A (aftershock-free)...
+[13:08:37] [windows] sampled Null A: 200, Null B: 200
+[13:08:37] [persist] feature_summary.csv (425 rows)
+[13:08:38] [auc] b                      vs null_A  AUC=0.514 CI=[0.405,0.627] z=+0.22 p=8.26e-01  3σ=n  Bonf=n
+[13:08:38] [auc] b_drift_per_day        vs null_A  AUC=0.499 CI=[0.378,0.618] z=+0.07 p=9.41e-01  3σ=n  Bonf=n
+[13:08:38] [auc] benioff_total_log10    vs null_A  AUC=0.441 CI=[0.322,0.561] z=-0.97 p=3.30e-01  3σ=n  Bonf=n
+[13:08:38] [auc] benioff_curv           vs null_A  AUC=0.394 CI=[0.283,0.504] z=-1.65 p=9.88e-02  3σ=n  Bonf=n
+[13:08:38] [auc] n_above_mc             vs null_A  AUC=0.432 CI=[0.323,0.549] z=-1.13 p=2.57e-01  3σ=n  Bonf=n
+[13:08:38] [auc] b                      vs null_B  AUC=0.429 CI=[0.314,0.545] z=-1.20 p=2.32e-01  3σ=n  Bonf=n
+[13:08:38] [auc] b_drift_per_day        vs null_B  AUC=0.550 CI=[0.426,0.667] z=+0.73 p=4.65e-01  3σ=n  Bonf=n
+[13:08:38] [auc] benioff_total_log10    vs null_B  AUC=0.621 CI=[0.498,0.732] z=+1.99 p=4.65e-02  3σ=n  Bonf=n
+[13:08:38] [auc] benioff_curv           vs null_B  AUC=0.333 CI=[0.220,0.453] z=-2.76 p=5.70e-03  3σ=n  Bonf=n
+[13:08:38] [auc] n_above_mc             vs null_B  AUC=0.597 CI=[0.473,0.707] z=+1.60 p=1.10e-01  3σ=n  Bonf=n
+[13:08:38] [plot] wrote bvalue_vs_mc.png, zbz_bimodality.png, feature_distributions.png
+
+[13:08:38] [headline] features passing 3σ or Bonferroni: 0
+[13:08:38] [persist] summary.json
+[13:08:38] [exp05] done

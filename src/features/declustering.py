@@ -99,12 +99,21 @@ def zbz_decluster(
     p: float = DEFAULT_P,
     q: float = DEFAULT_Q,
     eta_threshold: float | None = None,
+    temporal_max_years: float = 2.0,
+    spatial_max_km: float = 400.0,
     log: callable | None = print,
 ) -> DeclusterResult:
     """Decluster a catalog DataFrame.
 
     Required DataFrame columns: time (datetime, UTC), latitude, longitude, magnitude.
     Returns a DeclusterResult with one entry per row of df, in the same order.
+
+    Pre-filter (added 2026-04-28 for California-scale catalogs): for each j, only
+    consider predecessors within `temporal_max_years` AND within `spatial_max_km`.
+    These caps are generous (most NN parents are within months / 100 km), so the
+    filter is essentially lossless for typical seismicity, while reducing the
+    effective per-event work from O(j) to O(K_local). Pass `temporal_max_years=1e9`
+    and `spatial_max_km=1e9` to recover the brute-force behavior.
     """
     if not {"time", "latitude", "longitude", "magnitude"}.issubset(df.columns):
         raise ValueError("df must contain columns: time, latitude, longitude, magnitude")
@@ -123,33 +132,63 @@ def zbz_decluster(
     log_R_nn = np.full(n, np.nan)
 
     if log:
-        log(f"[zbz] computing nearest-neighbor proximity for N={n} (vectorized, O(N^2))")
+        log(f"[zbz] computing NN proximity for N={n} (temporal_max={temporal_max_years} yr, "
+            f"spatial_max={spatial_max_km} km)")
 
-    # Vectorize j-by-j: for each j, evaluate eta over all candidate parents i with t_i < t_j.
-    # Memory: each j needs an array of length j-1 of eta values, computed on the fly.
     progress_every = max(1, n // 20)
+    n_fallback = 0  # count events whose spatial filter found zero candidates within cap
     for j in range(1, n):
-        # candidate parents are events 0..j-1 (already sorted by time)
-        dt_yr = times[j] - times[:j]
-        # Guard: dt_yr should be > 0 since strictly increasing-ish; if zero (duplicates), set tiny epsilon
+        # Temporal pre-filter: earliest predecessor within temporal_max_years
+        t_min_allowed = times[j] - temporal_max_years
+        i_min = int(np.searchsorted(times[:j], t_min_allowed, side="left"))
+        if i_min >= j:
+            continue  # no predecessors in temporal window — orphan event; log_eta_nn stays -inf
+
+        cand_lats = lats[i_min:j]
+        cand_lons = lons[i_min:j]
+        cand_mags = mags[i_min:j]
+        cand_times = times[i_min:j]
+
+        # Spatial filter
+        r_km = _haversine_km(cand_lats, cand_lons, lats[j], lons[j])
+        spatial_mask = r_km <= spatial_max_km
+        if not spatial_mask.any():
+            # Fallback: spatial cap excluded everything in the temporal window.
+            # Use the temporal-window candidates without spatial filter so we
+            # still produce a valid NN. Eta will be very large; the event is
+            # almost certainly background, but record it correctly.
+            spatial_mask = np.ones_like(r_km, dtype=bool)
+            n_fallback += 1
+
+        cand_lats = cand_lats[spatial_mask]
+        cand_lons = cand_lons[spatial_mask]
+        cand_mags = cand_mags[spatial_mask]
+        cand_times = cand_times[spatial_mask]
+        r_km = r_km[spatial_mask]
+
+        dt_yr = times[j] - cand_times
         dt_yr = np.where(dt_yr <= 0, 1e-9, dt_yr)
-        r_km = _haversine_km(lats[:j], lons[:j], lats[j], lons[j])
-        # Avoid log(0) for collocated pairs
         r_km = np.where(r_km < 1e-3, 1e-3, r_km)
 
-        T_ij = dt_yr * 10 ** (-q * b_value * mags[:j])
-        R_ij = (r_km ** d_f) * 10 ** (-p * b_value * mags[:j])
+        T_ij = dt_yr * 10 ** (-q * b_value * cand_mags)
+        R_ij = (r_km ** d_f) * 10 ** (-p * b_value * cand_mags)
         eta_ij = T_ij * R_ij
 
-        # Nearest neighbor in proximity (smallest eta)
-        i_star = int(np.argmin(eta_ij))
-        parent[j] = i_star
-        log_eta_nn[j] = math.log10(eta_ij[i_star]) if eta_ij[i_star] > 0 else -np.inf
-        log_T_nn[j] = math.log10(T_ij[i_star]) if T_ij[i_star] > 0 else np.nan
-        log_R_nn[j] = math.log10(R_ij[i_star]) if R_ij[i_star] > 0 else np.nan
+        local_idx = int(np.argmin(eta_ij))
+        # Map local index back to global predecessor index
+        cand_global_indices = np.arange(i_min, j)[spatial_mask]
+        global_idx = int(cand_global_indices[local_idx])
+        parent[j] = global_idx
+        log_eta_nn[j] = math.log10(eta_ij[local_idx]) if eta_ij[local_idx] > 0 else -np.inf
+        log_T_nn[j] = math.log10(T_ij[local_idx]) if T_ij[local_idx] > 0 else np.nan
+        log_R_nn[j] = math.log10(R_ij[local_idx]) if R_ij[local_idx] > 0 else np.nan
 
         if log and j % progress_every == 0:
-            log(f"[zbz]   {j:>6d} / {n}  ({100 * j / n:5.1f}%)")
+            log(f"[zbz]   {j:>6d} / {n}  ({100 * j / n:5.1f}%)  fallbacks={n_fallback}")
+
+    if log and n_fallback > 0:
+        log(f"[zbz] {n_fallback}/{n} events fell back to no-spatial-filter "
+            f"(no parents within {spatial_max_km} km in {temporal_max_years} yr)")
 
     if eta_threshold is None:
         eta_threshold = _find_eta_threshold(log_eta_nn)

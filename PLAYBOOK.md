@@ -305,15 +305,15 @@ Roughly **40% reuse** from Cedar Loop's portfolio:
 - **CRITICAL FINDING from exp04 (2026-04-28):** Parkfield 50 km has only 1 independent M≥4.5 in 25 years; 4 apparent targets are 1 mainshock + 3 aftershocks. AUC ≈ 1.0 on Benioff/n_events is leakage, not signal. Pre-reg commitments now non-negotiable: (i) decluster targets via ZBZ, (ii) broaden California to ~32-42N / 125-114W, (iii) apply post-event exclusion buffer to precursor windows too, not just null windows.
 
 ### Round C — Single-Region Evaluation (Week 3-4)
-**Goal:** establish within-region precursor signals on Parkfield.
+**Goal:** establish within-region precursor signals on California (broadened from Parkfield-only after exp04 Session 4 finding).
 
-- **C1:** For all M≥4.5 Parkfield events 2004-2024, extract 30-day pre-event feature windows.
-- **C2:** Sample equal-count null windows (Null A, B, C) per feature.
-- **C3:** Per-feature distribution comparison (KS test, t-test, Wasserstein distance) real vs each null.
-- **C4:** TLS-style matched filter scan over all feature templates.
-- **C5:** Significance via 1000-sample bootstrap.
+- **C1:** For all M≥4.5 declustered California events 2000-2024, extract 30-day pre-event feature windows with pre-reg overlap rejection. ✅ 2026-04-28 (exp05; 25 precursor windows kept from 116 declustered targets)
+- **C2:** Sample equal-count null windows (Null A, B, C) per feature. ✅ 2026-04-28 catalog features (Null A + B); Null C waveform-only deferred to C-waveform sub-round
+- **C3:** Per-feature distribution comparison (KS test, t-test, Wasserstein distance) real vs each null. ✅ 2026-04-28 (Mann-Whitney U + AUC + bootstrap CI95 + permutation z, per pre-reg §6)
+- **C4:** TLS-style matched filter scan over all feature templates. Pending — Round C waveform sub-round
+- **C5:** Significance via 1000-sample bootstrap. ✅ 2026-04-28 (exp05; 0/10 features pass 3σ on single region; expected given sample-size analysis; macro-pool across 6 regions in Session 7)
 
-**Decision point:** if within-region AUC is below 0.52 for all features, the cross-regional case is very unlikely to work. Consider broadening to different regions or scope-narrowing to a specific tectonic setting.
+**Decision point (single-region):** exp05 California shows 0/10 pass 3σ — consistent with under-powered single-region setup; not a kill. Proceed to multi-region macro pool. Sub-3σ patterns to watch: b-value DROPS in precursor (matches Gulia-Wiemer 2019 direction); Benioff curvature is LOWER (opposite the AMR prediction).
 
 ### Round D — Cross-Regional (Week 4-6)
 **Goal:** pre-registered train/test protocol.
