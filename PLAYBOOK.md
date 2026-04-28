@@ -289,7 +289,7 @@ Roughly **40% reuse** from Cedar Loop's portfolio:
 - **A2:** Pull Parkfield ComCat catalog 2000-2024. Compute b-value via MLE. Compare to published Parkfield b-value (≈0.9 from Bakun+ 2005). **Hard gate:** within 10%.  ✅ 2026-04-28 (exp01 + exp02; declustered Mc=1.50 → b=0.881, 2.1% rel-err)
 - **A3:** Novelty check #1. Document.  ✅ 2026-04-27 (`papers/novelty_check.md`)
 - **A2b (added in Session 2):** ZBZ 2013 declustering + Mc sensitivity sweep. Headline: declustering matters less than Mc choice for Parkfield; the b-vs-Mc curve diagnoses true completeness better than the Wiemer-Wyss + Woessner default.  ✅ 2026-04-28 (exp02)
-- **A4:** Pull BK.PKD continuous waveform for 1 month around 2004 Parkfield M6.0 event. Verify P + S arrivals visually against published picks. Compute waveform entropy + HHT features for sanity.
+- **A4:** Pull BK.PKD continuous waveform for 1 month around 2004 Parkfield M6.0 event. Verify P + S arrivals visually against published picks. Compute waveform entropy + HHT features for sanity.  ✅ 2026-04-28 (exp03; pulled ±30 min not ±1 month — 1 month was scope-creep for a sanity check). Lessons: (i) 60 Hz line noise aliases to Nyquist at fs=40 Hz, mandates pre-EMD bandpass; (ii) EMD's IMF1 in seismic data is amplitude-dominated, sign of IF shift is signal-content-dependent.
 
 ### Round B — Feature Implementation (Week 2-3)
 **Goal:** all 6 features computed cleanly on Parkfield.
@@ -407,6 +407,7 @@ arXiv cross-list: `stat.ML` (Mahoney-endorsed — always available) and optional
 | Novelty check #1 | 2026-04-28 | ✅ Done 2026-04-27 (`papers/novelty_check.md`) |
 | Parkfield b-value calibrated | 2026-05-02 | ✅ Done 2026-04-28 (exp02: declustered Mc=1.50 b=0.881, 2.1% rel-err) |
 | ZBZ 2013 declustering implemented | 2026-05-09 | ✅ Done 2026-04-28 (exp02; pre-reg note added re: log10 η_0=−5.0 default + auto as sensitivity) |
+| Round A4: BK.PKD waveform + entropy + HHT sanity | 2026-05-09 | ✅ Done 2026-04-28 (exp03; P+S arrivals visible at predicted times; entropy drops 1.77 bits, IMF1 IF responds 4.01 Hz). Lesson: pre-EMD bandpass at fs/3 to avoid Nyquist line-noise aliasing. |
 | All 6 features implemented | 2026-05-14 | Pending |
 | Pre-registration committed | 2026-05-16 | Pending |
 | Within-region evaluation | 2026-05-23 | Pending |

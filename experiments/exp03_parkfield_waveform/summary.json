@@ -1,0 +1,66 @@
+{
+  "experiment": "exp03_parkfield_waveform",
+  "timestamp_utc": "2026-04-28T17:06:41.530428Z",
+  "event": {
+    "name": "2004 Parkfield M6.0",
+    "origin_time": "2004-09-28T17:15:24",
+    "lat": 35.815,
+    "lon": -120.374,
+    "depth_km": 8.5
+  },
+  "station": {
+    "code": "BK.PKD",
+    "lat": 35.945171,
+    "lon": -120.541603,
+    "epicentral_km": 20.917058719005936,
+    "hypocentral_km": 22.57816080761102,
+    "predicted_P_s": 3.7630268012685035,
+    "predicted_S_s": 6.450903087888863
+  },
+  "fetch": {
+    "channels_returned": [
+      "BHE",
+      "BHN",
+      "BHZ",
+      "LHE",
+      "LHN",
+      "LHZ"
+    ],
+    "n_traces": 6,
+    "sampling_rate_hz": 40.0,
+    "duration_s": 3599.975
+  },
+  "windows": {
+    "quiet": {
+      "start_offset_s": -1500,
+      "length_s": 300
+    },
+    "event": {
+      "start_offset_s": -30,
+      "length_s": 300
+    }
+  },
+  "entropy": {
+    "quiet_mean_bits": 3.8972514688385833,
+    "event_mean_bits": 2.1312787638274897,
+    "delta_bits": -1.7659727050110936,
+    "max_possible_bits": 5.977279923499917
+  },
+  "hht_imf1_if": {
+    "quiet_mean_hz": 5.428492641315796,
+    "quiet_median_hz": 4.908163759990148,
+    "event_mean_hz": 1.9372402242092204,
+    "event_median_hz": 0.9026851303772929,
+    "delta_median_hz": -4.005478629612855
+  },
+  "gates": {
+    "entropy_drops_at_event": true,
+    "imf1_if_responds_at_event": true,
+    "imf1_if_rises_at_event": false,
+    "round_A4_sanity_pass": true
+  },
+  "emd_bandpass_hz": [
+    0.5,
+    12.0
+  ]
+}

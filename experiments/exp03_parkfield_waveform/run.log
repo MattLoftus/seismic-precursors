@@ -1,0 +1,27 @@
+[10:06:40] [exp03] start
+[10:06:40] [fetch] using cached MSEED + inventory
+[10:06:40] [geom] BK.PKD (35.9452,-120.5416)  epicentral 20.92 km, hypocentral 22.58 km
+[10:06:40] [geom] predicted P = 3.76 s, S = 6.45 s after origin
+[10:06:40] [preprocess] removed response (output=VEL)
+/Users/Loftus/workspace/seismic-precursors/venv/lib/python3.9/site-packages/obspy/signal/filter.py:87: UserWarning: Selected high corner frequency (20.0) of bandpass is at or above Nyquist (20.0). Applying a high-pass instead.
+  warnings.warn(msg)
+[10:06:40] [preprocess] bandpass 0.50-20.0 Hz, 3 traces
+[10:06:41] [plot] wrote waveform_with_arrivals.png
+[10:06:41] [feat] fs=40.0 Hz, quiet len=12000 samples (300s), event len=12000 samples (300s)
+[10:06:41] [entropy] computing spectral entropy series...
+[10:06:41] [entropy] H_quiet  mean=3.897 bits  (max possible 5.98)
+[10:06:41] [entropy] H_event  mean=2.131 bits
+[10:06:41] [entropy] delta = H_event - H_quiet = -1.766 bits (expect NEGATIVE)
+[10:06:41] [plot] wrote entropy_quiet_vs_event.png
+[10:06:41] [hht] running EMD + IMF1 IF on 0.5-12 Hz bandpassed signal...
+[10:06:41] [hht] IF1_quiet  mean=5.43 Hz  median=4.91 Hz
+[10:06:41] [hht] IF1_event  mean=1.94 Hz  median=0.90 Hz
+[10:06:41] [hht] delta median = -4.01 Hz (expect POSITIVE — body-wave energy is higher freq than microseismic)
+[10:06:41] [plot] wrote imf1_if_quiet_vs_event.png
+
+[10:06:41] [gate] entropy DROP at event?       True  (delta = -1.766 bits)
+[10:06:41] [gate] IMF1 IF RESPONDS at event?   True  (|delta median| = 4.01 Hz, threshold 1.0 Hz)
+[10:06:41] [gate]   ↳ direction (rises?)        False  (delta = -4.01 Hz; sign is signal-content-dependent)
+[10:06:41] [gate] >>> ROUND A4 SANITY PASS <<<
+
+[10:06:41] [persist] wrote summary.json

@@ -13,6 +13,7 @@ iris_cache/
 *.mseed
 *.sac
 *.npz
+*.xml
 # Catalog caches (regenerable from ComCat)
 catalog.csv
 *_catalog.csv
