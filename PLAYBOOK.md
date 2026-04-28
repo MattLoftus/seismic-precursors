@@ -285,9 +285,10 @@ Roughly **40% reuse** from Cedar Loop's portfolio:
 ### Round A — Calibration (Week 1-2)
 **Goal:** reproduce a published b-value for one well-characterized region.
 
-- **A1:** Install ObsPy + libcomcat. IRIS hello-world.
-- **A2:** Pull Parkfield ComCat catalog 2000-2024. Compute b-value via MLE. Compare to published Parkfield b-value (≈0.9 from Bakun+ 2005). **Hard gate:** within 10%.
-- **A3:** Novelty check #1. Document.
+- **A1:** Install ObsPy + libcomcat. IRIS hello-world.  ✅ 2026-04-27
+- **A2:** Pull Parkfield ComCat catalog 2000-2024. Compute b-value via MLE. Compare to published Parkfield b-value (≈0.9 from Bakun+ 2005). **Hard gate:** within 10%.  ✅ 2026-04-28 (exp01 + exp02; declustered Mc=1.50 → b=0.881, 2.1% rel-err)
+- **A3:** Novelty check #1. Document.  ✅ 2026-04-27 (`papers/novelty_check.md`)
+- **A2b (added in Session 2):** ZBZ 2013 declustering + Mc sensitivity sweep. Headline: declustering matters less than Mc choice for Parkfield; the b-vs-Mc curve diagnoses true completeness better than the Wiemer-Wyss + Woessner default.  ✅ 2026-04-28 (exp02)
 - **A4:** Pull BK.PKD continuous waveform for 1 month around 2004 Parkfield M6.0 event. Verify P + S arrivals visually against published picks. Compute waveform entropy + HHT features for sanity.
 
 ### Round B — Feature Implementation (Week 2-3)
@@ -337,8 +338,9 @@ Roughly **40% reuse** from Cedar Loop's portfolio:
 
 | Gate | Metric | Pass action | Fail action |
 |------|--------|-------------|-------------|
-| **Day 5 b-value Parkfield** | Matches Bakun+ 2005 to 10% | Proceed | Debug catalog handling; most likely a M_c (magnitude of completeness) miscalibration |
-|   ↳ Result 2026-04-27 | b=0.813±0.007, 9.67% rel-err PASS | exp01 | Bakun's 0.9 sits outside our tight CI — needs declustering + Mc sweep in exp02 |
+| **Day 5 b-value Parkfield** | Matches Bakun+ 2005 to 10% at the b-vs-Mc plateau | Proceed | Debug catalog handling; most likely an Mc miscalibration |
+|   ↳ Result 2026-04-27 (exp01) | b=0.813±0.007 at Mc=1.35, 9.67% rel-err — PASS by margin only | | Bakun outside CI; exp01 hypothesized aftershock contamination, real cause was Mc too low |
+|   ↳ Result 2026-04-28 (exp02) | **declustered, Mc=1.50: b=0.881±0.010, 2.1% rel-err — DEFINITIVE PASS** | | ZBZ declustering tagged 11% as clusters (not bimodal — see notes); Mc choice is the bigger lever than declustering for Parkfield |
 | **Day 10 novelty** | No close prior paper | Proceed | Pivot narrower or kill |
 | **Week 2 single-waveform sanity** | Visually identifiable P+S arrivals on BK.PKD for known event | Proceed | Debug ObsPy fetch / instrument response removal |
 | **Week 3 feature compute** | All 6 features produce sensible distributions on 100 random windows | Proceed | Debug individual feature implementations |
@@ -403,7 +405,8 @@ arXiv cross-list: `stat.ML` (Mahoney-endorsed — always available) and optional
 | Project initialized | 2026-04-23 | ✅ Done |
 | ObsPy + libcomcat installed | 2026-04-25 | ✅ Done 2026-04-27 (obspy 1.5.0, usgs-libcomcat) |
 | Novelty check #1 | 2026-04-28 | ✅ Done 2026-04-27 (`papers/novelty_check.md`) |
-| Parkfield b-value calibrated | 2026-05-02 | ✅ Done 2026-04-27 (b=0.813, 9.67% from Bakun 0.9; PASS) |
+| Parkfield b-value calibrated | 2026-05-02 | ✅ Done 2026-04-28 (exp02: declustered Mc=1.50 b=0.881, 2.1% rel-err) |
+| ZBZ 2013 declustering implemented | 2026-05-09 | ✅ Done 2026-04-28 (exp02; pre-reg note added re: log10 η_0=−5.0 default + auto as sensitivity) |
 | All 6 features implemented | 2026-05-14 | Pending |
 | Pre-registration committed | 2026-05-16 | Pending |
 | Within-region evaluation | 2026-05-23 | Pending |

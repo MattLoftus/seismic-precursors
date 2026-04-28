@@ -1,0 +1,66 @@
+[09:27:00] [exp02] start
+[09:27:00] [exp02] cache: /Users/Loftus/workspace/seismic-precursors/experiments/exp02_parkfield_declustered/catalog.csv
+[09:27:01] [data] ComCat: M>=1.0, r=50km @ (35.850,-120.400), 2000-01-01..2025-01-01
+[09:27:10] [data]   chunk  1 2000-2002:   970 events  (running total: 970)
+[09:27:18] [data]   chunk  2 2002-2004:  1273 events  (running total: 2243)
+[09:27:26] [data]   chunk  3 2004-2006:  5407 events  (running total: 7650)
+[09:27:34] [data]   chunk  4 2006-2008:  1461 events  (running total: 9111)
+[09:27:43] [data]   chunk  5 2008-2010:  1030 events  (running total: 10141)
+[09:27:52] [data]   chunk  6 2010-2012:   741 events  (running total: 10882)
+[09:28:01] [data]   chunk  7 2012-2014:   757 events  (running total: 11639)
+[09:28:11] [data]   chunk  8 2014-2016:   829 events  (running total: 12468)
+[09:28:20] [data]   chunk  9 2016-2018:   892 events  (running total: 13360)
+[09:28:28] [data]   chunk 10 2018-2020:   822 events  (running total: 14182)
+[09:28:37] [data]   chunk 11 2020-2022:   555 events  (running total: 14737)
+[09:28:45] [data]   chunk 12 2022-2024:   675 events  (running total: 15412)
+[09:28:50] [data]   chunk 13 2024-2025:   320 events  (running total: 15732)
+[09:28:50] [data] cached 15732 events -> /Users/Loftus/workspace/seismic-precursors/experiments/exp02_parkfield_declustered/catalog.csv
+[09:28:50] [data] done -- 15732 events, M [1.00, 5.97]
+[09:28:50] [exp02] catalog has 15732 events, M [1.00, 5.97]
+[09:28:50] [zbz] computing nearest-neighbor proximity for N=15732 (vectorized, O(N^2))
+[09:28:50] [zbz]      786 / 15732  (  5.0%)
+[09:28:50] [zbz]     1572 / 15732  ( 10.0%)
+[09:28:50] [zbz]     2358 / 15732  ( 15.0%)
+[09:28:50] [zbz]     3144 / 15732  ( 20.0%)
+[09:28:50] [zbz]     3930 / 15732  ( 25.0%)
+[09:28:50] [zbz]     4716 / 15732  ( 30.0%)
+[09:28:50] [zbz]     5502 / 15732  ( 35.0%)
+[09:28:50] [zbz]     6288 / 15732  ( 40.0%)
+[09:28:50] [zbz]     7074 / 15732  ( 45.0%)
+[09:28:51] [zbz]     7860 / 15732  ( 50.0%)
+[09:28:51] [zbz]     8646 / 15732  ( 55.0%)
+[09:28:51] [zbz]     9432 / 15732  ( 60.0%)
+[09:28:51] [zbz]    10218 / 15732  ( 65.0%)
+[09:28:52] [zbz]    11004 / 15732  ( 69.9%)
+[09:28:52] [zbz]    11790 / 15732  ( 74.9%)
+[09:28:52] [zbz]    12576 / 15732  ( 79.9%)
+[09:28:52] [zbz]    13362 / 15732  ( 84.9%)
+[09:28:53] [zbz]    14148 / 15732  ( 89.9%)
+[09:28:53] [zbz]    14934 / 15732  ( 94.9%)
+[09:28:53] [zbz]    15720 / 15732  ( 99.9%)
+[09:28:54] [zbz] auto threshold log10(eta_0) = -6.785
+[09:28:54] [zbz] background = 13990 / 15732  (88.9%); clustered = 1742
+[09:28:55] [plot] wrote bimodality_log_eta.png
+[09:28:55] [exp02] catalog sizes: full=15732, declustered=13990, declustered+pre-2004=3141
+[09:28:55] [bvalue] full           Mc=1.00  b=0.7391 +/- 0.0048  CI=[0.7299, 0.7492]  n>=Mc=15732
+[09:28:55] [bvalue] full           Mc=1.15  b=0.7589 +/- 0.0055  CI=[0.7487, 0.7696]  n>=Mc=12179
+[09:28:55] [bvalue] full           Mc=1.25  b=0.7933 +/- 0.0063  CI=[0.7813, 0.8052]  n>=Mc=10518
+[09:28:55] [bvalue] full           Mc=1.35  b=0.8130 +/- 0.0071  CI=[0.7992, 0.8269]  n>=Mc=8833
+[09:28:55] [bvalue] full           Mc=1.50  b=0.8550 +/- 0.0088  CI=[0.8381, 0.8746]  n>=Mc=6803
+[09:28:55] [bvalue] declustered    Mc=1.00  b=0.7535 +/- 0.0051  CI=[0.7439, 0.7637]  n>=Mc=13990
+[09:28:55] [bvalue] declustered    Mc=1.15  b=0.7762 +/- 0.0060  CI=[0.7650, 0.7877]  n>=Mc=10798
+[09:28:55] [bvalue] declustered    Mc=1.25  b=0.8120 +/- 0.0069  CI=[0.7984, 0.8258]  n>=Mc=9288
+[09:28:55] [bvalue] declustered    Mc=1.35  b=0.8335 +/- 0.0078  CI=[0.8206, 0.8493]  n>=Mc=7772
+[09:28:55] [bvalue] declustered    Mc=1.50  b=0.8806 +/- 0.0098  CI=[0.8633, 0.8989]  n>=Mc=5958
+[09:28:55] [bvalue] decl_pre2004   Mc=1.00  b=0.7234 +/- 0.0100  CI=[0.7042, 0.7438]  n>=Mc=3141
+[09:28:55] [bvalue] decl_pre2004   Mc=1.15  b=0.7348 +/- 0.0112  CI=[0.7121, 0.7563]  n>=Mc=2415
+[09:28:55] [bvalue] decl_pre2004   Mc=1.25  b=0.7767 +/- 0.0129  CI=[0.7487, 0.8028]  n>=Mc=2122
+[09:28:55] [bvalue] decl_pre2004   Mc=1.35  b=0.7954 +/- 0.0142  CI=[0.7663, 0.8206]  n>=Mc=1786
+[09:28:55] [bvalue] decl_pre2004   Mc=1.50  b=0.8535 +/- 0.0176  CI=[0.8197, 0.8904]  n>=Mc=1412
+[09:28:55] [plot] wrote bvalue_vs_mc.png
+[09:28:55] [plot] wrote fmd_full_vs_decl.png
+[09:28:55] [gate@Mc=1.35] full            b=0.8130  rel_err=9.67%  Bakun_in_CI=False  verdict=PASS
+[09:28:55] [gate@Mc=1.35] declustered     b=0.8335  rel_err=7.39%  Bakun_in_CI=False  verdict=PASS
+[09:28:55] [gate@Mc=1.35] decl_pre2004    b=0.7954  rel_err=11.63%  Bakun_in_CI=False  verdict=FAIL
+[09:28:55] [persist] wrote summary.json
+[09:28:55] [exp02] done

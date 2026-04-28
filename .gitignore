@@ -13,6 +13,9 @@ iris_cache/
 *.mseed
 *.sac
 *.npz
+# Catalog caches (regenerable from ComCat)
+catalog.csv
+*_catalog.csv
 # Database
 *.db
 *.sqlite
