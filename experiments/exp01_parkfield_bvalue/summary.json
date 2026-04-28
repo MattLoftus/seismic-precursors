@@ -1,0 +1,46 @@
+{
+  "experiment": "exp01_parkfield_bvalue",
+  "timestamp_utc": "2026-04-28T05:14:39.948810Z",
+  "region": "Parkfield",
+  "params": {
+    "lat": 35.85,
+    "lon": -120.4,
+    "radius_km": 50.0,
+    "M_min": 1.0,
+    "start": "2000-01-01T00:00:00",
+    "end": "2025-01-01T00:00:00",
+    "chunk_years": 2
+  },
+  "iris_hello_world": {
+    "networks": [
+      "BK"
+    ],
+    "n_stations": 1
+  },
+  "catalog": {
+    "n_events": 15732,
+    "m_min_observed": 1.0,
+    "m_max_observed": 5.97
+  },
+  "bvalue": {
+    "Mc_raw_max_curvature": 1.1500000000000001,
+    "Mc_used": 1.35,
+    "Mc_method": "max-curvature + +0.20 (Woessner-Wiemer 2005)",
+    "n_above_Mc": 8833,
+    "b": 0.8129739264683659,
+    "b_se_shi_bolt_1982": 0.007121246302628675,
+    "b_boot_ci95": [
+      0.7992014822698504,
+      0.8270262377145015
+    ],
+    "a_intercept": 5.0436230311692
+  },
+  "calibration_gate": {
+    "reference_paper": "Bakun et al. 2005",
+    "reference_b": 0.9,
+    "tolerance_frac": 0.1,
+    "rel_error": 0.09669563725737129,
+    "reference_in_bootstrap_ci": false,
+    "passed": true
+  }
+}

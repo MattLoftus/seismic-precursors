@@ -1,0 +1,33 @@
+[22:12:55] [hello-world] connecting to IRIS FDSN...
+/Users/Loftus/workspace/seismic-precursors/venv/lib/python3.9/site-packages/obspy/clients/fdsn/client.py:251: ObsPyDeprecationWarning: IRIS is now EarthScope, please consider changing the FDSN client short URL to 'EARTHSCOPE'.
+  warnings.warn(msg, ObsPyDeprecationWarning)
+[22:12:56] [hello-world] OK -- networks=['BK'] stations=['PKD']
+               BK.PKD  35.9452,-120.5416  elev=583m  start=1996-09-06
+[22:12:56] [catalog] Parkfield M>=1.0, radius=50.0km @ (35.85, -120.4), 2000-01-01 to 2025-01-01
+[22:13:04] [catalog]   chunk 1/12 2000-2002:   970 events  (running total: 970)
+[22:13:13] [catalog]   chunk 2/12 2002-2004:  1273 events  (running total: 2243)
+[22:13:21] [catalog]   chunk 3/12 2004-2006:  5407 events  (running total: 7650)
+[22:13:30] [catalog]   chunk 4/12 2006-2008:  1461 events  (running total: 9111)
+[22:13:37] [catalog]   chunk 5/12 2008-2010:  1030 events  (running total: 10141)
+[22:13:46] [catalog]   chunk 6/12 2010-2012:   741 events  (running total: 10882)
+[22:13:54] [catalog]   chunk 7/12 2012-2014:   757 events  (running total: 11639)
+[22:14:02] [catalog]   chunk 8/12 2014-2016:   829 events  (running total: 12468)
+[22:14:10] [catalog]   chunk 9/12 2016-2018:   892 events  (running total: 13360)
+[22:14:18] [catalog]   chunk 10/12 2018-2020:   822 events  (running total: 14182)
+[22:14:26] [catalog]   chunk 11/12 2020-2022:   555 events  (running total: 14737)
+[22:14:34] [catalog]   chunk 12/12 2022-2024:   675 events  (running total: 15412)
+[22:14:39] [catalog]   chunk 13/12 2024-2025:   320 events  (running total: 15732)
+[22:14:39] [catalog] done -- 15732 events, M range [1.00, 5.97]
+[22:14:39] [persist] saved catalog_magnitudes.npz (122 KB)
+[22:14:39] [bvalue] Mc raw (max-curvature) = 1.15
+[22:14:39] [bvalue] Mc adjusted = 1.35  (max-curvature + +0.20 (Woessner-Wiemer 2005), n>=Mc = 8833/15732)
+[22:14:39] [bvalue] b = 0.8130 +/- 0.0071 (Shi-Bolt 1982)
+[22:14:39] [bvalue] b 95% bootstrap CI = [0.7992, 0.8270]
+[22:14:39] [bvalue] a (log10 N at M=0) = 5.0436
+[22:14:39] [plot] wrote magnitude_frequency.png
+
+[22:14:39] [gate] Bakun+ 2005 reference b = 0.90
+[22:14:39] [gate] |our_b - 0.9| / 0.9 = 9.670%  (tolerance 10%)
+[22:14:39] [gate] Bakun b inside our 95% CI? False
+[22:14:39] [gate] >>> CALIBRATION PASS <<<
+[22:14:39] [persist] wrote summary.json

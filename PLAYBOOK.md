@@ -72,14 +72,38 @@ The earthquake-precursor literature has been in a reputational hole since Parkfi
 
 ### 3.2 What's novel about our approach
 
-1. **Cross-regional generalization test (train on 6, test on 2).** Most precursor work is per-region or global-averaged. A hold-out test is the correct statistical protocol and is rare.
-2. **Multiple null models on equal footing:**
-   - Aftershock-free window null (precursor window may be contaminated by aftershocks from prior events)
-   - Random-window null (stationary rate assumption)
-   - Colored-noise synthetic null (features may emerge from 1/f statistics alone)
-3. **TLS-style matched filter for feature space.** Apply the exoplanet-detection methodology (Transit Least Squares; Hippke & Heller 2019) to scan across feature-time space for precursor-like patterns. This is a direct port from Matt's exoplanet pipeline.
-4. **Pre-registration.** Feature set, null models, and training/test regions committed BEFORE looking at results. This alone sets us apart from most precursor papers.
-5. **Honest upper-bound reporting.** Even a null result (no precursor) is framed as a tightened upper bound on detectability.
+> **Updated 2026-04-27 after Session 1 novelty check.** Pre-registration is
+> NOT novel in seismology — CSEP/RELM solved it ~15 years ago. Cross-region
+> held-out testing is also being done (SafeNet 2025). The methodologically
+> closest prior is the MDPI 2025 ionospheric-precursor paper, which applies
+> a similar rigor framework to a different physical domain. See
+> `papers/novelty_check.md` for the full audit. What remains genuinely novel:
+
+1. **The specific 6-feature stack on equal footing.** Each feature
+   (b-value drift, spectral slope drift, repeating-event rate, Benioff strain
+   accumulation, waveform entropy, HHT peak drift) is published individually,
+   often by different groups. A single pipeline that computes them all under
+   a unified Mc / preprocessing / null protocol does not appear in the
+   literature. This is where the Mignan & Broccardo 2019 lesson bites: any
+   single feature has a trivial baseline; the head-to-head AUC bake-off is
+   what survives.
+2. **TLS-style matched filter applied to feature time series for precursor
+   templates.** Direct port from `~/workspace/exoplanet-search`. The
+   Senobari et al. 2024 *JGR* matrix-profile work is the closest matched-
+   filter analog in seismology, but applied to event detection (raw
+   waveforms), not precursor template scanning across feature space.
+3. **A/B/C null triplet on equal footing.** Aftershock-free + random-window
+   + colored-noise. The Gulia–Wiemer 2019 line uses random windows only;
+   CSEP uses likelihood tests (different statistic); nothing combines all
+   three. Tightening the null discipline is the main methodological lever
+   we have post-Session-1.
+4. **CSEP-style protocol applied to feature-based forecasts.** We adopt the
+   CSEP pre-registration / hold-out test / metric-fixed framework but apply
+   it to feature-based precursors rather than the rate-based ETAS variants
+   that dominate CSEP. This is the bridge contribution.
+5. **Honest upper-bound reporting.** Even a null result (no precursor) is
+   framed as a tightened upper bound on detectability — which is the
+   contribution Mignan 2014 said the field needs.
 
 ### 3.3 Mandatory novelty check (Week 1 Day 3 + Week 3 end)
 
@@ -314,6 +338,7 @@ Roughly **40% reuse** from Cedar Loop's portfolio:
 | Gate | Metric | Pass action | Fail action |
 |------|--------|-------------|-------------|
 | **Day 5 b-value Parkfield** | Matches Bakun+ 2005 to 10% | Proceed | Debug catalog handling; most likely a M_c (magnitude of completeness) miscalibration |
+|   ↳ Result 2026-04-27 | b=0.813±0.007, 9.67% rel-err PASS | exp01 | Bakun's 0.9 sits outside our tight CI — needs declustering + Mc sweep in exp02 |
 | **Day 10 novelty** | No close prior paper | Proceed | Pivot narrower or kill |
 | **Week 2 single-waveform sanity** | Visually identifiable P+S arrivals on BK.PKD for known event | Proceed | Debug ObsPy fetch / instrument response removal |
 | **Week 3 feature compute** | All 6 features produce sensible distributions on 100 random windows | Proceed | Debug individual feature implementations |
@@ -325,12 +350,14 @@ Roughly **40% reuse** from Cedar Loop's portfolio:
 
 ## 11. Scoring Rubric (Paper)
 
-| Outcome | Score | Interpretation |
-|---------|-------|----------------|
-| All features fail cross-regional; tight upper bound only | 6.5-7.0 | Honest null result — rare in the field, publishable |
-| One feature works cross-regional (AUC > 0.55 at 3σ) | 7.5-8.0 | Genuine contribution; field-important |
-| Multiple features work, physical mechanism links to slow-slip / stress redistribution | 8.5 | Field-changing; Nature Geoscience shot |
-| Cold-read score mandatory at Round E3 before commit | | |
+> **Revised 2026-04-27 after Session 1 novelty check (−0.5 across the board).**
+
+| Outcome | Original estimate | Post-novelty estimate | Interpretation |
+|---------|------------------|----------------------|----------------|
+| All features fail cross-regional; tight upper bound only | 6.5–7.0 | **6.0–6.5** | Honest null result — rare in the field, publishable |
+| One feature works cross-regional (AUC > 0.55 at 3σ) | 7.5–8.0 | **7.0–7.5** | Genuine contribution; field-important |
+| Multiple features work, physical mechanism links to slow-slip / stress redistribution | 8.5 | **7.5–8.0** | Field-changing; Nature Geoscience shot |
+| Cold-read score mandatory at Round E3 before commit | | | |
 
 ---
 
@@ -374,9 +401,9 @@ arXiv cross-list: `stat.ML` (Mahoney-endorsed — always available) and optional
 | Milestone | Target | Status |
 |-----------|--------|--------|
 | Project initialized | 2026-04-23 | ✅ Done |
-| ObsPy installed | 2026-04-25 | Pending |
-| Novelty check | 2026-04-28 | Pending |
-| Parkfield b-value calibrated | 2026-05-02 | Pending |
+| ObsPy + libcomcat installed | 2026-04-25 | ✅ Done 2026-04-27 (obspy 1.5.0, usgs-libcomcat) |
+| Novelty check #1 | 2026-04-28 | ✅ Done 2026-04-27 (`papers/novelty_check.md`) |
+| Parkfield b-value calibrated | 2026-05-02 | ✅ Done 2026-04-27 (b=0.813, 9.67% from Bakun 0.9; PASS) |
 | All 6 features implemented | 2026-05-14 | Pending |
 | Pre-registration committed | 2026-05-16 | Pending |
 | Within-region evaluation | 2026-05-23 | Pending |
@@ -395,12 +422,11 @@ cd ~/workspace/seismic-precursors
 source venv/bin/activate
 
 pip install numpy scipy matplotlib scikit-learn
-pip install obspy  # seismic I/O and processing
-pip install libcomcat  # USGS catalog access
-pip install cartopy  # geographic maps
-pip install emd PyEMD  # Hilbert-Huang
-pip install tqdm  # progress bars
-pip install sqlalchemy  # database
+pip install obspy            # seismic I/O and processing
+pip install usgs-libcomcat   # USGS ComCat catalog access (NOT 'libcomcat' on PyPI)
+pip install cartopy          # geographic maps (Session 2+)
+pip install emd PyEMD        # Hilbert-Huang (Session 3 — Round B)
+pip install tqdm sqlalchemy
 pip install pytest ipython jupyter
 
 pip freeze > requirements.txt
