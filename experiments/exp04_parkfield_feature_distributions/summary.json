@@ -1,0 +1,36 @@
+{
+  "experiment": "exp04_parkfield_feature_distributions",
+  "timestamp_utc": "2026-04-28T17:27:18.307739Z",
+  "params": {
+    "window_days": 30,
+    "target_M_min": 4.5,
+    "Mc_for_features": 1.0,
+    "n_null_target": 200,
+    "n_drift_subwindows": 3,
+    "min_events_per_subwindow": 10,
+    "null_buffer_days_before": 30,
+    "null_buffer_days_after": 60
+  },
+  "counts": {
+    "n_precursor": 4,
+    "n_null": 200,
+    "n_drift_ok_precursor": 4,
+    "feature_computability": {
+      "b": 134,
+      "b_drift_per_day": 118,
+      "benioff_total_log10": 204,
+      "benioff_curv": 204,
+      "n_above_mc": 204
+    }
+  },
+  "preview_aucs_NOT_PREREGISTERED": {
+    "b": 0.21153846153846154,
+    "b_drift_per_day": 0.4298245614035088,
+    "benioff_total_log10": 0.995,
+    "benioff_curv": 1.0,
+    "n_above_mc": 0.99
+  },
+  "gates": {
+    "sanity_pass": true
+  }
+}

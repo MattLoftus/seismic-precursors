@@ -35,8 +35,10 @@ def fetch_comcat_catalog(
     if cache_path is not None and Path(cache_path).is_file():
         if log:
             log(f"[data] loading cached catalog from {cache_path}")
-        df = pd.read_csv(cache_path, parse_dates=["time"])
-        df["time"] = pd.to_datetime(df["time"], utc=True)
+        # ComCat times are mixed-format; use ISO8601 to handle both microsecond
+        # and no-microsecond rows.
+        df = pd.read_csv(cache_path)
+        df["time"] = pd.to_datetime(df["time"], utc=True, format="ISO8601")
         return df
 
     from libcomcat.search import search

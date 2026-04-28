@@ -294,14 +294,15 @@ Roughly **40% reuse** from Cedar Loop's portfolio:
 ### Round B — Feature Implementation (Week 2-3)
 **Goal:** all 6 features computed cleanly on Parkfield.
 
-- **B1:** b-value trajectory (sliding window).
-- **B2:** Spectral slope drift.
-- **B3:** Repeating-event rate (template matching).
-- **B4:** Benioff strain accumulation.
-- **B5:** Waveform entropy.
-- **B6:** HHT peak drift.
-- **B7:** Declustering pipeline (Reasenberg / Zaliapin-Ben-Zion).
-- **B8:** Pre-registration commit to git with SHA.
+- **B1:** b-value trajectory (sliding window).  ✅ 2026-04-28 (`src/features/bvalue.py` `bvalue_drift`)
+- **B2:** Spectral slope drift.  ✅ 2026-04-28 (`src/features/spectral.py`); not yet exercised on real waveforms — needs Round C waveform pull
+- **B3:** Repeating-event rate (template matching).  Scaffold ✅ 2026-04-28 (`src/features/repeating.py`); full catalog application deferred to Round C
+- **B4:** Benioff strain accumulation.  ✅ 2026-04-28 (`src/features/benioff.py`)
+- **B5:** Waveform entropy.  ✅ 2026-04-27 (`src/features/entropy.py`)
+- **B6:** HHT peak drift.  ✅ 2026-04-27 (`src/features/hht.py`)
+- **B7:** Declustering pipeline (Reasenberg / Zaliapin-Ben-Zion).  ✅ 2026-04-28 (`src/features/declustering.py`, ZBZ 2013)
+- **B8:** Pre-registration commit to git with SHA.  Pending — Session 5 (now appropriate; all features implemented + leakage paths identified)
+- **CRITICAL FINDING from exp04 (2026-04-28):** Parkfield 50 km has only 1 independent M≥4.5 in 25 years; 4 apparent targets are 1 mainshock + 3 aftershocks. AUC ≈ 1.0 on Benioff/n_events is leakage, not signal. Pre-reg commitments now non-negotiable: (i) decluster targets via ZBZ, (ii) broaden California to ~32-42N / 125-114W, (iii) apply post-event exclusion buffer to precursor windows too, not just null windows.
 
 ### Round C — Single-Region Evaluation (Week 3-4)
 **Goal:** establish within-region precursor signals on Parkfield.

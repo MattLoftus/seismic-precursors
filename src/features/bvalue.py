@@ -135,3 +135,81 @@ def bvalue_with_bootstrap(
         method_mc=method_mc,
         dm=dm,
     )
+
+
+def bvalue_drift(
+    times_seconds: np.ndarray,
+    magnitudes: np.ndarray,
+    mc: float,
+    n_subwindows: int = 5,
+    min_events_per_subwindow: int = 30,
+    dm: float = DM_DEFAULT,
+) -> dict:
+    """Time-resolved b within a window: split into n_subwindows equal-time chunks
+    and fit b in each. Returns the linear slope (b vs sub-window center time)
+    along with the per-sub-window b values.
+
+    The slope is the precursor feature ("b-value drift", Gulia & Wiemer 2019
+    style — the sign and magnitude of b-change leading up to a target event).
+
+    times_seconds: float array of event times in seconds (any monotonic origin).
+    magnitudes:    float array of magnitudes, same length.
+
+    Returns dict with: drift_slope (b per second), drift_slope_per_day, b_series,
+    t_centers, n_above_mc, ok (bool flag — False if too sparse).
+    """
+    times_seconds = np.asarray(times_seconds, dtype=float)
+    magnitudes = np.asarray(magnitudes, dtype=float)
+    if len(times_seconds) != len(magnitudes):
+        raise ValueError("times_seconds and magnitudes must have same length")
+
+    above = magnitudes >= (mc - 1e-9)
+    n_above = int(above.sum())
+    if n_above < n_subwindows * min_events_per_subwindow:
+        return {
+            "ok": False,
+            "drift_slope_per_s": float("nan"),
+            "drift_slope_per_day": float("nan"),
+            "b_series": np.array([]),
+            "t_centers": np.array([]),
+            "n_above_mc": n_above,
+            "reason": f"insufficient events above Mc ({n_above} < "
+                      f"{n_subwindows * min_events_per_subwindow})",
+        }
+
+    t_min, t_max = float(times_seconds.min()), float(times_seconds.max())
+    edges = np.linspace(t_min, t_max, n_subwindows + 1)
+    centers = 0.5 * (edges[:-1] + edges[1:])
+
+    bs = np.full(n_subwindows, np.nan)
+    for i in range(n_subwindows):
+        mask = (times_seconds >= edges[i]) & (times_seconds < edges[i + 1] if i < n_subwindows - 1
+                                               else times_seconds <= edges[i + 1])
+        if int((mask & above).sum()) >= min_events_per_subwindow:
+            bb, _, _ = aki_bvalue(magnitudes[mask], mc=mc, dm=dm)
+            bs[i] = bb
+
+    valid = np.isfinite(bs)
+    if valid.sum() < 2:
+        return {
+            "ok": False,
+            "drift_slope_per_s": float("nan"),
+            "drift_slope_per_day": float("nan"),
+            "b_series": bs,
+            "t_centers": centers,
+            "n_above_mc": n_above,
+            "reason": f"only {int(valid.sum())} sub-windows had >= "
+                      f"{min_events_per_subwindow} above-Mc events",
+        }
+
+    # Least-squares slope of b vs time
+    slope, intercept = np.polyfit(centers[valid], bs[valid], deg=1)
+    return {
+        "ok": True,
+        "drift_slope_per_s": float(slope),
+        "drift_slope_per_day": float(slope * 86400.0),
+        "intercept": float(intercept),
+        "b_series": bs,
+        "t_centers": centers,
+        "n_above_mc": n_above,
+    }

@@ -1,0 +1,28 @@
+[10:27:17] [exp04] loading catalog from experiments/exp02_parkfield_declustered/catalog.csv
+[10:27:17] [exp04] 15732 events, 2000-01-01 05:19:24.020000+00:00 .. 2024-12-30 18:17:32.580000+00:00
+[10:27:17] [exp04] M>=4.5 targets: 4
+[10:27:17]   target  2004-09-28 17:15:24.250000+00:00  M=5.97  (35.818,-120.366)  depth=8.1km
+[10:27:17]   target  2004-09-28 17:24:15.280000+00:00  M=4.71  (35.804,-120.350)  depth=6.0km
+[10:27:17]   target  2004-09-29 17:10:04.030000+00:00  M=5.00  (35.954,-120.502)  depth=10.8km
+[10:27:17]   target  2004-09-30 18:54:28.840000+00:00  M=4.88  (35.988,-120.538)  depth=9.9km
+[10:27:17] [exp04] computing features for 4 precursor windows...
+[10:27:17] [exp04] sampling 200 aftershock-free null windows...
+[10:27:17] [exp04] sampled 200 null intervals
+[10:27:18] [exp04] wrote feature_summary.csv (204 rows)
+[10:27:18] [auc] b                             AUC=0.212  (n_precursor=4/4, n_null=130/200)
+[10:27:18] [auc] b_drift_per_day               AUC=0.430  (n_precursor=4/4, n_null=114/200)
+[10:27:18] [auc] benioff_total_log10           AUC=0.995  (n_precursor=4/4, n_null=200/200)
+[10:27:18] [auc] benioff_curv                  AUC=1.000  (n_precursor=4/4, n_null=200/200)
+[10:27:18] [auc] n_above_mc                    AUC=0.990  (n_precursor=4/4, n_null=200/200)
+[10:27:18] [plot] wrote feature_distributions.png
+
+[10:27:18] [gate] feature computability:
+[10:27:18]   b                          134 / 204 computable
+[10:27:18]   b_drift_per_day            118 / 204 computable
+[10:27:18]   benioff_total_log10        204 / 204 computable
+[10:27:18]   benioff_curv               204 / 204 computable
+[10:27:18]   n_above_mc                 204 / 204 computable
+[10:27:18] [gate] precursor b_drift OK:  4 / 4
+[10:27:18] [gate] >>> exp04 SANITY PASS <<<
+
+[10:27:18] [persist] wrote summary.json
