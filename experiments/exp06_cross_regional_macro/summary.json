@@ -1,0 +1,731 @@
+{
+  "experiment": "exp06_cross_regional_macro",
+  "timestamp_utc": "2026-04-28T20:40:25.879960Z",
+  "preview_deviations": [
+    "Catalog M_min=2.5 (pre-reg=1.5; computational practicality)",
+    "Null C skipped (catalog-only, no waveforms)"
+  ],
+  "params": {
+    "window_days": 30,
+    "target_M_min": 4.5,
+    "catalog_M_min": 2.5,
+    "zbz_log_eta_threshold": -5.0,
+    "n_null_a": 200,
+    "n_null_b": 200,
+    "n_boot": 1000,
+    "n_perm": 1000
+  },
+  "n_regions": 4,
+  "region_results": [
+    {
+      "region": "California",
+      "mc": 2.75,
+      "mc_diag": {
+        "mc_raw": 2.55,
+        "mc_woessner": 2.75,
+        "mc_grid": [
+          2.5,
+          2.7,
+          2.9,
+          3.1,
+          3.3,
+          3.5
+        ],
+        "b_at_mc_grid": [
+          0.9158589329746873,
+          0.9220058742027663,
+          0.9244782682397756,
+          0.9142892532023057,
+          0.9527963305447817,
+          0.9669140626766471
+        ]
+      },
+      "n_total": 37777,
+      "n_background": 16868,
+      "n_targets_all": 329,
+      "n_targets_background": 116,
+      "n_precursor": 25,
+      "n_precursor_rejected": 91,
+      "n_null_a": 200,
+      "n_null_b": 200,
+      "auc_table": {
+        "b__null_A": {
+          "auc": 0.5135309278350515,
+          "ci_lo": 0.40548754295532646,
+          "ci_hi": 0.6265088058419244,
+          "perm_z": 0.21967215466942502,
+          "perm_p": 0.826126492315207,
+          "n_p": 24.0,
+          "n_q": 194.0
+        },
+        "b_drift_per_day__null_A": {
+          "auc": 0.4993131868131868,
+          "ci_lo": 0.37833104395604394,
+          "ci_hi": 0.617691163003663,
+          "perm_z": 0.07372907649660432,
+          "perm_p": 0.9412259620489323,
+          "n_p": 24.0,
+          "n_q": 182.0
+        },
+        "benioff_total_log10__null_A": {
+          "auc": 0.4414,
+          "ci_lo": 0.322,
+          "ci_hi": 0.561,
+          "perm_z": -0.9737434982660627,
+          "perm_p": 0.33018391364930766,
+          "n_p": 25.0,
+          "n_q": 200.0
+        },
+        "benioff_curv__null_A": {
+          "auc": 0.3942,
+          "ci_lo": 0.282785,
+          "ci_hi": 0.504205,
+          "perm_z": -1.6506796053732204,
+          "perm_p": 0.09880401439792674,
+          "n_p": 25.0,
+          "n_q": 200.0
+        },
+        "n_above_mc__null_A": {
+          "auc": 0.4318,
+          "ci_lo": 0.32258,
+          "ci_hi": 0.5486399999999999,
+          "perm_z": -1.1346065226476698,
+          "perm_p": 0.2565402189892505,
+          "n_p": 25.0,
+          "n_q": 200.0
+        },
+        "b__null_B": {
+          "auc": 0.4288194444444444,
+          "ci_lo": 0.3144476996527778,
+          "ci_hi": 0.5449435763888889,
+          "perm_z": -1.1961884770045024,
+          "perm_p": 0.2316230165358688,
+          "n_p": 24.0,
+          "n_q": 192.0
+        },
+        "b_drift_per_day__null_B": {
+          "auc": 0.5500465549348231,
+          "ci_lo": 0.4259776536312849,
+          "ci_hi": 0.6669285381750466,
+          "perm_z": 0.7298358501573439,
+          "perm_p": 0.4654905279958035,
+          "n_p": 24.0,
+          "n_q": 179.0
+        },
+        "benioff_total_log10__null_B": {
+          "auc": 0.6214,
+          "ci_lo": 0.497575,
+          "ci_hi": 0.7324050000000001,
+          "perm_z": 1.9910908948930608,
+          "perm_p": 0.04647089528126802,
+          "n_p": 25.0,
+          "n_q": 200.0
+        },
+        "benioff_curv__null_B": {
+          "auc": 0.333,
+          "ci_lo": 0.219795,
+          "ci_hi": 0.45311499999999993,
+          "perm_z": -2.7646409780889356,
+          "perm_p": 0.00569854769707745,
+          "n_p": 25.0,
+          "n_q": 200.0
+        },
+        "n_above_mc__null_B": {
+          "auc": 0.5974,
+          "ci_lo": 0.47297999999999996,
+          "ci_hi": 0.70683,
+          "perm_z": 1.5991522957761939,
+          "perm_p": 0.10978676708715396,
+          "n_p": 25.0,
+          "n_q": 200.0
+        }
+      }
+    },
+    {
+      "region": "Cascadia",
+      "mc": 2.95,
+      "mc_diag": {
+        "mc_raw": 2.75,
+        "mc_woessner": 2.95,
+        "mc_grid": [
+          2.5,
+          2.7,
+          2.9,
+          3.1,
+          3.3,
+          3.5
+        ],
+        "b_at_mc_grid": [
+          0.6192367422951794,
+          0.6149516512073163,
+          0.5928104700055279,
+          0.5623848575133219,
+          0.5641166574692709,
+          0.5938035310674286
+        ]
+      },
+      "n_total": 9945,
+      "n_background": 5768,
+      "n_targets_all": 535,
+      "n_targets_background": 277,
+      "n_precursor": 4,
+      "n_precursor_rejected": 273,
+      "n_null_a": 23,
+      "n_null_b": 200,
+      "auc_table": {
+        "b__null_A": {
+          "auc": NaN,
+          "ci_lo": NaN,
+          "ci_hi": NaN,
+          "perm_z": NaN,
+          "perm_p": NaN,
+          "n_p": 0.0,
+          "n_q": 0.0
+        },
+        "b_drift_per_day__null_A": {
+          "auc": NaN,
+          "ci_lo": NaN,
+          "ci_hi": NaN,
+          "perm_z": NaN,
+          "perm_p": NaN,
+          "n_p": 0.0,
+          "n_q": 0.0
+        },
+        "benioff_total_log10__null_A": {
+          "auc": 0.14130434782608695,
+          "ci_lo": 0.0,
+          "ci_hi": 0.391304347826087,
+          "perm_z": -2.2293298714495546,
+          "perm_p": 0.025791964519700672,
+          "n_p": 4.0,
+          "n_q": 23.0
+        },
+        "benioff_curv__null_A": {
+          "auc": 0.43478260869565216,
+          "ci_lo": 0.2391304347826087,
+          "ci_hi": 0.6415760869565215,
+          "perm_z": -0.388620556400597,
+          "perm_p": 0.6975568580096339,
+          "n_p": 4.0,
+          "n_q": 23.0
+        },
+        "n_above_mc__null_A": {
+          "auc": 0.13043478260869565,
+          "ci_lo": 0.0,
+          "ci_hi": 0.391304347826087,
+          "perm_z": -2.2687059421036384,
+          "perm_p": 0.023286214018316098,
+          "n_p": 4.0,
+          "n_q": 23.0
+        },
+        "b__null_B": {
+          "auc": NaN,
+          "ci_lo": NaN,
+          "ci_hi": NaN,
+          "perm_z": NaN,
+          "perm_p": NaN,
+          "n_p": 0.0,
+          "n_q": 0.0
+        },
+        "b_drift_per_day__null_B": {
+          "auc": NaN,
+          "ci_lo": NaN,
+          "ci_hi": NaN,
+          "perm_z": NaN,
+          "perm_p": NaN,
+          "n_p": 0.0,
+          "n_q": 0.0
+        },
+        "benioff_total_log10__null_B": {
+          "auc": 0.42125,
+          "ci_lo": 0.11,
+          "ci_hi": 0.77378125,
+          "perm_z": -0.548878914063222,
+          "perm_p": 0.5830885495930744,
+          "n_p": 4.0,
+          "n_q": 200.0
+        },
+        "benioff_curv__null_B": {
+          "auc": 0.60875,
+          "ci_lo": 0.45,
+          "ci_hi": 0.77378125,
+          "perm_z": 0.7707065760614691,
+          "perm_p": 0.44088087320944935,
+          "n_p": 4.0,
+          "n_q": 200.0
+        },
+        "n_above_mc__null_B": {
+          "auc": 0.4375,
+          "ci_lo": 0.09865625000000001,
+          "ci_hi": 0.7375,
+          "perm_z": -0.5083705168789195,
+          "perm_p": 0.6111935251793561,
+          "n_p": 4.0,
+          "n_q": 200.0
+        }
+      }
+    },
+    {
+      "region": "Turkey",
+      "mc": 3.5,
+      "mc_diag": {
+        "mc_raw": 3.1500000000000004,
+        "mc_woessner": 3.3500000000000005,
+        "mc_grid": [
+          2.5,
+          2.7,
+          2.9,
+          3.1,
+          3.3,
+          3.5
+        ],
+        "b_at_mc_grid": [
+          0.34150312052206155,
+          0.3965741518312073,
+          0.45613722008437063,
+          0.5163916360943717,
+          0.5613076723988004,
+          0.6088941213230208
+        ]
+      },
+      "n_total": 6894,
+      "n_background": 3955,
+      "n_targets_all": 849,
+      "n_targets_background": 389,
+      "n_precursor": 2,
+      "n_precursor_rejected": 387,
+      "n_null_a": 74,
+      "n_null_b": 200,
+      "auc_table": {
+        "b__null_A": {
+          "auc": NaN,
+          "ci_lo": NaN,
+          "ci_hi": NaN,
+          "perm_z": NaN,
+          "perm_p": NaN,
+          "n_p": 0.0,
+          "n_q": 0.0
+        },
+        "b_drift_per_day__null_A": {
+          "auc": NaN,
+          "ci_lo": NaN,
+          "ci_hi": NaN,
+          "perm_z": NaN,
+          "perm_p": NaN,
+          "n_p": 0.0,
+          "n_q": 0.0
+        },
+        "benioff_total_log10__null_A": {
+          "auc": 0.325,
+          "ci_lo": 0.0,
+          "ci_hi": 0.75,
+          "perm_z": -0.7671909998912302,
+          "perm_p": 0.4429679632005583,
+          "n_p": 2.0,
+          "n_q": 40.0
+        },
+        "benioff_curv__null_A": {
+          "auc": 0.7635135135135135,
+          "ci_lo": 0.44594594594594594,
+          "ci_hi": 1.0,
+          "perm_z": 1.9072014719123143,
+          "perm_p": 0.05649450297275571,
+          "n_p": 2.0,
+          "n_q": 74.0
+        },
+        "n_above_mc__null_A": {
+          "auc": 0.6621621621621622,
+          "ci_lo": 0.4527027027027027,
+          "ci_hi": 0.8918918918918919,
+          "perm_z": 0.8636527581118025,
+          "perm_p": 0.38777867271452227,
+          "n_p": 2.0,
+          "n_q": 74.0
+        },
+        "b__null_B": {
+          "auc": NaN,
+          "ci_lo": NaN,
+          "ci_hi": NaN,
+          "perm_z": NaN,
+          "perm_p": NaN,
+          "n_p": 0.0,
+          "n_q": 1.0
+        },
+        "b_drift_per_day__null_B": {
+          "auc": NaN,
+          "ci_lo": NaN,
+          "ci_hi": NaN,
+          "perm_z": NaN,
+          "perm_p": NaN,
+          "n_p": 0.0,
+          "n_q": 1.0
+        },
+        "benioff_total_log10__null_B": {
+          "auc": 0.2714285714285714,
+          "ci_lo": 0.0,
+          "ci_hi": 0.5885714285714285,
+          "perm_z": -1.1602755800704516,
+          "perm_p": 0.24593662360085977,
+          "n_p": 2.0,
+          "n_q": 175.0
+        },
+        "benioff_curv__null_B": {
+          "auc": 0.6175,
+          "ci_lo": 0.495,
+          "ci_hi": 0.785,
+          "perm_z": 0.4986399365128333,
+          "perm_p": 0.6180330652428758,
+          "n_p": 2.0,
+          "n_q": 200.0
+        },
+        "n_above_mc__null_B": {
+          "auc": 0.39,
+          "ci_lo": 0.12,
+          "ci_hi": 0.66,
+          "perm_z": -0.5301135369212614,
+          "perm_p": 0.5960332139867583,
+          "n_p": 2.0,
+          "n_q": 200.0
+        }
+      }
+    },
+    {
+      "region": "Italy",
+      "mc": 3.1,
+      "mc_diag": {
+        "mc_raw": 2.75,
+        "mc_woessner": 2.95,
+        "mc_grid": [
+          2.5,
+          2.7,
+          2.9,
+          3.1,
+          3.3,
+          3.5
+        ],
+        "b_at_mc_grid": [
+          0.7041728998754443,
+          0.6827202213604142,
+          0.6502408566223944,
+          0.6330544955209685,
+          0.6454037928719684,
+          0.6773146695864584
+        ]
+      },
+      "n_total": 8179,
+      "n_background": 5562,
+      "n_targets_all": 312,
+      "n_targets_background": 198,
+      "n_precursor": 19,
+      "n_precursor_rejected": 179,
+      "n_null_a": 200,
+      "n_null_b": 200,
+      "auc_table": {
+        "b__null_A": {
+          "auc": NaN,
+          "ci_lo": NaN,
+          "ci_hi": NaN,
+          "perm_z": NaN,
+          "perm_p": NaN,
+          "n_p": 0.0,
+          "n_q": 0.0
+        },
+        "b_drift_per_day__null_A": {
+          "auc": NaN,
+          "ci_lo": NaN,
+          "ci_hi": NaN,
+          "perm_z": NaN,
+          "perm_p": NaN,
+          "n_p": 0.0,
+          "n_q": 0.0
+        },
+        "benioff_total_log10__null_A": {
+          "auc": 0.6688218390804598,
+          "ci_lo": 0.4931752873563218,
+          "ci_hi": 0.8283045977011494,
+          "perm_z": 2.1850112269911746,
+          "perm_p": 0.028888023422986908,
+          "n_p": 16.0,
+          "n_q": 174.0
+        },
+        "benioff_curv__null_A": {
+          "auc": 0.5818421052631579,
+          "ci_lo": 0.41024342105263156,
+          "ci_hi": 0.7289539473684211,
+          "perm_z": 0.6118631486329894,
+          "perm_p": 0.540628305005963,
+          "n_p": 19.0,
+          "n_q": 200.0
+        },
+        "n_above_mc__null_A": {
+          "auc": 0.6313157894736842,
+          "ci_lo": 0.45736184210526315,
+          "ci_hi": 0.7684868421052631,
+          "perm_z": 1.7456992673277172,
+          "perm_p": 0.08086322248400046,
+          "n_p": 19.0,
+          "n_q": 200.0
+        },
+        "b__null_B": {
+          "auc": NaN,
+          "ci_lo": NaN,
+          "ci_hi": NaN,
+          "perm_z": NaN,
+          "perm_p": NaN,
+          "n_p": 0.0,
+          "n_q": 0.0
+        },
+        "b_drift_per_day__null_B": {
+          "auc": NaN,
+          "ci_lo": NaN,
+          "ci_hi": NaN,
+          "perm_z": NaN,
+          "perm_p": NaN,
+          "n_p": 0.0,
+          "n_q": 0.0
+        },
+        "benioff_total_log10__null_B": {
+          "auc": 0.601864640883978,
+          "ci_lo": 0.42678694751381213,
+          "ci_hi": 0.7521581491712707,
+          "perm_z": 1.3356535600757273,
+          "perm_p": 0.18166253505124552,
+          "n_p": 16.0,
+          "n_q": 181.0
+        },
+        "benioff_curv__null_B": {
+          "auc": 0.49157894736842106,
+          "ci_lo": 0.3820921052631579,
+          "ci_hi": 0.6484276315789473,
+          "perm_z": -0.33349169457911165,
+          "perm_p": 0.7387631577625327,
+          "n_p": 19.0,
+          "n_q": 200.0
+        },
+        "n_above_mc__null_B": {
+          "auc": 0.5392105263157895,
+          "ci_lo": 0.38182894736842105,
+          "ci_hi": 0.6784473684210526,
+          "perm_z": 0.38801848201061184,
+          "perm_p": 0.6980023563934512,
+          "n_p": 19.0,
+          "n_q": 200.0
+        }
+      }
+    }
+  ],
+  "macro_auc_table": [
+    {
+      "feature": "b",
+      "null": "null_A",
+      "macro_auc": 0.5135309278350515,
+      "ci_lo": 0.5135309278350515,
+      "ci_hi": 0.5135309278350515,
+      "perm_z": 0.22463461904379114,
+      "perm_p": 0.8222635309774702,
+      "n_above_half": 0,
+      "n_below_half": 0,
+      "n_regions": 1,
+      "sign_p_two_sided": NaN,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.5135309278350515,
+        NaN,
+        NaN,
+        NaN
+      ]
+    },
+    {
+      "feature": "b",
+      "null": "null_B",
+      "macro_auc": 0.4288194444444444,
+      "ci_lo": 0.4288194444444444,
+      "ci_hi": 0.4288194444444444,
+      "perm_z": -1.1693616606139339,
+      "perm_p": 0.2422579498353552,
+      "n_above_half": 0,
+      "n_below_half": 0,
+      "n_regions": 1,
+      "sign_p_two_sided": NaN,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.4288194444444444,
+        NaN,
+        NaN,
+        NaN
+      ]
+    },
+    {
+      "feature": "b_drift_per_day",
+      "null": "null_A",
+      "macro_auc": 0.4993131868131868,
+      "ci_lo": 0.4993131868131868,
+      "ci_hi": 0.4993131868131868,
+      "perm_z": -0.009666686053102383,
+      "perm_p": 0.9922872205641684,
+      "n_above_half": 0,
+      "n_below_half": 0,
+      "n_regions": 1,
+      "sign_p_two_sided": NaN,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.4993131868131868,
+        NaN,
+        NaN,
+        NaN
+      ]
+    },
+    {
+      "feature": "b_drift_per_day",
+      "null": "null_B",
+      "macro_auc": 0.5500465549348231,
+      "ci_lo": 0.5500465549348231,
+      "ci_hi": 0.5500465549348231,
+      "perm_z": 0.7831234895049106,
+      "perm_p": 0.4335545986041769,
+      "n_above_half": 0,
+      "n_below_half": 0,
+      "n_regions": 1,
+      "sign_p_two_sided": NaN,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.5500465549348231,
+        NaN,
+        NaN,
+        NaN
+      ]
+    },
+    {
+      "feature": "benioff_total_log10",
+      "null": "null_A",
+      "macro_auc": 0.39413154672663664,
+      "ci_lo": 0.2163282608695652,
+      "ci_hi": 0.5828663793103448,
+      "perm_z": -1.4454688904539796,
+      "perm_p": 0.1483262251526125,
+      "n_above_half": 1,
+      "n_below_half": 3,
+      "n_regions": 4,
+      "sign_p_two_sided": 0.625,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.4414,
+        0.14130434782608695,
+        0.325,
+        0.6688218390804598
+      ]
+    },
+    {
+      "feature": "benioff_total_log10",
+      "null": "null_B",
+      "macro_auc": 0.4789858030781373,
+      "ci_lo": 0.34633928571428574,
+      "ci_hi": 0.6116323204419889,
+      "perm_z": -0.28971889216724644,
+      "perm_p": 0.7720313020493688,
+      "n_above_half": 2,
+      "n_below_half": 2,
+      "n_regions": 4,
+      "sign_p_two_sided": 1.0,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.6214,
+        0.42125,
+        0.2714285714285714,
+        0.601864640883978
+      ]
+    },
+    {
+      "feature": "benioff_curv",
+      "null": "null_A",
+      "macro_auc": 0.5435845568680808,
+      "ci_lo": 0.41449130434782605,
+      "ci_hi": 0.6813307873090482,
+      "perm_z": 0.8160875648634824,
+      "perm_p": 0.4144500555622139,
+      "n_above_half": 2,
+      "n_below_half": 2,
+      "n_regions": 4,
+      "sign_p_two_sided": 1.0,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.3942,
+        0.43478260869565216,
+        0.7635135135135135,
+        0.5818421052631579
+      ]
+    },
+    {
+      "feature": "benioff_curv",
+      "null": "null_B",
+      "macro_auc": 0.5127072368421053,
+      "ci_lo": 0.4019375,
+      "ci_hi": 0.613125,
+      "perm_z": 0.1731234322917465,
+      "perm_p": 0.8625544067410658,
+      "n_above_half": 2,
+      "n_below_half": 2,
+      "n_regions": 4,
+      "sign_p_two_sided": 1.0,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.333,
+        0.60875,
+        0.6175,
+        0.49157894736842106
+      ]
+    },
+    {
+      "feature": "n_above_mc",
+      "null": "null_A",
+      "macro_auc": 0.4639281835611355,
+      "ci_lo": 0.2556550343249428,
+      "ci_hi": 0.6467389758179232,
+      "perm_z": -0.482538200405698,
+      "perm_p": 0.6294236683482337,
+      "n_above_half": 2,
+      "n_below_half": 2,
+      "n_regions": 4,
+      "sign_p_two_sided": 1.0,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.4318,
+        0.13043478260869565,
+        0.6621621621621622,
+        0.6313157894736842
+      ]
+    },
+    {
+      "feature": "n_above_mc",
+      "null": "null_B",
+      "macro_auc": 0.49102763157894735,
+      "ci_lo": 0.41375,
+      "ci_hi": 0.5683052631578948,
+      "perm_z": -0.19367423897760597,
+      "perm_p": 0.8464309642140999,
+      "n_above_half": 2,
+      "n_below_half": 2,
+      "n_regions": 4,
+      "sign_p_two_sided": 1.0,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.5974,
+        0.4375,
+        0.39,
+        0.5392105263157895
+      ]
+    }
+  ],
+  "headline_pass_3sigma": [],
+  "headline_pass_bonferroni": []
+}

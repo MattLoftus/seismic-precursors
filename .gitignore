@@ -17,6 +17,7 @@ iris_cache/
 # Catalog caches (regenerable from ComCat)
 catalog.csv
 *_catalog.csv
+catalog_*.csv
 # Database
 *.db
 *.sqlite

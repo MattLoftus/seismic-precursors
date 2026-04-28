@@ -315,6 +315,8 @@ Roughly **40% reuse** from Cedar Loop's portfolio:
 
 **Decision point (single-region):** exp05 California shows 0/10 pass 3σ — consistent with under-powered single-region setup; not a kill. Proceed to multi-region macro pool. Sub-3σ patterns to watch: b-value DROPS in precursor (matches Gulia-Wiemer 2019 direction); Benioff curvature is LOWER (opposite the AMR prediction).
 
+**exp06 Session 7 (2026-04-28):** macro pool across all 6 training regions. **0/10 features pass 3σ or Bonferroni.** But the pre-reg has critical gaps: (1) overlap rule fails on event-dense regions — Japan 0 windows, Chile 0, Cascadia 4, Turkey 2; (2) ComCat is incomplete for non-US regions — Japan Mc=4.55, Chile Mc=4.45 (≈ target threshold). Effective panel: 4 regions, only California (N=25) and Italy (N=19) usable. exp05's California Benioff-curvature z=−2.76 did NOT replicate (Italy went the other direction). Pre-reg amendment v2 required before Round D; chain of custody preserved by separate amendment commit.
+
 ### Round D — Cross-Regional (Week 4-6)
 **Goal:** pre-registered train/test protocol.
 

@@ -1,0 +1,286 @@
+[13:31:50] [exp06] start — 6 training regions
+[13:31:50] [exp06] regions: ['California', 'Cascadia', 'Japan', 'Chile', 'Turkey', 'Italy']
+[13:31:50] [pipe] === region California ===
+[13:31:50] [data] ComCat bbox: M>=2.5, lat=[32.00,42.00] lon=[-125.00,-114.00], 2000-01-01..2025-01-01
+[13:31:54] [data]   chunk  1 2000-2001:   1433 events  (running total: 1433)
+[13:31:57] [data]   chunk  2 2001-2002:   1364 events  (running total: 2797)
+[13:32:00] [data]   chunk  3 2002-2003:   1196 events  (running total: 3993)
+[13:32:03] [data]   chunk  4 2003-2004:   1518 events  (running total: 5511)
+[13:32:07] [data]   chunk  5 2004-2005:   1527 events  (running total: 7038)
+[13:32:10] [data]   chunk  6 2005-2006:   1120 events  (running total: 8158)
+[13:32:13] [data]   chunk  7 2006-2007:   1024 events  (running total: 9182)
+[13:32:17] [data]   chunk  8 2007-2008:    943 events  (running total: 10125)
+[13:32:20] [data]   chunk  9 2008-2009:   1637 events  (running total: 11762)
+[13:32:23] [data]   chunk 10 2009-2010:   1126 events  (running total: 12888)
+[13:32:28] [data]   chunk 11 2010-2011:   4700 events  (running total: 17588)
+[13:32:32] [data]   chunk 12 2011-2012:   1298 events  (running total: 18886)
+[13:32:35] [data]   chunk 13 2012-2013:   1104 events  (running total: 19990)
+[13:32:38] [data]   chunk 14 2013-2014:   1086 events  (running total: 21076)
+[13:32:42] [data]   chunk 15 2014-2015:   1363 events  (running total: 22439)
+[13:32:45] [data]   chunk 16 2015-2016:   1166 events  (running total: 23605)
+[13:32:48] [data]   chunk 17 2016-2017:   1037 events  (running total: 24642)
+[13:32:51] [data]   chunk 18 2017-2018:    918 events  (running total: 25560)
+[13:32:55] [data]   chunk 19 2018-2019:    798 events  (running total: 26358)
+[13:32:59] [data]   chunk 20 2019-2020:   3705 events  (running total: 30063)
+[13:33:02] [data]   chunk 21 2020-2021:   2706 events  (running total: 32769)
+[13:33:06] [data]   chunk 22 2021-2022:   1635 events  (running total: 34404)
+[13:33:09] [data]   chunk 23 2022-2023:   1030 events  (running total: 35434)
+[13:33:13] [data]   chunk 24 2023-2024:    972 events  (running total: 36406)
+[13:33:16] [data]   chunk 25 2024-2025:   1371 events  (running total: 37777)
+[13:33:16] [data] cached 37777 events -> /Users/Loftus/workspace/seismic-precursors/experiments/exp06_cross_regional_macro/catalog_California.csv
+[13:33:16] [data] done -- 37777 events, M [2.50, 7.20]
+[13:33:16] [pipe] California: 37777 events
+[13:33:16] [pipe] California: Mc=2.75 (raw=2.55, woessner=2.75)
+[13:33:20] [pipe] California: ZBZ background 16868/37777 (44.7%)
+[13:33:20] [pipe] California: targets all=329 background=116
+[13:33:20] [pipe] California: precursor windows kept 25 (rejected 91)
+[13:33:20] [pipe] California: null_A 200, null_B 200
+[13:33:21] [pipe] California  [auc] b                      vs null_A  AUC=0.514  z=+0.22  p=8.26e-01
+[13:33:21] [pipe] California  [auc] b_drift_per_day        vs null_A  AUC=0.499  z=+0.07  p=9.41e-01
+[13:33:21] [pipe] California  [auc] benioff_total_log10    vs null_A  AUC=0.441  z=-0.97  p=3.30e-01
+[13:33:21] [pipe] California  [auc] benioff_curv           vs null_A  AUC=0.394  z=-1.65  p=9.88e-02
+[13:33:21] [pipe] California  [auc] n_above_mc             vs null_A  AUC=0.432  z=-1.13  p=2.57e-01
+[13:33:21] [pipe] California  [auc] b                      vs null_B  AUC=0.429  z=-1.20  p=2.32e-01
+[13:33:21] [pipe] California  [auc] b_drift_per_day        vs null_B  AUC=0.550  z=+0.73  p=4.65e-01
+[13:33:21] [pipe] California  [auc] benioff_total_log10    vs null_B  AUC=0.621  z=+1.99  p=4.65e-02
+[13:33:22] [pipe] California  [auc] benioff_curv           vs null_B  AUC=0.333  z=-2.76  p=5.70e-03
+[13:33:22] [pipe] California  [auc] n_above_mc             vs null_B  AUC=0.597  z=+1.60  p=1.10e-01
+[13:33:22] [exp06] California done: N_pre=25 N_A=200 N_B=200
+[13:33:22] [pipe] === region Cascadia ===
+[13:33:22] [data] ComCat bbox: M>=2.5, lat=[40.00,50.00] lon=[-130.00,-121.00], 2000-01-01..2025-01-01
+[13:33:24] [data]   chunk  1 2000-2001:    295 events  (running total: 295)
+[13:33:27] [data]   chunk  2 2001-2002:    345 events  (running total: 640)
+[13:33:31] [data]   chunk  3 2002-2003:    281 events  (running total: 921)
+[13:33:34] [data]   chunk  4 2003-2004:    261 events  (running total: 1182)
+[13:33:38] [data]   chunk  5 2004-2005:   1046 events  (running total: 2228)
+[13:33:41] [data]   chunk  6 2005-2006:    801 events  (running total: 3029)
+[13:33:45] [data]   chunk  7 2006-2007:    394 events  (running total: 3423)
+[13:33:48] [data]   chunk  8 2007-2008:    300 events  (running total: 3723)
+[13:33:51] [data]   chunk  9 2008-2009:    445 events  (running total: 4168)
+[13:33:54] [data]   chunk 10 2009-2010:    263 events  (running total: 4431)
+[13:33:57] [data]   chunk 11 2010-2011:    333 events  (running total: 4764)
+[13:34:01] [data]   chunk 12 2011-2012:    259 events  (running total: 5023)
+[13:34:04] [data]   chunk 13 2012-2013:    322 events  (running total: 5345)
+[13:34:08] [data]   chunk 14 2013-2014:    426 events  (running total: 5771)
+[13:34:11] [data]   chunk 15 2014-2015:    430 events  (running total: 6201)
+[13:34:14] [data]   chunk 16 2015-2016:    314 events  (running total: 6515)
+[13:34:18] [data]   chunk 17 2016-2017:    277 events  (running total: 6792)
+[13:34:21] [data]   chunk 18 2017-2018:    252 events  (running total: 7044)
+[13:34:24] [data]   chunk 19 2018-2019:    326 events  (running total: 7370)
+[13:34:28] [data]   chunk 20 2019-2020:    291 events  (running total: 7661)
+[13:34:31] [data]   chunk 21 2020-2021:    246 events  (running total: 7907)
+[13:34:34] [data]   chunk 22 2021-2022:    591 events  (running total: 8498)
+[13:34:37] [data]   chunk 23 2022-2023:    370 events  (running total: 8868)
+[13:34:41] [data]   chunk 24 2023-2024:    382 events  (running total: 9250)
+[13:34:44] [data]   chunk 25 2024-2025:    695 events  (running total: 9945)
+[13:34:44] [data] cached 9945 events -> /Users/Loftus/workspace/seismic-precursors/experiments/exp06_cross_regional_macro/catalog_Cascadia.csv
+[13:34:44] [data] done -- 9945 events, M [2.50, 7.20]
+[13:34:44] [pipe] Cascadia: 9945 events
+[13:34:44] [pipe] Cascadia: Mc=2.95 (raw=2.75, woessner=2.95)
+[13:34:44] [pipe] Cascadia: ZBZ background 5768/9945 (58.0%)
+[13:34:44] [pipe] Cascadia: targets all=535 background=277
+[13:34:45] [pipe] Cascadia: precursor windows kept 4 (rejected 273)
+[13:34:45] [pipe] Cascadia: null_A 23, null_B 200
+[13:34:45] [pipe] Cascadia    [auc] b                      vs null_A  AUC=nan  z=+nan  p=nan
+[13:34:45] [pipe] Cascadia    [auc] b_drift_per_day        vs null_A  AUC=nan  z=+nan  p=nan
+[13:34:45] [pipe] Cascadia    [auc] benioff_total_log10    vs null_A  AUC=0.141  z=-2.23  p=2.58e-02
+[13:34:45] [pipe] Cascadia    [auc] benioff_curv           vs null_A  AUC=0.435  z=-0.39  p=6.98e-01
+[13:34:45] [pipe] Cascadia    [auc] n_above_mc             vs null_A  AUC=0.130  z=-2.27  p=2.33e-02
+[13:34:45] [pipe] Cascadia    [auc] b                      vs null_B  AUC=nan  z=+nan  p=nan
+[13:34:45] [pipe] Cascadia    [auc] b_drift_per_day        vs null_B  AUC=nan  z=+nan  p=nan
+[13:34:45] [pipe] Cascadia    [auc] benioff_total_log10    vs null_B  AUC=0.421  z=-0.55  p=5.83e-01
+[13:34:45] [pipe] Cascadia    [auc] benioff_curv           vs null_B  AUC=0.609  z=+0.77  p=4.41e-01
+[13:34:45] [pipe] Cascadia    [auc] n_above_mc             vs null_B  AUC=0.438  z=-0.51  p=6.11e-01
+[13:34:45] [exp06] Cascadia done: N_pre=4 N_A=23 N_B=200
+[13:34:45] [pipe] === region Japan ===
+[13:34:45] [data] ComCat bbox: M>=2.5, lat=[30.00,46.00] lon=[128.00,148.00], 2000-01-01..2025-01-01
+[13:34:48] [data]   chunk  1 2000-2001:   1257 events  (running total: 1257)
+[13:34:51] [data]   chunk  2 2001-2002:    491 events  (running total: 1748)
+[13:34:55] [data]   chunk  3 2002-2003:    533 events  (running total: 2281)
+[13:34:58] [data]   chunk  4 2003-2004:    745 events  (running total: 3026)
+[13:35:01] [data]   chunk  5 2004-2005:    959 events  (running total: 3985)
+[13:35:04] [data]   chunk  6 2005-2006:    960 events  (running total: 4945)
+[13:35:07] [data]   chunk  7 2006-2007:    720 events  (running total: 5665)
+[13:35:09] [data]   chunk  8 2007-2008:    812 events  (running total: 6477)
+[13:35:13] [data]   chunk  9 2008-2009:   1173 events  (running total: 7650)
+[13:35:16] [data]   chunk 10 2009-2010:    334 events  (running total: 7984)
+[13:35:19] [data]   chunk 11 2010-2011:    364 events  (running total: 8348)
+[13:35:22] [data]   chunk 12 2011-2012:   5111 events  (running total: 13459)
+[13:35:25] [data]   chunk 13 2012-2013:   1152 events  (running total: 14611)
+[13:35:28] [data]   chunk 14 2013-2014:    748 events  (running total: 15359)
+[13:35:31] [data]   chunk 15 2014-2015:    878 events  (running total: 16237)
+[13:35:34] [data]   chunk 16 2015-2016:    896 events  (running total: 17133)
+[13:35:37] [data]   chunk 17 2016-2017:    928 events  (running total: 18061)
+[13:35:40] [data]   chunk 18 2017-2018:    613 events  (running total: 18674)
+[13:35:43] [data]   chunk 19 2018-2019:    640 events  (running total: 19314)
+[13:35:46] [data]   chunk 20 2019-2020:    618 events  (running total: 19932)
+[13:35:50] [data]   chunk 21 2020-2021:    609 events  (running total: 20541)
+[13:35:52] [data]   chunk 22 2021-2022:    802 events  (running total: 21343)
+[13:35:55] [data]   chunk 23 2022-2023:    896 events  (running total: 22239)
+[13:35:58] [data]   chunk 24 2023-2024:    774 events  (running total: 23013)
+[13:36:01] [data]   chunk 25 2024-2025:    801 events  (running total: 23814)
+[13:36:01] [data] cached 23814 events -> /Users/Loftus/workspace/seismic-precursors/experiments/exp06_cross_regional_macro/catalog_Japan.csv
+[13:36:01] [data] done -- 23814 events, M [2.70, 9.10]
+[13:36:01] [pipe] Japan: 23814 events
+[13:36:01] [pipe] Japan: Mc=4.55 (raw=4.35, woessner=4.55)
+[13:36:03] [pipe] Japan: ZBZ background 11688/23814 (49.1%)
+[13:36:03] [pipe] Japan: targets all=11410 background=4563
+[13:36:04] [pipe] Japan: precursor windows kept 0 (rejected 4563)
+[13:36:05] [pipe] Japan: null_A 0, null_B 0
+[13:36:05] [exp06] Japan FAILED: KeyError: 'window_kind'
+[13:36:05] [pipe] === region Chile ===
+[13:36:05] [data] ComCat bbox: M>=2.5, lat=[-45.00,-18.00] lon=[-76.00,-68.00], 2000-01-01..2025-01-01
+[13:36:08] [data]   chunk  1 2000-2001:   1030 events  (running total: 1030)
+[13:36:11] [data]   chunk  2 2001-2002:   2100 events  (running total: 3130)
+[13:36:14] [data]   chunk  3 2002-2003:   2374 events  (running total: 5504)
+[13:36:17] [data]   chunk  4 2003-2004:   2905 events  (running total: 8409)
+[13:36:22] [data]   chunk  5 2004-2005:   2052 events  (running total: 10461)
+[13:36:25] [data]   chunk  6 2005-2006:   1990 events  (running total: 12451)
+[13:36:28] [data]   chunk  7 2006-2007:   2477 events  (running total: 14928)
+[13:36:31] [data]   chunk  8 2007-2008:   2020 events  (running total: 16948)
+[13:36:34] [data]   chunk  9 2008-2009:   1270 events  (running total: 18218)
+[13:36:38] [data]   chunk 10 2009-2010:    332 events  (running total: 18550)
+[13:36:41] [data]   chunk 11 2010-2011:   2178 events  (running total: 20728)
+[13:36:44] [data]   chunk 12 2011-2012:    596 events  (running total: 21324)
+[13:36:48] [data]   chunk 13 2012-2013:    458 events  (running total: 21782)
+[13:36:51] [data]   chunk 14 2013-2014:    454 events  (running total: 22236)
+[13:36:54] [data]   chunk 15 2014-2015:   1208 events  (running total: 23444)
+[13:36:57] [data]   chunk 16 2015-2016:   1508 events  (running total: 24952)
+[13:37:00] [data]   chunk 17 2016-2017:    790 events  (running total: 25742)
+[13:37:03] [data]   chunk 18 2017-2018:    791 events  (running total: 26533)
+[13:37:06] [data]   chunk 19 2018-2019:    540 events  (running total: 27073)
+[13:37:09] [data]   chunk 20 2019-2020:    552 events  (running total: 27625)
+[13:37:12] [data]   chunk 21 2020-2021:    666 events  (running total: 28291)
+[13:37:15] [data]   chunk 22 2021-2022:    621 events  (running total: 28912)
+[13:37:18] [data]   chunk 23 2022-2023:    599 events  (running total: 29511)
+[13:37:20] [data]   chunk 24 2023-2024:    609 events  (running total: 30120)
+[13:37:23] [data]   chunk 25 2024-2025:    571 events  (running total: 30691)
+[13:37:23] [data] cached 30691 events -> /Users/Loftus/workspace/seismic-precursors/experiments/exp06_cross_regional_macro/catalog_Chile.csv
+[13:37:23] [data] done -- 30691 events, M [2.50, 8.80]
+[13:37:23] [pipe] Chile: 30691 events
+[13:37:23] [pipe] Chile: Mc=4.45 (raw=4.25, woessner=4.45)
+[13:37:27] [pipe] Chile: ZBZ background 20204/30691 (65.8%)
+[13:37:27] [pipe] Chile: targets all=6401 background=3275
+[13:37:28] [pipe] Chile: precursor windows kept 0 (rejected 3275)
+[13:37:29] [pipe] Chile: null_A 0, null_B 0
+[13:37:29] [exp06] Chile FAILED: KeyError: 'window_kind'
+[13:37:29] [pipe] === region Turkey ===
+[13:37:29] [data] ComCat bbox: M>=2.5, lat=[36.00,42.00] lon=[26.00,44.00], 2000-01-01..2025-01-01
+[13:37:31] [data]   chunk  1 2000-2001:    287 events  (running total: 287)
+[13:37:35] [data]   chunk  2 2001-2002:    405 events  (running total: 692)
+[13:37:38] [data]   chunk  3 2002-2003:    165 events  (running total: 857)
+[13:37:43] [data]   chunk  4 2003-2004:    241 events  (running total: 1098)
+[13:37:46] [data]   chunk  5 2004-2005:    913 events  (running total: 2011)
+[13:37:49] [data]   chunk  6 2005-2006:   1116 events  (running total: 3127)
+[13:37:52] [data]   chunk  7 2006-2007:    617 events  (running total: 3744)
+[13:37:55] [data]   chunk  8 2007-2008:    590 events  (running total: 4334)
+[13:37:58] [data]   chunk  9 2008-2009:    442 events  (running total: 4776)
+[13:38:02] [data]   chunk 10 2009-2010:     33 events  (running total: 4809)
+[13:38:06] [data]   chunk 11 2010-2011:     48 events  (running total: 4857)
+[13:38:10] [data]   chunk 12 2011-2012:    236 events  (running total: 5093)
+[13:38:14] [data]   chunk 13 2012-2013:    113 events  (running total: 5206)
+[13:38:17] [data]   chunk 14 2013-2014:     63 events  (running total: 5269)
+[13:38:21] [data]   chunk 15 2014-2015:     75 events  (running total: 5344)
+[13:38:24] [data]   chunk 16 2015-2016:     69 events  (running total: 5413)
+[13:38:27] [data]   chunk 17 2016-2017:     48 events  (running total: 5461)
+[13:38:31] [data]   chunk 18 2017-2018:    128 events  (running total: 5589)
+[13:38:34] [data]   chunk 19 2018-2019:     55 events  (running total: 5644)
+[13:38:37] [data]   chunk 20 2019-2020:     80 events  (running total: 5724)
+[13:38:41] [data]   chunk 21 2020-2021:    157 events  (running total: 5881)
+[13:38:45] [data]   chunk 22 2021-2022:    150 events  (running total: 6031)
+[13:38:48] [data]   chunk 23 2022-2023:     86 events  (running total: 6117)
+[13:38:52] [data]   chunk 24 2023-2024:    663 events  (running total: 6780)
+[13:38:56] [data]   chunk 25 2024-2025:    114 events  (running total: 6894)
+[13:38:56] [data] cached 6894 events -> /Users/Loftus/workspace/seismic-precursors/experiments/exp06_cross_regional_macro/catalog_Turkey.csv
+[13:38:56] [data] done -- 6894 events, M [2.50, 7.80]
+[13:38:56] [pipe] Turkey: 6894 events
+[13:38:56] [pipe] Turkey: Mc=3.50 (raw=3.15, woessner=3.35)
+[13:38:56] [pipe] Turkey: ZBZ background 3955/6894 (57.4%)
+[13:38:56] [pipe] Turkey: targets all=849 background=389
+[13:38:56] [pipe] Turkey: precursor windows kept 2 (rejected 387)
+[13:38:56] [pipe] Turkey: null_A 74, null_B 200
+[13:38:57] [pipe] Turkey      [auc] b                      vs null_A  AUC=nan  z=+nan  p=nan
+[13:38:57] [pipe] Turkey      [auc] b_drift_per_day        vs null_A  AUC=nan  z=+nan  p=nan
+[13:38:57] [pipe] Turkey      [auc] benioff_total_log10    vs null_A  AUC=0.325  z=-0.77  p=4.43e-01
+[13:38:57] [pipe] Turkey      [auc] benioff_curv           vs null_A  AUC=0.764  z=+1.91  p=5.65e-02
+[13:38:57] [pipe] Turkey      [auc] n_above_mc             vs null_A  AUC=0.662  z=+0.86  p=3.88e-01
+[13:38:57] [pipe] Turkey      [auc] b                      vs null_B  AUC=nan  z=+nan  p=nan
+[13:38:57] [pipe] Turkey      [auc] b_drift_per_day        vs null_B  AUC=nan  z=+nan  p=nan
+[13:38:57] [pipe] Turkey      [auc] benioff_total_log10    vs null_B  AUC=0.271  z=-1.16  p=2.46e-01
+[13:38:57] [pipe] Turkey      [auc] benioff_curv           vs null_B  AUC=0.618  z=+0.50  p=6.18e-01
+[13:38:57] [pipe] Turkey      [auc] n_above_mc             vs null_B  AUC=0.390  z=-0.53  p=5.96e-01
+[13:38:57] [exp06] Turkey done: N_pre=2 N_A=74 N_B=200
+[13:38:57] [pipe] === region Italy ===
+[13:38:57] [data] ComCat bbox: M>=2.5, lat=[36.00,47.00] lon=[6.00,19.00], 2000-01-01..2025-01-01
+[13:39:00] [data]   chunk  1 2000-2001:    601 events  (running total: 601)
+[13:39:04] [data]   chunk  2 2001-2002:    503 events  (running total: 1104)
+[13:39:07] [data]   chunk  3 2002-2003:   1423 events  (running total: 2527)
+[13:39:10] [data]   chunk  4 2003-2004:   1581 events  (running total: 4108)
+[13:39:13] [data]   chunk  5 2004-2005:   1039 events  (running total: 5147)
+[13:39:16] [data]   chunk  6 2005-2006:    661 events  (running total: 5808)
+[13:39:18] [data]   chunk  7 2006-2007:    601 events  (running total: 6409)
+[13:39:22] [data]   chunk  8 2007-2008:    423 events  (running total: 6832)
+[13:39:25] [data]   chunk  9 2008-2009:    525 events  (running total: 7357)
+[13:39:29] [data]   chunk 10 2009-2010:     64 events  (running total: 7421)
+[13:39:33] [data]   chunk 11 2010-2011:     21 events  (running total: 7442)
+[13:39:36] [data]   chunk 12 2011-2012:     41 events  (running total: 7483)
+[13:39:40] [data]   chunk 13 2012-2013:     77 events  (running total: 7560)
+[13:39:43] [data]   chunk 14 2013-2014:     51 events  (running total: 7611)
+[13:39:47] [data]   chunk 15 2014-2015:     35 events  (running total: 7646)
+[13:39:50] [data]   chunk 16 2015-2016:     47 events  (running total: 7693)
+[13:39:54] [data]   chunk 17 2016-2017:    106 events  (running total: 7799)
+[13:39:58] [data]   chunk 18 2017-2018:     49 events  (running total: 7848)
+[13:40:01] [data]   chunk 19 2018-2019:     41 events  (running total: 7889)
+[13:40:04] [data]   chunk 20 2019-2020:     36 events  (running total: 7925)
+[13:40:09] [data]   chunk 21 2020-2021:     59 events  (running total: 7984)
+[13:40:12] [data]   chunk 22 2021-2022:     53 events  (running total: 8037)
+[13:40:16] [data]   chunk 23 2022-2023:     53 events  (running total: 8090)
+[13:40:19] [data]   chunk 24 2023-2024:     44 events  (running total: 8134)
+[13:40:23] [data]   chunk 25 2024-2025:     45 events  (running total: 8179)
+[13:40:24] [data] cached 8179 events -> /Users/Loftus/workspace/seismic-precursors/experiments/exp06_cross_regional_macro/catalog_Italy.csv
+[13:40:24] [data] done -- 8179 events, M [2.50, 6.60]
+[13:40:24] [pipe] Italy: 8179 events
+[13:40:24] [pipe] Italy: Mc=3.10 (raw=2.75, woessner=2.95)
+[13:40:24] [pipe] Italy: ZBZ background 5562/8179 (68.0%)
+[13:40:24] [pipe] Italy: targets all=312 background=198
+[13:40:24] [pipe] Italy: precursor windows kept 19 (rejected 179)
+[13:40:24] [pipe] Italy: null_A 200, null_B 200
+[13:40:24] [pipe] Italy       [auc] b                      vs null_A  AUC=nan  z=+nan  p=nan
+[13:40:24] [pipe] Italy       [auc] b_drift_per_day        vs null_A  AUC=nan  z=+nan  p=nan
+[13:40:24] [pipe] Italy       [auc] benioff_total_log10    vs null_A  AUC=0.669  z=+2.19  p=2.89e-02
+[13:40:24] [pipe] Italy       [auc] benioff_curv           vs null_A  AUC=0.582  z=+0.61  p=5.41e-01
+[13:40:24] [pipe] Italy       [auc] n_above_mc             vs null_A  AUC=0.631  z=+1.75  p=8.09e-02
+[13:40:24] [pipe] Italy       [auc] b                      vs null_B  AUC=nan  z=+nan  p=nan
+[13:40:24] [pipe] Italy       [auc] b_drift_per_day        vs null_B  AUC=nan  z=+nan  p=nan
+[13:40:24] [pipe] Italy       [auc] benioff_total_log10    vs null_B  AUC=0.602  z=+1.34  p=1.82e-01
+[13:40:24] [pipe] Italy       [auc] benioff_curv           vs null_B  AUC=0.492  z=-0.33  p=7.39e-01
+[13:40:25] [pipe] Italy       [auc] n_above_mc             vs null_B  AUC=0.539  z=+0.39  p=6.98e-01
+[13:40:25] [exp06] Italy done: N_pre=19 N_A=200 N_B=200
+
+[13:40:25] [exp06] aggregating across 4 regions
+[13:40:25] [persist] feature_summary.csv (1347 rows across regions)
+[13:40:25] [aggregate] cross-region bootstrap...
+/Users/Loftus/workspace/seismic-precursors/experiments/exp06_cross_regional_macro/run.py:85: RuntimeWarning: Mean of empty slice
+  boot_macros[i] = np.nanmean(region_aucs[idx])
+[13:40:25] [aggregate] permutation z for macro-AUC...
+
+[13:40:25] [headline] pre-reg gates: 3σ = (CI_lo>0.5 AND |eff|>0.05 AND z>3); Bonferroni α = 1.39e-03
+[13:40:25] [headline] feature                null     macro           CI95      z          p       sign   3σ  Bonf
+[13:40:25] [headline] b                      null_A   0.514 [0.51,0.51]  +0.22   8.22e-01 0/0/ 1      n     n
+[13:40:25] [headline] b                      null_B   0.429 [0.43,0.43]  -1.17   2.42e-01 0/0/ 1      n     n
+[13:40:25] [headline] b_drift_per_day        null_A   0.499 [0.50,0.50]  -0.01   9.92e-01 0/0/ 1      n     n
+[13:40:25] [headline] b_drift_per_day        null_B   0.550 [0.55,0.55]  +0.78   4.34e-01 0/0/ 1      n     n
+[13:40:25] [headline] benioff_total_log10    null_A   0.394 [0.22,0.58]  -1.45   1.48e-01 1/3/ 4      n     n
+[13:40:25] [headline] benioff_total_log10    null_B   0.479 [0.35,0.61]  -0.29   7.72e-01 2/2/ 4      n     n
+[13:40:25] [headline] benioff_curv           null_A   0.544 [0.41,0.68]  +0.82   4.14e-01 2/2/ 4      n     n
+[13:40:25] [headline] benioff_curv           null_B   0.513 [0.40,0.61]  +0.17   8.63e-01 2/2/ 4      n     n
+[13:40:25] [headline] n_above_mc             null_A   0.464 [0.26,0.65]  -0.48   6.29e-01 2/2/ 4      n     n
+[13:40:25] [headline] n_above_mc             null_B   0.491 [0.41,0.57]  -0.19   8.46e-01 2/2/ 4      n     n
+
+[13:40:25] [persist] macro_auc_table.csv
+[13:40:25] [plot] macro_auc_plot.png
+[13:40:25] [plot] sign_test_plot.png
+[13:40:25] [persist] summary.json
+
+[13:40:25] [exp06] HEADLINE: 0/10 features pass 3σ, 0/10 pass Bonferroni-corrected
+[13:40:25] [exp06] done
