@@ -301,7 +301,7 @@ Roughly **40% reuse** from Cedar Loop's portfolio:
 - **B5:** Waveform entropy.  ✅ 2026-04-27 (`src/features/entropy.py`)
 - **B6:** HHT peak drift.  ✅ 2026-04-27 (`src/features/hht.py`)
 - **B7:** Declustering pipeline (Reasenberg / Zaliapin-Ben-Zion).  ✅ 2026-04-28 (`src/features/declustering.py`, ZBZ 2013)
-- **B8:** Pre-registration commit to git with SHA.  Pending — Session 5 (now appropriate; all features implemented + leakage paths identified)
+- **B8:** Pre-registration commit to git with SHA.  ✅ 2026-04-28 — `papers/pre_registration.md` committed at SHA **`a4f1c6fa093ecea8bd00077fb8dbcab008c70eaa`**. The protocol (catalog, Mc, declustering, region polygons, station list, feature stack, null models, metric, significance, "will NOT" list) is now locked. Cite this SHA in any subsequent paper draft.
 - **CRITICAL FINDING from exp04 (2026-04-28):** Parkfield 50 km has only 1 independent M≥4.5 in 25 years; 4 apparent targets are 1 mainshock + 3 aftershocks. AUC ≈ 1.0 on Benioff/n_events is leakage, not signal. Pre-reg commitments now non-negotiable: (i) decluster targets via ZBZ, (ii) broaden California to ~32-42N / 125-114W, (iii) apply post-event exclusion buffer to precursor windows too, not just null windows.
 
 ### Round C — Single-Region Evaluation (Week 3-4)
@@ -409,6 +409,8 @@ arXiv cross-list: `stat.ML` (Mahoney-endorsed — always available) and optional
 | Parkfield b-value calibrated | 2026-05-02 | ✅ Done 2026-04-28 (exp02: declustered Mc=1.50 b=0.881, 2.1% rel-err) |
 | ZBZ 2013 declustering implemented | 2026-05-09 | ✅ Done 2026-04-28 (exp02; pre-reg note added re: log10 η_0=−5.0 default + auto as sensitivity) |
 | Round A4: BK.PKD waveform + entropy + HHT sanity | 2026-05-09 | ✅ Done 2026-04-28 (exp03; P+S arrivals visible at predicted times; entropy drops 1.77 bits, IMF1 IF responds 4.01 Hz). Lesson: pre-EMD bandpass at fs/3 to avoid Nyquist line-noise aliasing. |
+| Round B feature modules (B1–B7) | 2026-05-14 | ✅ Done 2026-04-28 (Session 4; exp04 caught target-leakage; pre-reg commitments updated) |
+| **Pre-registration committed (B8)** | 2026-05-16 | **✅ Done 2026-04-28 — SHA `a4f1c6fa093ecea8bd00077fb8dbcab008c70eaa`** |
 | All 6 features implemented | 2026-05-14 | Pending |
 | Pre-registration committed | 2026-05-16 | Pending |
 | Within-region evaluation | 2026-05-23 | Pending |
