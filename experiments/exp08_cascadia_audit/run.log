@@ -1,0 +1,37 @@
+[15:49:14] [exp08] forensic audit of exp07 b-vs-null_A z=+3.41
+[15:49:14] loaded 1739 rows from feature_summary.csv
+[15:49:14] columns: ['t_start', 't_end', 'n_events', 'n_above_mc', 'b', 'b_drift_per_day', 'b_drift_ok', 'benioff_total_log10', 'benioff_curv', 'target_M', 'target_time', 'window_kind', 'region']
+[15:49:14] regions present: ['California', 'Cascadia', 'Italy', 'Turkey']
+[15:49:14] window_kinds: ['null_A', 'null_B', 'precursor']
+
+region      kind          N   b_OK   %OK  n_above_mc P25/med/P75           b med [IQR]
+----------------------------------------------------------------------------------------------------
+California  precursor    37      1    3%      1/   4/   5   1.65 [1.65, 1.65]
+California  null_A      200      5    2%      2/   3/   6   0.83 [0.79, 0.83]
+California  null_B      200      0    0%      2/   3/   6    nan [nan, nan]
+Cascadia    precursor    36      1    3%      2/   5/   7   0.67 [0.67, 0.67]
+Cascadia    null_A      200      2    1%      2/   4/   6   0.66 [0.66, 0.66]
+Cascadia    null_B      200      0    0%      2/   3/   5    nan [nan, nan]
+Italy       precursor    36      0    0%      3/   4/   6    nan [nan, nan]
+Italy       null_A      200      3    2%      3/   4/   6   0.81 [0.81, 0.81]
+Italy       null_B      200      0    0%      3/   4/   5    nan [nan, nan]
+Turkey      precursor    30     22   73%     28/  68/ 110   1.69 [1.53, 1.93]
+Turkey      null_A      200    146   73%     26/  76/ 125   1.92 [1.67, 2.09]
+Turkey      null_B      200    157   78%     32/  64/ 109   1.82 [1.51, 2.04]
+
+[15:49:14] === CASCADIA DEEP DIVE ===
+[15:49:14] Cascadia: precursor=36, null_A=200, null_B=200
+[15:49:14] Cascadia: b finite — precursor=1/36, null_A=2/200, null_B=0/200
+[15:49:14] Cascadia b vs null_A: AUC = 1.0000 computed on 1 precursor × 2 null_A finite values
+[15:49:14] Cascadia precursor b range: [0.672, 0.672], median 0.672
+[15:49:14] Cascadia null_A    b range: [0.665, 0.665], median 0.665
+[15:49:14] *** Cascadia: precursor MIN (0.672) > null_A MAX (0.665); separation = 0.007
+[15:49:14] AUC=1.00 is mathematically correct given the data, but check whether the small effective N is the cause
+
+[15:49:14] [plot] audit.png
+
+[15:49:14] === VERDICT ===
+[15:49:14] ARTIFACT — null A had < 30 finite b values for Cascadia
+[15:49:14] cascadia null_A b finite: 2/200 (1.0%)
+[15:49:14] cascadia precursor b finite: 1/36
+[15:49:14] [persist] summary.json
