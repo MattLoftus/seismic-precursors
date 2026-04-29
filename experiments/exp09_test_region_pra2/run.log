@@ -1,0 +1,108 @@
+[15:54:56] [exp09] start — PRA-2 protocol on TEST regions
+[15:54:56] [exp09] regions: ['Mexico', 'Alaska']
+[15:54:56] [exp09] catalog_source = ISC
+[15:54:56] [exp09] overlap forbidden zone = [t', t'+60d]
+[15:54:56] [pipe] === region Mexico (catalog=ISC) ===
+[15:54:57] [data] ISC bbox: M>=2.5, lat=[14.00,32.00] lon=[-118.00,-86.00], 2000-01-01..2025-01-01
+[15:55:05] [data]   chunk  1 2000-2001:   1087 events  (running total: 1087)
+[15:55:14] [data]   chunk  2 2001-2002:   1474 events  (running total: 2561)
+[15:55:25] [data]   chunk  3 2002-2003:   1727 events  (running total: 4288)
+[15:55:35] [data]   chunk  4 2003-2004:   1469 events  (running total: 5757)
+[15:55:45] [data]   chunk  5 2004-2005:   1503 events  (running total: 7260)
+[15:55:54] [data]   chunk  6 2005-2006:   1388 events  (running total: 8648)
+[15:56:06] [data]   chunk  7 2006-2007:   1651 events  (running total: 10299)
+[15:56:17] [data]   chunk  8 2007-2008:   1689 events  (running total: 11988)
+[15:56:30] [data]   chunk  9 2008-2009:   2058 events  (running total: 14046)
+[15:56:45] [data]   chunk 10 2009-2010 attempt 1/3 failed (ValueError); retrying in 10s
+[15:57:13] [data]   chunk 10 2009-2010:   2718 events  (running total: 16764)
+[15:57:31] [data]   chunk 11 2010-2011:   2873 events  (running total: 19637)
+[15:57:54] [data]   chunk 12 2011-2012:   3591 events  (running total: 23228)
+[15:58:26] [data]   chunk 13 2012-2013:   4961 events  (running total: 28189)
+[15:58:59] [data]   chunk 14 2013-2014:   5197 events  (running total: 33386)
+[15:59:39] [data]   chunk 15 2014-2015:   7257 events  (running total: 40643)
+[16:00:23] [data]   chunk 16 2015-2016:   8708 events  (running total: 49351)
+[16:00:31] [data]   chunk 17 2016-2017:    864 events  (running total: 50215)
+[16:00:43] [data]   chunk 18 2017-2018:   1418 events  (running total: 51633)
+[16:00:51] [data]   chunk 19 2018-2019:    889 events  (running total: 52522)
+[16:01:02] [data]   chunk 20 2019-2020:   1668 events  (running total: 54190)
+[16:01:13] [data]   chunk 21 2020-2021:   1472 events  (running total: 55662)
+[16:01:29] [data]   chunk 22 2021-2022:   2342 events  (running total: 58004)
+[16:01:50] [data]   chunk 23 2022-2023:   2952 events  (running total: 60956)
+[16:02:06] [data]   chunk 24 2023-2024:   2121 events  (running total: 63077)
+[16:03:29] [data]   chunk 25 2024-2025:  15854 events  (running total: 78931)
+[16:03:29] [data] cached 78931 events -> /Users/Loftus/workspace/seismic-precursors/experiments/exp09_test_region_pra2/catalog_Mexico.csv
+[16:03:29] [data] done -- 78931 events, M [0.87, 8.28]
+[16:03:30] [pipe] Mexico: 78931 events
+[16:03:30] [pipe] Mexico: Mc=3.95 (raw=3.75, woessner=3.95)
+[16:03:48] [pipe] Mexico: ZBZ background 49957/78931 (63.3%)
+[16:03:48] [pipe] Mexico: targets all=1385 background=843
+[16:03:48] [pipe] Mexico: precursor windows kept 1 (rejected 842)  [overlap_buffer_pre=0d post=60d]
+[16:03:48] [pipe] Mexico: null_A 0, null_B 0
+[16:03:48] [pipe] Mexico      [auc] b                      vs null_A  AUC=nan  z=+nan  p=nan
+[16:03:48] [pipe] Mexico      [auc] b_drift_per_day        vs null_A  AUC=nan  z=+nan  p=nan
+[16:03:48] [pipe] Mexico      [auc] benioff_total_log10    vs null_A  AUC=nan  z=+nan  p=nan
+[16:03:48] [pipe] Mexico      [auc] benioff_curv           vs null_A  AUC=nan  z=+nan  p=nan
+[16:03:48] [pipe] Mexico      [auc] n_above_mc             vs null_A  AUC=nan  z=+nan  p=nan
+[16:03:48] [pipe] Mexico      [auc] b                      vs null_B  AUC=nan  z=+nan  p=nan
+[16:03:48] [pipe] Mexico      [auc] b_drift_per_day        vs null_B  AUC=nan  z=+nan  p=nan
+[16:03:48] [pipe] Mexico      [auc] benioff_total_log10    vs null_B  AUC=nan  z=+nan  p=nan
+[16:03:48] [pipe] Mexico      [auc] benioff_curv           vs null_B  AUC=nan  z=+nan  p=nan
+[16:03:48] [pipe] Mexico      [auc] n_above_mc             vs null_B  AUC=nan  z=+nan  p=nan
+[16:03:48] [exp09] Mexico done: N_pre=1 N_A=0 N_B=0
+[16:03:48] [pipe] === region Alaska (catalog=ISC) ===
+[16:03:48] [data] ISC bbox: M>=2.5, lat=[51.00,72.00] lon=[-180.00,-130.00], 2000-01-01..2025-01-01
+[16:03:56] [data]   chunk  1 2000-2001:   1059 events  (running total: 1059)
+[16:04:05] [data]   chunk  2 2001-2002:   1127 events  (running total: 2186)
+[16:04:22] [data]   chunk  3 2002-2003:   2803 events  (running total: 4989)
+[16:04:33] [data]   chunk  4 2003-2004:   1562 events  (running total: 6551)
+[16:04:48] [data]   chunk  5 2004-2005:   1987 events  (running total: 8538)
+[16:05:05] [data]   chunk  6 2005-2006:   2453 events  (running total: 10991)
+[16:05:20] [data]   chunk  7 2006-2007:   1851 events  (running total: 12842)
+[16:05:35] [data]   chunk  8 2007-2008:   2069 events  (running total: 14911)
+[16:05:54] [data]   chunk  9 2008-2009:   2512 events  (running total: 17423)
+[16:06:16] [data]   chunk 10 2009-2010:   2904 events  (running total: 20327)
+[16:06:45] [data]   chunk 11 2010-2011 attempt 1/3 failed (ValueError); retrying in 10s
+[16:07:31] [data]   chunk 11 2010-2011:   5375 events  (running total: 25702)
+[16:07:54] [data]   chunk 12 2011-2012:   3369 events  (running total: 29071)
+[16:08:19] [data]   chunk 13 2012-2013:   3539 events  (running total: 32610)
+[16:08:44] [data]   chunk 14 2013-2014:   3289 events  (running total: 35899)
+[16:09:05] [data]   chunk 15 2014-2015:   3154 events  (running total: 39053)
+[16:09:31] [data]   chunk 16 2015-2016:   3945 events  (running total: 42998)
+[16:09:55] [data]   chunk 17 2016-2017:   3436 events  (running total: 46434)
+[16:10:29] [data]   chunk 18 2017-2018:   4494 events  (running total: 50928)
+[16:11:30] [data]   chunk 19 2018-2019:   9320 events  (running total: 60248)
+[16:12:00] [data]   chunk 20 2019-2020:   4744 events  (running total: 64992)
+[16:12:42] [data]   chunk 21 2020-2021:   6312 events  (running total: 71304)
+[16:13:18] [data]   chunk 22 2021-2022:   5269 events  (running total: 76573)
+[16:13:57] [data]   chunk 23 2022-2023:   5651 events  (running total: 82224)
+[16:14:42] [data]   chunk 24 2023-2024:   6027 events  (running total: 88251)
+[16:15:21] [data]   chunk 25 2024-2025:   5789 events  (running total: 94040)
+[16:15:22] [data] cached 94040 events -> /Users/Loftus/workspace/seismic-precursors/experiments/exp09_test_region_pra2/catalog_Alaska.csv
+[16:15:22] [data] done -- 94040 events, M [0.70, 8.22]
+[16:15:22] [pipe] Alaska: 94040 events
+[16:15:22] [pipe] Alaska: Mc=3.10 (raw=2.65, woessner=2.85)
+[16:15:46] [pipe] Alaska: ZBZ background 61233/94040 (65.1%)
+[16:15:46] [pipe] Alaska: targets all=1626 background=847
+[16:15:46] [pipe] Alaska: precursor windows kept 1 (rejected 846)  [overlap_buffer_pre=0d post=60d]
+[16:15:47] [pipe] Alaska: null_A 0, null_B 0
+[16:15:47] [pipe] Alaska      [auc] b                      vs null_A  AUC=nan  z=+nan  p=nan
+[16:15:47] [pipe] Alaska      [auc] b_drift_per_day        vs null_A  AUC=nan  z=+nan  p=nan
+[16:15:47] [pipe] Alaska      [auc] benioff_total_log10    vs null_A  AUC=nan  z=+nan  p=nan
+[16:15:47] [pipe] Alaska      [auc] benioff_curv           vs null_A  AUC=nan  z=+nan  p=nan
+[16:15:47] [pipe] Alaska      [auc] n_above_mc             vs null_A  AUC=nan  z=+nan  p=nan
+[16:15:47] [pipe] Alaska      [auc] b                      vs null_B  AUC=nan  z=+nan  p=nan
+[16:15:47] [pipe] Alaska      [auc] b_drift_per_day        vs null_B  AUC=nan  z=+nan  p=nan
+[16:15:47] [pipe] Alaska      [auc] benioff_total_log10    vs null_B  AUC=nan  z=+nan  p=nan
+[16:15:47] [pipe] Alaska      [auc] benioff_curv           vs null_B  AUC=nan  z=+nan  p=nan
+[16:15:47] [pipe] Alaska      [auc] n_above_mc             vs null_B  AUC=nan  z=+nan  p=nan
+[16:15:47] [exp09] Alaska done: N_pre=1 N_A=0 N_B=0
+
+[16:15:47] [exp09] qualifying test regions (N_pre>=8): []
+[16:15:47] [exp09] dropped: [('Mexico', 1), ('Alaska', 1)]
+[16:15:47] [exp09] WARNING: zero qualifying test regions; cross-regional test-region claim cannot be made
+[16:15:47] [persist] test_region_auc_table.csv (0 rows)
+
+[16:15:47] [headline] test-region per-feature AUC table:
+region     feature                null       AUC           CI95      z          p  N_p  N_q
+[16:15:47] [persist] summary.json
+[16:15:47] [exp09] done

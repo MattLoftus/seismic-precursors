@@ -1,0 +1,55 @@
+{
+  "experiment": "exp09_test_region_pra2",
+  "timestamp_utc": "2026-04-29T23:15:47.080070Z",
+  "pre_reg_v1_sha": "a4f1c6fa093ecea8bd00077fb8dbcab008c70eaa",
+  "pra2_sha": "05a4b0f4f7d26b076fc5169c5cda493e9f343652",
+  "params": {
+    "catalog_source": "ISC",
+    "catalog_m_min": 2.5,
+    "null_buffer_days_before": 0,
+    "null_buffer_days_after": 60,
+    "min_kept_precursor_per_region": 8
+  },
+  "test_regions_attempted": [
+    "Mexico",
+    "Alaska"
+  ],
+  "qualifying_test_regions": [],
+  "dropped_test_regions": [
+    [
+      "Mexico",
+      1
+    ],
+    [
+      "Alaska",
+      1
+    ]
+  ],
+  "per_region": [
+    {
+      "region": "Mexico",
+      "mc": 3.9499999999999993,
+      "n_total": 78931,
+      "n_background": 49957,
+      "n_targets_all": 1385,
+      "n_targets_background": 843,
+      "n_precursor": 1,
+      "n_precursor_rejected": 842,
+      "n_null_a": 0,
+      "n_null_b": 0
+    },
+    {
+      "region": "Alaska",
+      "mc": 3.1,
+      "n_total": 94040,
+      "n_background": 61233,
+      "n_targets_all": 1626,
+      "n_targets_background": 847,
+      "n_precursor": 1,
+      "n_precursor_rejected": 846,
+      "n_null_a": 0,
+      "n_null_b": 0
+    }
+  ],
+  "auc_rows": []
+}
