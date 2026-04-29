@@ -125,6 +125,111 @@ def fetch_comcat_catalog(
     return df
 
 
+def fetch_isc_catalog_bbox(
+    lat_min: float,
+    lat_max: float,
+    lon_min: float,
+    lon_max: float,
+    start: dt.datetime,
+    end: dt.datetime,
+    m_min: float,
+    chunk_years: int = 1,
+    cache_path: Path | None = None,
+    log: callable | None = print,
+) -> pd.DataFrame:
+    """ISC global bulletin via obspy FDSN. Same DataFrame schema as ComCat path.
+
+    Adopted in PRA-2 to fix the ComCat-is-teleseismic-only-for-non-US gap
+    surfaced in exp06. ISC merges 130+ regional networks (JMA, IPOC, AFAD,
+    INGV, SSN, AEC, NCSN/SCSN, PNSN), giving region-specific Mc consistent
+    with local instrumentation density.
+    """
+    if cache_path is not None and Path(cache_path).is_file():
+        if log:
+            log(f"[data] loading cached ISC catalog from {cache_path}")
+        df = pd.read_csv(cache_path)
+        df["time"] = pd.to_datetime(df["time"], utc=True, format="ISO8601")
+        return df
+
+    from obspy.clients.fdsn import Client
+    from obspy import UTCDateTime
+
+    client = Client("ISC", timeout=120)
+
+    if log:
+        log(
+            f"[data] ISC bbox: M>={m_min}, "
+            f"lat=[{lat_min:.2f},{lat_max:.2f}] lon=[{lon_min:.2f},{lon_max:.2f}], "
+            f"{start.date()}..{end.date()}"
+        )
+
+    rows: list[dict] = []
+    cur = start
+    chunk = 0
+    while cur < end:
+        nxt = dt.datetime(min(cur.year + chunk_years, end.year), 1, 1)
+        if nxt <= cur:
+            nxt = end
+        chunk += 1
+        for attempt in (1, 2, 3):
+            try:
+                cat = client.get_events(
+                    starttime=UTCDateTime(cur), endtime=UTCDateTime(nxt),
+                    minmagnitude=m_min,
+                    minlatitude=lat_min, maxlatitude=lat_max,
+                    minlongitude=lon_min, maxlongitude=lon_max,
+                )
+                break
+            except Exception as e:
+                if attempt == 3:
+                    raise
+                wait = 10 * attempt
+                if log:
+                    log(
+                        f"[data]   chunk {chunk} {cur.year}-{nxt.year} attempt {attempt}/3 "
+                        f"failed ({type(e).__name__}); retrying in {wait}s"
+                    )
+                time.sleep(wait)
+        for ev in cat:
+            origin = ev.preferred_origin() or (ev.origins[0] if ev.origins else None)
+            mag = ev.preferred_magnitude() or (ev.magnitudes[0] if ev.magnitudes else None)
+            if origin is None or mag is None or mag.mag is None:
+                continue
+            rows.append({
+                "time": origin.time.datetime,
+                "latitude": float(origin.latitude),
+                "longitude": float(origin.longitude),
+                "depth_km": float(origin.depth) / 1000.0 if origin.depth is not None else float("nan"),
+                "magnitude": float(mag.mag),
+                "eventid": str(ev.resource_id),
+            })
+        if log:
+            log(
+                f"[data]   chunk {chunk:>2d} {cur.year}-{nxt.year}: "
+                f"{len(cat):>6d} events  (running total: {len(rows)})"
+            )
+        cur = nxt
+
+    df = pd.DataFrame(rows)
+    if len(df):
+        df["time"] = pd.to_datetime(df["time"], utc=True)
+        df = df.sort_values("time").reset_index(drop=True)
+
+    if cache_path is not None:
+        Path(cache_path).parent.mkdir(parents=True, exist_ok=True)
+        df.to_csv(cache_path, index=False)
+        if log:
+            log(f"[data] cached {len(df)} events -> {cache_path}")
+    if log:
+        log(
+            f"[data] done -- {len(df)} events, "
+            f"M [{df['magnitude'].min():.2f}, {df['magnitude'].max():.2f}]"
+            if len(df)
+            else "[data] done -- 0 events"
+        )
+    return df
+
+
 def fetch_comcat_catalog_bbox(
     lat_min: float,
     lat_max: float,

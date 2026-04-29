@@ -18,7 +18,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from src.data import fetch_comcat_catalog_bbox
+from src.data import fetch_comcat_catalog_bbox, fetch_isc_catalog_bbox
 from src.features.benioff import benioff_features
 from src.features.bvalue import (
     aki_bvalue,
@@ -32,15 +32,16 @@ from src.regions import Region
 
 @dataclass
 class PipelineParams:
-    """All knobs in one place. Defaults match `papers/pre_registration.md`."""
+    """All knobs in one place. Defaults match `papers/pre_registration.md` v1."""
     window_days: int = 30
     target_m_min: float = 4.5
     catalog_m_min: float = 2.5            # PREVIEW deviation; pre-reg = 1.5
+    catalog_source: str = "ComCat"        # "ComCat" (v1) or "ISC" (PRA-2 amendment 1)
     zbz_log_eta_threshold: float = -5.0
     zbz_b_input: float = 1.0
     n_drift_subwindows: int = 3
     min_events_per_subwindow: int = 10
-    null_buffer_days_before: int = 30
+    null_buffer_days_before: int = 30     # set to 0 for PRA-2 amendment 2
     null_buffer_days_after: int = 60
     n_null_a: int = 200
     n_null_b: int = 200
@@ -49,6 +50,7 @@ class PipelineParams:
     random_seed: int = 42
     chunk_years: int = 1                  # ComCat per-call limit ~20k events
     mc_grid: tuple[float, ...] = (2.5, 2.7, 2.9, 3.1, 3.3, 3.5)
+    min_kept_precursor_per_region: int = 8  # PRA-2 amendment 3
 
 
 FEATURE_COLS = ["b", "b_drift_per_day", "benioff_total_log10", "benioff_curv", "n_above_mc"]
@@ -228,9 +230,16 @@ def run_region_pipeline(
 ) -> RegionResult:
     """Apply the full pre-reg protocol to one region; return RegionResult."""
     if log:
-        log(f"[pipe] === region {region.name} ===")
+        log(f"[pipe] === region {region.name} (catalog={params.catalog_source}) ===")
 
-    df = fetch_comcat_catalog_bbox(
+    if params.catalog_source.upper() == "ISC":
+        fetcher = fetch_isc_catalog_bbox
+    elif params.catalog_source.upper() == "COMCAT":
+        fetcher = fetch_comcat_catalog_bbox
+    else:
+        raise ValueError(f"unknown catalog_source {params.catalog_source!r}; "
+                         f"expected 'ComCat' or 'ISC'")
+    df = fetcher(
         lat_min=region.lat_min, lat_max=region.lat_max,
         lon_min=region.lon_min, lon_max=region.lon_max,
         start=start, end=end, m_min=params.catalog_m_min,
@@ -261,7 +270,8 @@ def run_region_pipeline(
     if log:
         log(f"[pipe] {region.name}: targets all={len(targets_all)} background={len(targets_bg)}")
 
-    # Precursor windows with overlap rejection per pre-reg §5.1
+    # Precursor windows with overlap rejection per pre-reg §5.1 (PRA-2 amendment 2:
+    # forbidden zone is [t', t'+60] when null_buffer_days_before=0, dropping the pre-event side).
     forbid_starts = targets_bg["time"] - pd.Timedelta(days=params.null_buffer_days_before)
     forbid_ends = targets_bg["time"] + pd.Timedelta(days=params.null_buffer_days_after)
     pre_rows = []
@@ -283,7 +293,8 @@ def run_region_pipeline(
         feat["region"] = region.name
         pre_rows.append(feat)
     if log:
-        log(f"[pipe] {region.name}: precursor windows kept {len(pre_rows)} (rejected {rejected})")
+        log(f"[pipe] {region.name}: precursor windows kept {len(pre_rows)} (rejected {rejected})  "
+            f"[overlap_buffer_pre={params.null_buffer_days_before}d post={params.null_buffer_days_after}d]")
 
     # Null A and Null B
     null_a = sample_null_windows(df, targets_bg["time"].tolist(), params.n_null_a,
