@@ -1,0 +1,145 @@
+{
+  "experiment": "exp13_joint_classification",
+  "timestamp_utc": "2026-04-30T18:22:13.797002Z",
+  "features": [
+    "benioff_total_log10",
+    "benioff_curv",
+    "n_above_mc",
+    "wf_spectral_slope",
+    "wf_waveform_entropy",
+    "wf_hht_imf1_if_median_hz"
+  ],
+  "qualifying_regions": [
+    "California",
+    "Cascadia",
+    "Turkey",
+    "Italy"
+  ],
+  "null_kind": "null_A",
+  "macro_table": [
+    {
+      "classifier": "logreg",
+      "per_region_aucs": {
+        "California": 0.5104054054054054,
+        "Cascadia": 0.547652692730413,
+        "Turkey": 0.5543766578249337,
+        "Italy": 0.49321266968325794
+      },
+      "macro_auc": 0.5264118564110025,
+      "ci_lo": 0.5018090375443316,
+      "ci_hi": 0.5510146752776733,
+      "perm_z": 0.9680438786257496,
+      "perm_p": 0.3330224562038222,
+      "passes_3sigma": false,
+      "passes_bonferroni": false
+    },
+    {
+      "classifier": "rf",
+      "per_region_aucs": {
+        "California": 0.4345945945945946,
+        "Cascadia": 0.4887737478411054,
+        "Turkey": 0.5387267904509284,
+        "Italy": 0.45677117000646417
+      },
+      "macro_auc": 0.4797165757232732,
+      "ci_lo": 0.4456828823005294,
+      "ci_hi": 0.5182378853398123,
+      "perm_z": -0.7061161480393521,
+      "perm_p": 0.480115910358633,
+      "passes_3sigma": false,
+      "passes_bonferroni": false
+    }
+  ],
+  "loro_per_split": [
+    {
+      "classifier": "logreg",
+      "test_region": "California",
+      "n_test_pre": 37,
+      "n_test_null": 200,
+      "auc": 0.5104054054054054,
+      "ci_lo": 0.40399303594787594,
+      "ci_hi": 0.6204641635400574
+    },
+    {
+      "classifier": "logreg",
+      "test_region": "Cascadia",
+      "n_test_pre": 33,
+      "n_test_null": 193,
+      "auc": 0.547652692730413,
+      "ci_lo": 0.42572016158731885,
+      "ci_hi": 0.6757844292803971
+    },
+    {
+      "classifier": "logreg",
+      "test_region": "Turkey",
+      "n_test_pre": 26,
+      "n_test_null": 145,
+      "auc": 0.5543766578249337,
+      "ci_lo": 0.4248380152768133,
+      "ci_hi": 0.6712212084769151
+    },
+    {
+      "classifier": "logreg",
+      "test_region": "Italy",
+      "n_test_pre": 34,
+      "n_test_null": 182,
+      "auc": 0.49321266968325794,
+      "ci_lo": 0.3941234291415051,
+      "ci_hi": 0.591745213405873
+    },
+    {
+      "classifier": "rf",
+      "test_region": "California",
+      "n_test_pre": 37,
+      "n_test_null": 200,
+      "auc": 0.4345945945945946,
+      "ci_lo": 0.3252132232203226,
+      "ci_hi": 0.5381643804728796
+    },
+    {
+      "classifier": "rf",
+      "test_region": "Cascadia",
+      "n_test_pre": 33,
+      "n_test_null": 193,
+      "auc": 0.4887737478411054,
+      "ci_lo": 0.3896832351116626,
+      "ci_hi": 0.5878034885829332
+    },
+    {
+      "classifier": "rf",
+      "test_region": "Turkey",
+      "n_test_pre": 26,
+      "n_test_null": 145,
+      "auc": 0.5387267904509284,
+      "ci_lo": 0.4155177642309995,
+      "ci_hi": 0.6454655217139195
+    },
+    {
+      "classifier": "rf",
+      "test_region": "Italy",
+      "n_test_pre": 34,
+      "n_test_null": 182,
+      "auc": 0.45677117000646417,
+      "ci_lo": 0.3601561440472731,
+      "ci_hi": 0.5467394392292488
+    }
+  ],
+  "feature_importance_by_classifier": {
+    "logreg": {
+      "benioff_total_log10": -0.021838211998066067,
+      "benioff_curv": 0.3301315816550208,
+      "n_above_mc": 0.05375127985962932,
+      "wf_spectral_slope": -0.07025516662862344,
+      "wf_waveform_entropy": -0.08731251173965127,
+      "wf_hht_imf1_if_median_hz": -0.10533994304256067
+    },
+    "rf": {
+      "benioff_total_log10": 0.1746929665340324,
+      "benioff_curv": 0.1808851873981488,
+      "n_above_mc": 0.12952687569522947,
+      "wf_spectral_slope": 0.1686493445602101,
+      "wf_waveform_entropy": 0.15955272576364105,
+      "wf_hht_imf1_if_median_hz": 0.18669290004873815
+    }
+  }
+}

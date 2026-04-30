@@ -1,0 +1,24 @@
+[11:24:19] [exp14] start — TLS template scan in feature time series
+[11:24:19] [exp14] 939 rows in qualifying regions × {precursor, null_A}
+[11:24:19] [exp14] loaded catalogs: {'California': 37777, 'Cascadia': 9945, 'Turkey': 6894, 'Italy': 8179}
+[11:24:19] [exp14] computing 6-point catalog trajectories per window...
+
+[11:24:21] [exp14] === LORO TLS scan ===
+[11:24:21]   n_above_mc_traj         test=California   AUC=0.573  CI=[0.466, 0.674]
+[11:24:21]   n_above_mc_traj         test=Cascadia     AUC=0.486  CI=[0.386, 0.594]
+[11:24:22]   n_above_mc_traj         test=Turkey       AUC=0.602  CI=[0.486, 0.709]
+[11:24:22]   n_above_mc_traj         test=Italy        AUC=0.506  CI=[0.410, 0.607]
+[11:24:23]   benioff_total_traj      test=California   AUC=0.733  CI=[0.635, 0.816]
+[11:24:23]   benioff_total_traj      test=Cascadia     AUC=0.809  CI=[0.727, 0.885]
+[11:24:23]   benioff_total_traj      test=Turkey       AUC=0.608  CI=[0.499, 0.716]
+[11:24:24]   benioff_total_traj      test=Italy        AUC=0.665  CI=[0.563, 0.762]
+
+[11:24:24] [exp14] === macro AUC per feature ===
+[11:24:25] [headline] n_above_mc_traj         macro=0.542  CI=[0.496, 0.588]  z=+1.62  p=1.06e-01  3σ=n  Bonf=n
+[11:24:27] [headline] benioff_total_traj      macro=0.704  CI=[0.637, 0.773]  z=+8.01  p=1.11e-15  3σ=Y  Bonf=Y
+[11:24:27] [plot] tls_macro_plot.png
+[11:24:27] [plot] tls_template_plot.png
+[11:24:27] [persist] summary.json
+
+[11:24:27] [exp14] HEADLINE: 1/2 catalog trajectories pass 3σ, 1/2 pass Bonferroni
+[11:24:27] [exp14] done

@@ -1,0 +1,17 @@
+[11:26:38] [exp15] start — window-shift control
+[11:26:38] [exp15] precursor window: [t-60, t-30) (shifted from exp14's [t-30, t))
+[11:26:38] [exp15] 139 precursor windows shifted; 800 null A windows untouched
+[11:26:38] [exp15] computing Benioff trajectories...
+[11:26:39] [exp15] === LORO TLS scan on shifted window ===
+[11:26:39]   test=California   AUC=0.544  CI=[0.450, 0.648]
+[11:26:40]   test=Cascadia     AUC=0.603  CI=[0.493, 0.715]
+[11:26:40]   test=Turkey       AUC=0.512  CI=[0.410, 0.616]
+[11:26:41]   test=Italy        AUC=0.481  CI=[0.383, 0.570]
+
+[11:26:42] [headline] benioff_total_traj (shifted) macro=0.535  CI=[0.496, 0.580]  z=+1.30  p=1.94e-01  3σ=n  Bonf=n
+[11:26:42] [plot] shifted_template_plot.png
+[11:26:42] [persist] summary.json
+
+[11:26:42] [exp15] VERDICT
+[11:26:42] [exp15]   shifted macro AUC = 0.535 ≈ 0.5 — the exp14 finding was FORESHOCK LEAKAGE in the last sub-window, not a long-distance precursor signal
+[11:26:42] [exp15] done

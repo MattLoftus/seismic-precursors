@@ -1,0 +1,21 @@
+{
+  "experiment": "exp15_window_shift_control",
+  "timestamp_utc": "2026-04-30T18:26:42.904136Z",
+  "purpose": "Re-run exp14 Benioff TLS with the precursor window shifted 30 days earlier to t-60..t-30, leaving null windows untouched. If signal disappears, exp14's pass was foreshock-specific.",
+  "exp14_unshifted_macro_auc": 0.704,
+  "exp14_unshifted_z": 8.01,
+  "shifted_macro_auc": 0.5349454030132202,
+  "shifted_ci_lo": 0.4964390685747031,
+  "shifted_ci_hi": 0.5799639376740201,
+  "shifted_z": 1.299537989488659,
+  "shifted_p_two_sided": 0.19375936490982704,
+  "shifted_passes_3sigma": false,
+  "shifted_passes_bonferroni": false,
+  "per_region_aucs": {
+    "California": 0.5441891891891892,
+    "Cascadia": 0.6027142857142856,
+    "Turkey": 0.5117128935532234,
+    "Italy": 0.48116524359618285
+  },
+  "interpretation": "If shifted macro AUC \u2248 0.5: the exp14 finding is foreshock-specific (signal in last sub-window of original window). If shifted macro AUC \u2248 0.70: the trajectory shape is intrinsic to precursor periods, not just foreshock leakage."
+}

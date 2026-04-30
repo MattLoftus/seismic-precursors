@@ -1,0 +1,53 @@
+{
+  "experiment": "exp14_tls_feature_scan",
+  "timestamp_utc": "2026-04-30T18:24:27.823922Z",
+  "features_scanned": [
+    "n_above_mc_traj",
+    "benioff_total_traj"
+  ],
+  "waveform_features_skipped": "exp11 stored per-window aggregates only; TLS for waveform features would require snapshot-resolution storage and re-fetch \u2014 skipped this iteration",
+  "qualifying_regions": [
+    "California",
+    "Cascadia",
+    "Turkey",
+    "Italy"
+  ],
+  "n_subwindows": 6,
+  "subwindow_days": 5,
+  "macro_table": [
+    {
+      "feature": "n_above_mc_traj",
+      "macro_auc": 0.541773324131489,
+      "ci_lo": 0.4959516619723396,
+      "ci_hi": 0.5875949862906384,
+      "perm_z": 1.6179983943608114,
+      "perm_p": 0.1056629436953791,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": {
+        "California": 0.5733783783783784,
+        "Cascadia": 0.48597222222222225,
+        "Turkey": 0.6018115942028986,
+        "Italy": 0.5059311017224569
+      }
+    },
+    {
+      "feature": "benioff_total_traj",
+      "macro_auc": 0.7038837029261956,
+      "ci_lo": 0.6368364749214603,
+      "ci_hi": 0.7730015707940635,
+      "perm_z": 8.011025373144557,
+      "perm_p": 1.1102230246251565e-15,
+      "passes_3sigma": true,
+      "passes_bonferroni": true,
+      "per_region_aucs": {
+        "California": 0.732972972972973,
+        "Cascadia": 0.8088888888888889,
+        "Turkey": 0.6083333333333334,
+        "Italy": 0.6653396165095873
+      }
+    }
+  ],
+  "n_pass_3sigma": 1,
+  "n_pass_bonferroni": 1
+}
