@@ -1,0 +1,52 @@
+[22:12:29] [exp10] California waveform-feature validation
+[22:12:29] [exp10] 37 California precursor windows
+[22:12:29] [exp10] window range: 2000-02-15 15:20:00.910000+00:00 .. 2024-07-29 20:00:52.010000+00:00
+[22:12:29] [exp10] primary station: BK.PKD
+[22:12:29] [exp10] params: 6 snapshots × 600s, bandpass [0.5, 12.0] Hz
+[22:12:58] [wf] snapshot 2001-07-15T00:07:27.480000 failed: fetch: FDSNNoDataException: No data available for request.
+HTTP Status code: 204
+Detailed response of server:
+
+
+[22:13:17] [wf] 5/37  (14%)  last: succ=6/6 slope=-1.866 ent=2.44 if1=4.54Hz
+[22:14:05] [wf] 10/37  (27%)  last: succ=6/6 slope=-2.067 ent=2.05 if1=7.42Hz
+[22:14:08] [wf] snapshot 2006-10-12T03:56:42.810000 failed: fetch: FDSNNoDataException: No data available for request.
+HTTP Status code: 204
+Detailed response of server:
+
+
+[22:14:54] [wf] 15/37  (41%)  last: succ=6/6 slope=-1.999 ent=2.18 if1=8.28Hz
+[22:15:44] [wf] 20/37  (54%)  last: succ=6/6 slope=-2.649 ent=2.02 if1=7.23Hz
+[22:16:37] [wf] 25/37  (68%)  last: succ=6/6 slope=-2.451 ent=2.11 if1=7.80Hz
+[22:17:48] [wf] snapshot 2015-01-11T09:08:54.010000 failed: fetch: FDSNServiceUnavailableException: Service temporarily unavailable
+HTTP Status code: 503
+Detailed response of server:
+
+Service Unavailable
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>503 Service Unavailable</title>
+</head><body>
+<h1>Service Unavailable</h1>
+<p>The server is temporarily unable to service your
+request due to maintenance downtime or capacity
+problems. Please try again later.</p>
+</body></html>
+[22:18:08] [wf] snapshot 2016-11-22T04:41:07.240000 failed: fetch: FDSNNoDataException: No data available for request.
+HTTP Status code: 204
+Detailed response of server:
+
+
+[22:18:25] [wf] 30/37  (81%)  last: succ=6/6 slope=-2.184 ent=2.18 if1=7.02Hz
+[22:19:16] [wf] 35/37  (95%)  last: succ=6/6 slope=-3.115 ent=1.82 if1=4.18Hz
+[22:19:37] [exp10] done in 429s (11.6s per window)
+[22:19:37] [persist] california_precursor_waveform_features.csv (37 rows)
+
+[22:19:37] [summary] windows with >=1 successful snapshot: 37/37 (100%)
+[22:19:37] [summary] windows with all 6 successful: 33/37
+[22:19:37] [summary] feature distributions:
+[22:19:37]   wf_spectral_slope                N= 37  med=-2.299  IQR=[-2.542, -2.067]
+[22:19:37]   wf_spectral_r2                   N= 37  med=0.812  IQR=[0.772, 0.891]
+[22:19:37]   wf_waveform_entropy              N= 37  med=2.146  IQR=[1.997, 2.444]
+[22:19:37]   wf_hht_imf1_if_median_hz         N= 37  med=6.945  IQR=[6.295, 7.596]
+[22:19:37] [persist] summary.json

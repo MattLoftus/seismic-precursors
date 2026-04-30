@@ -25,11 +25,11 @@ catalog_*.csv
 chains/
 bootstrap_cache/
 .matplotlib/
-# LaTeX build outputs (regenerable via tectonic)
-*.pdf
-*.aux
-*.bbl
-*.blg
-*.log
-*.out
-*.toc
+# LaTeX build outputs (regenerable via tectonic) — papers/draft only
+papers/draft/*.pdf
+papers/draft/*.aux
+papers/draft/*.bbl
+papers/draft/*.blg
+papers/draft/*.log
+papers/draft/*.out
+papers/draft/*.toc

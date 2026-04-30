@@ -1,0 +1,45 @@
+{
+  "experiment": "exp10_california_waveform_validation",
+  "timestamp_utc": "2026-04-30T05:19:37.706762Z",
+  "elapsed_seconds": 428.67641,
+  "elapsed_per_window_s": 11.585848918918918,
+  "params": {
+    "n_snapshots_per_window": 6,
+    "snapshot_seconds": 600,
+    "fdsn_client": "EARTHSCOPE",
+    "bandpass": [
+      0.5,
+      12.0
+    ]
+  },
+  "n_windows": 37,
+  "primary_station": "BK.PKD",
+  "n_windows_any_snapshot_ok": 37,
+  "n_windows_all_snapshots_ok": 33,
+  "feature_summaries": {
+    "wf_spectral_slope": {
+      "n_finite": 37,
+      "median": -2.2991729124376303,
+      "p25": -2.5424700027238027,
+      "p75": -2.067002215803287
+    },
+    "wf_spectral_r2": {
+      "n_finite": 37,
+      "median": 0.8117154745950647,
+      "p25": 0.7715040118066051,
+      "p75": 0.8906073408395198
+    },
+    "wf_waveform_entropy": {
+      "n_finite": 37,
+      "median": 2.1455974987878617,
+      "p25": 1.9970963588453436,
+      "p75": 2.4443145064313305
+    },
+    "wf_hht_imf1_if_median_hz": {
+      "n_finite": 37,
+      "median": 6.944738507275831,
+      "p25": 6.294918558834551,
+      "p75": 7.595704655290638
+    }
+  }
+}

@@ -23,7 +23,15 @@ class Station:
 
 @dataclass(frozen=True)
 class Region:
-    """A pre-registered region: bounding box + stations + tectonic regime."""
+    """A pre-registered region: bounding box + stations + tectonic regime.
+
+    `fdsn_client` is the ObsPy FDSN service short-name for the region's primary
+    waveform host. Defaults to "IRIS" (global IU/II network); California
+    overrides to "NCEDC" (Berkeley/NCSN archive); Italy overrides to "INGV"
+    (Italian national archive). This field was added in Session 12 after exp10
+    discovered BK.PKD waveforms are not in EarthScope/IRIS for most of the
+    2000–2024 period — they are NCEDC-hosted.
+    """
     name: str
     lat_min: float
     lat_max: float
@@ -33,6 +41,7 @@ class Region:
     primary: Station
     backups: tuple[Station, ...] = field(default_factory=tuple)
     is_test: bool = False
+    fdsn_client: str = "IRIS"
 
     def contains(self, lat: float, lon: float) -> bool:
         return (self.lat_min <= lat <= self.lat_max and
@@ -49,6 +58,7 @@ CALIFORNIA = Region(
     tectonic_regime="strike-slip + thrust margins",
     primary=Station("BK", "PKD"),
     backups=(Station("BK", "CMB"), Station("IU", "COR")),
+    fdsn_client="NCEDC",
 )
 CASCADIA = Region(
     name="Cascadia",
@@ -84,6 +94,7 @@ ITALY = Region(
     tectonic_regime="continental thrust + extension",
     primary=Station("IV", "AQU"),
     backups=(Station("IV", "MGAB"), Station("G", "SSB")),
+    fdsn_client="INGV",
 )
 
 # === Test regions (held out) (2) ===
