@@ -105,13 +105,22 @@ Five catalog-derived features are computed per 30-day window:
         positive corresponds to AMR \citep{bowman1998}.
   \item \textbf{Number of events $\ge M_c$} per window.
 \end{enumerate}
-Three waveform-derived features (spectral slope $\alpha$ following Brune's
-$f^{-2}$ \citep{brune1970}, whitened-spectrogram Shannon entropy
-\citep{bensen2007}, and HHT IMF1 instantaneous frequency \citep{huang1998})
-are defined and implemented in code but deferred from this paper to a
-follow-up Round-C waveform sub-protocol; this is acknowledged as a
-limitation. The pre-registered repeating-event-rate feature
-\citep[Nadeau-McEvilly]{loftus2026prereg} is also deferred.
+Three waveform-derived features are also computed per window via a Round-C
+sub-protocol: spectral slope $\alpha$ from a Welch PSD log-log fit
+\citep{brune1970}, whitened-spectrogram Shannon entropy \citep{bensen2007},
+and the median instantaneous frequency of the first IMF after empirical
+mode decomposition \citep{huang1998}. For each window we sample six
+10-minute snapshots evenly spaced across the 30-day span from the region's
+primary broadband Z channel, preprocess each (instrument response removal
+to ground velocity, bandpass 0.5--12 Hz clamped to $f_s/3$), compute the
+three features per snapshot, and aggregate to per-window scalars (mean for
+the spectrum and entropy, median for the IMF1 IF; robust to per-snapshot
+fetch failures). Per-region FDSN routing reflects waveform-archive
+realities: California's BK.PKD requires NCEDC, Italy's L'Aquila Observatory
+post-2009 is MN.AQU on IRIS, and Cascadia/Turkey use IRIS directly. The
+pre-registered repeating-event-rate feature
+\citep[Nadeau-McEvilly]{loftus2026prereg} is excluded from the headline
+panel.
 
 \subsection{Null windows}
 \label{sec:methods-null}
@@ -212,47 +221,66 @@ on degenerate per-region samples and does not constitute a clean test.
 \subsection{Macro-AUC across qualifying training regions}
 \label{sec:results-macro}
 
-Macro-AUCs for the genuinely-computable features (Benioff total, Benioff
-curvature, $n$ above $M_c$) lie within $\pm 0.05$ of 0.5 across both null
-types, with permutation $z$-scores in $[-1.0, +1.4]$ and $p$-values all
-exceeding the Bonferroni-corrected threshold. Table~\ref{tab:macro-auc}
-reports the values.
+The full 8-feature ($\times$ 2 null) panel under PRA-2 is summarized in
+Table~\ref{tab:macro-auc}. \textbf{Zero of sixteen tests pass 3$\sigma$ or
+the Bonferroni-corrected threshold} ($\alpha = 0.05 / 128 \approx 3.9 \times
+10^{-4}$). The complete cross-regional precursor signal upper bound on this
+feature panel is therefore macro AUC $\approx 0.50 \pm 0.05$.
 \begin{table}[h]
-\centering\small
-\begin{tabular}{lrrrrcc}
+\centering\footnotesize
+\begin{tabular}{lcrrrrcc}
 \toprule
-Feature & Null & Macro AUC & CI95 & $z$ & $p$ & 3$\sigma$/Bonf\\
+Feature & Null & Macro AUC & CI95 & $z$ & $p$ & 3$\sigma$ & Bonf\\
 \midrule
-$n \ge M_c$ & A & 0.514 & [0.48, 0.56] & +0.27 & 0.79 & n/n\\
-$n \ge M_c$ & B & 0.541 & [0.50, 0.59] & +1.33 & 0.19 & n/n\\
-Benioff total & A & 0.505 & [0.47, 0.55] & +0.20 & 0.84 & n/n\\
-Benioff total & B & 0.531 & [0.49, 0.57] & +1.19 & 0.23 & n/n\\
-Benioff curv. & A & 0.509 & [0.44, 0.58] & +0.36 & 0.72 & n/n\\
-Benioff curv. & B & 0.506 & [0.43, 0.59] & +0.23 & 0.81 & n/n\\
-\midrule
-$b$ & A & 0.722 & [0.37, 1.00] & \textbf{+3.41} & 6.6e-4 & n/n\\
-$b$ & B & 0.443 & [0.44, 0.44] & $-$0.87 & 0.38 & n/n\\
-$b$-drift & A & 0.351 & [0.25, 0.45] & $-$2.24 & 0.025 & n/n\\
-$b$-drift & B & 0.517 & [0.52, 0.52] & +0.22 & 0.83 & n/n\\
+\multicolumn{2}{l}{\textit{Catalog features (Benioff/$n$ computable in every window)}} & & & & & &\\
+$n \ge M_c$ & A & 0.514 & [0.47, 0.56] & +0.23 & 0.82 & n & n\\
+$n \ge M_c$ & B & 0.541 & [0.50, 0.59] & +1.37 & 0.17 & n & n\\
+Benioff total & A & 0.505 & [0.47, 0.55] & +0.23 & 0.82 & n & n\\
+Benioff total & B & 0.531 & [0.49, 0.57] & +1.26 & 0.21 & n & n\\
+Benioff curv. & A & 0.509 & [0.44, 0.58] & +0.39 & 0.70 & n & n\\
+Benioff curv. & B & 0.506 & [0.43, 0.59] & +0.25 & 0.80 & n & n\\
+\multicolumn{2}{l}{\textit{Catalog features (b-value uncomputable in 3 of 4 regions; failure mode \#3)}} & & & & & &\\
+$b$ & A & 0.722 & [0.37, 1.00] & \textbf{+3.41} & 6.6e-4 & n & n\\
+$b$ & B & 0.443 & [0.44, 0.44] & $-$0.87 & 0.38 & n & n\\
+$b$-drift & A & 0.351 & [0.25, 0.45] & $-$2.24 & 0.025 & n & n\\
+$b$-drift & B & 0.517 & [0.52, 0.52] & +0.22 & 0.83 & n & n\\
+\multicolumn{2}{l}{\textit{Waveform features (computed on 6$\times$10-min snapshots per window)}} & & & & & &\\
+spectral slope & A & 0.453 & [0.39, 0.49] & $-$1.71 & 0.087 & n & n\\
+spectral slope & B & 0.471 & [0.41, 0.52] & $-$1.02 & 0.31 & n & n\\
+entropy & A & 0.455 & [0.39, 0.51] & $-$1.56 & 0.12 & n & n\\
+entropy & B & 0.484 & [0.42, 0.55] & $-$0.49 & 0.62 & n & n\\
+HHT IMF1 IF & A & 0.486 & [0.46, 0.51] & $-$0.50 & 0.62 & n & n\\
+HHT IMF1 IF & B & 0.491 & [0.47, 0.51] & $-$0.27 & 0.79 & n & n\\
 \bottomrule
 \end{tabular}
-\caption{Cross-regional macro-AUC under PRA-2. Top block: features
-computable in every window. Bottom block: features whose AUC is computed
-on the degenerate sample identified as failure mode \#3. The $b$-vs-Null A
-$z = +3.41$ fails the CI95 gate ($\text{CI}_\text{lo} < 0.5$) and is
-attributable to a Cascadia per-region AUC of 1.00 computed on 1 precursor
-$\times$ 2 null A finite values.}
+\caption{Cross-regional macro-AUC under PRA-2 across the full eight-feature
+($\times$ two null) panel on four qualifying training regions (California,
+Cascadia, Turkey, Italy). The $b$-vs-Null A $z = +3.41$ fails the CI95 gate
+($\text{CI}_\text{lo} < 0.5$); per-region AUCs are California 0.80, Cascadia
+1.00, Turkey 0.37, Italy NaN, with Cascadia's value computed on 1 precursor
+$\times$ 2 null A finite $b$-values (the failure mode \#3 artifact). All
+three waveform features sit slightly below 0.5 vs Null A with consistent
+direction across regions but no individual feature reaches 3$\sigma$.}
 \label{tab:macro-auc}
 \end{table}
 
-The $b$ vs Null A row in Table~\ref{tab:macro-auc} appears suggestive but
-fails the pre-registered CI95 gate. Per-region: California 0.80, Cascadia
-1.00, Turkey 0.37, Italy NaN. The Cascadia 1.00 is computed on 1 precursor
-$\times$ 2 null A finite $b$-values (separation 0.007). We label this as
-exploratory and not headline. A single-region exception is Turkey:
-$b$-vs-Null A $\text{AUC} = 0.37$ ($z = -1.20$, sub-3$\sigma$), with
-precursor $b$ lower than null A — directionally consistent with
-\citet{gulia2019} foreshock prediction but underpowered.
+A noteworthy directional signal across the waveform half: \emph{all three}
+waveform features sit at AUC $< 0.5$ versus Null A (precursor windows have
+slightly lower spectral slope, entropy, and IMF1 IF than aftershock-free
+random windows), with permutation $z$-scores of $-1.71$, $-1.56$, and
+$-0.50$. The direction is consistent across all four qualifying regions for
+spectral slope and entropy. None reach 3$\sigma$ individually, but the
+common direction implies precursor windows are weakly more
+source-radiation-like (more $f^{-2}$, more concentrated, lower-frequency
+dominance) than aftershock-free random background --- consistent with a
+sub-detection-threshold version of the seismic-driver hypothesis but well
+below the pre-registered evidence threshold. We report this as exploratory.
+
+The $b$-vs-Null A row appears suggestive but is the failure mode \#3
+artifact identified above. A single-region exception worth flagging is
+Turkey, where $b$ is reliably computable: $b$-vs-Null A $\text{AUC} = 0.37$
+($z = -1.20$, sub-3$\sigma$), precursor $b$ lower than null A,
+directionally consistent with \citet{gulia2019} but underpowered.
 
 \subsection{Test-region results: failure mode \#4}
 \label{sec:results-test}

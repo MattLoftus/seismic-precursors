@@ -1,0 +1,104 @@
+[22:27:43] [exp11] start — 4 workers, 4 regions: ['California', 'Cascadia', 'Turkey', 'Italy']
+
+[22:27:43] [exp11] === California (N=437 windows, FDSN=NCEDC, primary=BK.PKD) ===
+[22:28:32] [wf] 20/437  (5%)  last: succ=6/6 slope=-2.649 ent=2.02 if1=7.23Hz
+[22:29:23] [wf] 40/437  (9%)  last: succ=6/6 slope=-1.901 ent=2.49 if1=7.95Hz
+[22:30:17] [wf] 60/437  (14%)  last: succ=6/6 slope=-2.692 ent=2.04 if1=7.14Hz
+[22:31:07] [wf] 80/437  (18%)  last: succ=6/6 slope=-1.156 ent=2.43 if1=6.92Hz
+[22:32:00] [wf] 100/437  (23%)  last: succ=6/6 slope=-1.666 ent=2.48 if1=7.77Hz
+[22:32:49] [wf] 120/437  (27%)  last: succ=6/6 slope=-2.431 ent=2.15 if1=7.23Hz
+[22:33:40] [wf] 140/437  (32%)  last: succ=6/6 slope=-2.326 ent=1.95 if1=8.42Hz
+[22:34:31] [wf] 160/437  (37%)  last: succ=6/6 slope=-2.566 ent=2.16 if1=6.85Hz
+[22:35:22] [wf] 180/437  (41%)  last: succ=6/6 slope=-2.708 ent=2.16 if1=3.38Hz
+[22:36:11] [wf] 200/437  (46%)  last: succ=6/6 slope=-2.779 ent=1.78 if1=7.68Hz
+[22:37:04] [wf] 220/437  (50%)  last: succ=6/6 slope=-2.004 ent=2.44 if1=7.54Hz
+[22:37:53] [wf] 240/437  (55%)  last: succ=6/6 slope=-2.608 ent=2.27 if1=2.82Hz
+[22:38:43] [wf] 260/437  (59%)  last: succ=6/6 slope=-2.701 ent=1.94 if1=3.70Hz
+[22:39:33] [wf] 280/437  (64%)  last: succ=6/6 slope=-2.322 ent=2.24 if1=8.01Hz
+[22:40:21] [wf] 300/437  (69%)  last: succ=6/6 slope=-2.580 ent=2.60 if1=6.53Hz
+[22:41:10] [wf] 320/437  (73%)  last: succ=6/6 slope=-2.349 ent=2.16 if1=7.54Hz
+[22:41:59] [wf] 340/437  (78%)  last: succ=6/6 slope=-2.452 ent=2.28 if1=6.63Hz
+[22:42:47] [wf] 360/437  (82%)  last: succ=6/6 slope=-2.171 ent=2.28 if1=7.47Hz
+[22:43:38] [wf] 380/437  (87%)  last: succ=6/6 slope=-1.960 ent=2.34 if1=4.06Hz
+[22:44:28] [wf] 400/437  (92%)  last: succ=6/6 slope=-2.582 ent=1.91 if1=7.64Hz
+[22:45:17] [wf] 420/437  (96%)  last: succ=5/6 slope=-2.254 ent=2.21 if1=7.56Hz
+[22:45:58] [exp11] California done in 1095s (2.5s/win)
+[22:45:58] [exp11] California: any-snapshot 437/437 (100%); all-6 423/437
+
+[22:45:58] [exp11] === Cascadia (N=436 windows, FDSN=IRIS, primary=UW.LON) ===
+[22:46:19] [wf] 20/436  (5%)  last: succ=6/6 slope=-0.033 ent=4.41 if1=8.85Hz
+[22:46:39] [wf] 40/436  (9%)  last: succ=6/6 slope=-0.005 ent=4.19 if1=9.07Hz
+[22:47:00] [wf] 60/436  (14%)  last: succ=4/6 slope=-0.098 ent=4.21 if1=0.13Hz
+[22:47:20] [wf] 80/436  (18%)  last: succ=6/6 slope=-0.672 ent=3.16 if1=8.55Hz
+[22:47:42] [wf] 100/436  (23%)  last: succ=5/6 slope=-0.168 ent=2.91 if1=8.79Hz
+[22:48:00] [wf] 120/436  (28%)  last: succ=4/6 slope=-0.324 ent=2.80 if1=8.67Hz
+[22:48:20] [wf] 140/436  (32%)  last: succ=6/6 slope=-0.379 ent=3.52 if1=8.73Hz
+[22:48:40] [wf] 160/436  (37%)  last: succ=6/6 slope=-0.088 ent=4.31 if1=8.71Hz
+[22:48:59] [wf] 180/436  (41%)  last: succ=5/6 slope=-0.790 ent=4.06 if1=8.42Hz
+[22:49:19] [wf] 200/436  (46%)  last: succ=6/6 slope=-0.088 ent=3.95 if1=0.29Hz
+[22:49:39] [wf] 220/436  (50%)  last: succ=6/6 slope=-0.496 ent=2.44 if1=8.82Hz
+[22:50:01] [wf] 240/436  (55%)  last: succ=6/6 slope=-0.501 ent=3.92 if1=8.84Hz
+[22:50:21] [wf] 260/436  (60%)  last: succ=6/6 slope=-0.330 ent=3.04 if1=8.72Hz
+[22:50:42] [wf] 280/436  (64%)  last: succ=6/6 slope=-0.621 ent=2.82 if1=8.61Hz
+[22:51:02] [wf] 300/436  (69%)  last: succ=6/6 slope=-1.229 ent=1.90 if1=8.51Hz
+[22:51:21] [wf] 320/436  (73%)  last: succ=6/6 slope=-0.291 ent=3.72 if1=8.69Hz
+[22:51:43] [wf] 340/436  (78%)  last: succ=6/6 slope=-0.333 ent=3.85 if1=8.86Hz
+[22:52:06] [wf] 360/436  (83%)  last: succ=6/6 slope=-0.049 ent=3.79 if1=8.89Hz
+[22:52:27] [wf] 380/436  (87%)  last: succ=6/6 slope=-0.510 ent=3.07 if1=8.75Hz
+[22:52:50] [wf] 400/436  (92%)  last: succ=6/6 slope=-0.280 ent=3.44 if1=8.98Hz
+[22:53:12] [wf] 420/436  (96%)  last: succ=6/6 slope=-0.123 ent=4.16 if1=8.80Hz
+[22:53:29] [exp11] Cascadia done in 450s (1.0s/win)
+[22:53:29] [exp11] Cascadia: any-snapshot 411/436 (94%); all-6 288/436
+
+[22:53:29] [exp11] === Turkey (N=430 windows, FDSN=IRIS, primary=IU.ANTO) ===
+[22:53:49] [wf] 20/430  (5%)  last: succ=6/6 slope=0.469 ent=4.01 if1=5.22Hz
+[22:54:12] [wf] 40/430  (9%)  last: succ=6/6 slope=-1.868 ent=3.37 if1=7.47Hz
+[22:54:31] [wf] 60/430  (14%)  last: succ=0/6 slope=nan ent=nan if1=nanHz
+[22:54:49] [wf] 80/430  (19%)  last: succ=6/6 slope=-2.282 ent=3.22 if1=7.27Hz
+[22:55:08] [wf] 100/430  (23%)  last: succ=6/6 slope=-1.728 ent=3.26 if1=3.33Hz
+[22:55:26] [wf] 120/430  (28%)  last: succ=6/6 slope=-1.717 ent=3.20 if1=3.37Hz
+[22:55:43] [wf] 140/430  (33%)  last: succ=6/6 slope=-1.813 ent=3.21 if1=3.50Hz
+[22:56:01] [wf] 160/430  (37%)  last: succ=6/6 slope=-1.620 ent=3.41 if1=3.01Hz
+[22:56:22] [wf] 180/430  (42%)  last: succ=0/6 slope=nan ent=nan if1=nanHz
+[22:56:43] [wf] 200/430  (47%)  last: succ=6/6 slope=-1.814 ent=3.22 if1=3.13Hz
+[22:57:02] [wf] 220/430  (51%)  last: succ=6/6 slope=-1.457 ent=3.41 if1=3.00Hz
+[22:57:22] [wf] 240/430  (56%)  last: succ=0/6 slope=nan ent=nan if1=nanHz
+[22:57:46] [wf] 260/430  (60%)  last: succ=6/6 slope=0.606 ent=4.14 if1=5.21Hz
+[22:58:11] [wf] 280/430  (65%)  last: succ=6/6 slope=-1.843 ent=3.10 if1=3.44Hz
+[22:58:31] [wf] 300/430  (70%)  last: succ=0/6 slope=nan ent=nan if1=nanHz
+[22:58:52] [wf] 320/430  (74%)  last: succ=0/6 slope=nan ent=nan if1=nanHz
+[22:59:14] [wf] 340/430  (79%)  last: succ=6/6 slope=-0.810 ent=3.58 if1=5.18Hz
+[22:59:34] [wf] 360/430  (84%)  last: succ=6/6 slope=-1.314 ent=3.43 if1=3.72Hz
+[22:59:53] [wf] 380/430  (88%)  last: succ=6/6 slope=-1.962 ent=2.58 if1=4.28Hz
+[23:00:14] [wf] 400/430  (93%)  last: succ=6/6 slope=-2.300 ent=3.41 if1=4.92Hz
+[23:00:34] [wf] 420/430  (98%)  last: succ=0/6 slope=nan ent=nan if1=nanHz
+[23:00:43] [exp11] Turkey done in 434s (1.0s/win)
+[23:00:43] [exp11] Turkey: any-snapshot 327/430 (76%); all-6 317/430
+
+[23:00:43] [exp11] === Italy (N=436 windows, FDSN=IRIS, primary=MN.AQU) ===
+[23:01:06] [wf] 20/436  (5%)  last: succ=6/6 slope=-2.255 ent=1.72 if1=4.82Hz
+[23:01:25] [wf] 40/436  (9%)  last: succ=6/6 slope=-0.828 ent=3.22 if1=4.77Hz
+[23:01:46] [wf] 60/436  (14%)  last: succ=6/6 slope=-0.416 ent=3.60 if1=5.00Hz
+[23:02:06] [wf] 80/436  (18%)  last: succ=0/6 slope=nan ent=nan if1=nanHz
+[23:02:24] [wf] 100/436  (23%)  last: succ=6/6 slope=-0.786 ent=3.44 if1=4.54Hz
+[23:02:46] [wf] 120/436  (28%)  last: succ=5/6 slope=-0.180 ent=3.90 if1=4.43Hz
+[23:03:16] [wf] 140/436  (32%)  last: succ=6/6 slope=-2.302 ent=2.09 if1=4.05Hz
+[23:03:41] [wf] 160/436  (37%)  last: succ=6/6 slope=-1.031 ent=3.00 if1=4.80Hz
+[23:04:01] [wf] 180/436  (41%)  last: succ=6/6 slope=-1.378 ent=2.72 if1=4.94Hz
+[23:04:20] [wf] 200/436  (46%)  last: succ=0/6 slope=nan ent=nan if1=nanHz
+[23:04:40] [wf] 220/436  (50%)  last: succ=6/6 slope=-0.437 ent=3.74 if1=4.68Hz
+[23:04:58] [wf] 240/436  (55%)  last: succ=5/6 slope=-0.679 ent=3.63 if1=4.75Hz
+[23:05:20] [wf] 260/436  (60%)  last: succ=4/6 slope=-0.159 ent=3.86 if1=4.36Hz
+[23:05:41] [wf] 280/436  (64%)  last: succ=6/6 slope=-1.000 ent=3.01 if1=4.98Hz
+[23:05:59] [wf] 300/436  (69%)  last: succ=3/6 slope=-0.733 ent=3.58 if1=4.73Hz
+[23:06:19] [wf] 320/436  (73%)  last: succ=6/6 slope=-0.429 ent=3.69 if1=4.47Hz
+[23:06:40] [wf] 340/436  (78%)  last: succ=5/6 slope=-0.855 ent=3.41 if1=4.56Hz
+[23:06:58] [wf] 360/436  (83%)  last: succ=5/6 slope=-0.819 ent=3.57 if1=4.47Hz
+[23:07:21] [wf] 380/436  (87%)  last: succ=6/6 slope=-1.534 ent=3.24 if1=4.44Hz
+[23:07:42] [wf] 400/436  (92%)  last: succ=6/6 slope=-0.365 ent=3.82 if1=4.64Hz
+[23:08:00] [wf] 420/436  (96%)  last: succ=5/6 slope=-0.805 ent=3.48 if1=4.66Hz
+[23:08:18] [exp11] Italy done in 455s (1.0s/win)
+[23:08:18] [exp11] Italy: any-snapshot 398/436 (91%); all-6 291/436
+
+[23:08:18] [exp11] all regions done in 2435s (40.6 min)
+[23:08:18] [persist] summary.json

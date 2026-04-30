@@ -1,0 +1,52 @@
+{
+  "experiment": "exp11_full_waveform_features",
+  "timestamp_utc": "2026-04-30T06:08:18.562423Z",
+  "n_workers": 4,
+  "params": {
+    "n_snapshots_per_window": 6,
+    "snapshot_seconds": 600
+  },
+  "regions": [
+    {
+      "region": "California",
+      "fdsn_client": "NCEDC",
+      "primary_station": "BK.PKD",
+      "n_windows": 437,
+      "n_any_snapshot_ok": 437,
+      "n_all_snapshots_ok": 423,
+      "elapsed_seconds": 1095.48921,
+      "elapsed_per_window_s": 2.5068402974828374
+    },
+    {
+      "region": "Cascadia",
+      "fdsn_client": "IRIS",
+      "primary_station": "UW.LON",
+      "n_windows": 436,
+      "n_any_snapshot_ok": 411,
+      "n_all_snapshots_ok": 288,
+      "elapsed_seconds": 450.427337,
+      "elapsed_per_window_s": 1.0330902224770642
+    },
+    {
+      "region": "Turkey",
+      "fdsn_client": "IRIS",
+      "primary_station": "IU.ANTO",
+      "n_windows": 430,
+      "n_any_snapshot_ok": 327,
+      "n_all_snapshots_ok": 317,
+      "elapsed_seconds": 433.851552,
+      "elapsed_per_window_s": 1.0089570976744187
+    },
+    {
+      "region": "Italy",
+      "fdsn_client": "IRIS",
+      "primary_station": "MN.AQU",
+      "n_windows": 436,
+      "n_any_snapshot_ok": 398,
+      "n_all_snapshots_ok": 291,
+      "elapsed_seconds": 455.387079,
+      "elapsed_per_window_s": 1.0444657775229358
+    }
+  ],
+  "total_elapsed_seconds": 2435.218676
+}

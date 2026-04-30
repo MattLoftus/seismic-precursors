@@ -1,0 +1,38 @@
+[23:08:37] [exp12] start — full 6-feature panel macro-AUC
+[23:08:37] [exp12] loading catalog features from exp07
+[23:08:37] [exp12]   1739 rows from ['California', 'Cascadia', 'Italy', 'Turkey']
+[23:08:37] [exp12] loading waveform features from exp11
+[23:08:37] [exp12]   California_waveform_features.csv: 437 rows
+[23:08:37] [exp12]   Cascadia_waveform_features.csv: 436 rows
+[23:08:37] [exp12]   Italy_waveform_features.csv: 436 rows
+[23:08:37] [exp12]   Turkey_waveform_features.csv: 430 rows
+[23:08:37] [exp12] merged: 1739 rows; 1739 have waveform features
+[23:08:37] [exp12] qualifying regions (N_pre>=8): ['California', 'Cascadia', 'Italy', 'Turkey']
+/Users/Loftus/workspace/seismic-precursors/experiments/exp12_macro_full_panel/run.py:75: RuntimeWarning: Mean of empty slice
+  boot_macros[i] = np.nanmean(region_aucs[idx])
+
+[23:08:40] [headline] full 6-feature panel macro AUC, Bonferroni α = 0.05/128 = 3.91e-04
+feature                    null     macro           CI95      z          p   3σ Bonf
+b                          null_A   0.722 [0.37,1.00]  +3.41   6.60e-04    n    n
+b                          null_B   0.443 [0.44,0.44]  -0.87   3.82e-01    n    n
+b_drift_per_day            null_A   0.351 [0.25,0.45]  -2.24   2.52e-02    n    n
+b_drift_per_day            null_B   0.517 [0.52,0.52]  +0.22   8.29e-01    n    n
+benioff_total_log10        null_A   0.505 [0.47,0.55]  +0.23   8.17e-01    n    n
+benioff_total_log10        null_B   0.531 [0.49,0.57]  +1.26   2.07e-01    n    n
+benioff_curv               null_A   0.509 [0.44,0.58]  +0.39   6.96e-01    n    n
+benioff_curv               null_B   0.506 [0.43,0.59]  +0.25   7.99e-01    n    n
+n_above_mc                 null_A   0.514 [0.47,0.56]  +0.23   8.19e-01    n    n
+n_above_mc                 null_B   0.541 [0.50,0.59]  +1.37   1.72e-01    n    n
+wf_spectral_slope          null_A   0.453 [0.39,0.49]  -1.71   8.66e-02    n    n
+wf_spectral_slope          null_B   0.471 [0.41,0.52]  -1.02   3.05e-01    n    n
+wf_waveform_entropy        null_A   0.455 [0.39,0.51]  -1.56   1.18e-01    n    n
+wf_waveform_entropy        null_B   0.484 [0.42,0.55]  -0.49   6.21e-01    n    n
+wf_hht_imf1_if_median_hz   null_A   0.486 [0.46,0.51]  -0.50   6.17e-01    n    n
+wf_hht_imf1_if_median_hz   null_B   0.491 [0.47,0.51]  -0.27   7.87e-01    n    n
+[23:08:40] [plot] full_panel_macro_plot.png
+
+[23:08:40] [exp12] HEADLINE
+[23:08:40] [exp12]   total: 0/16 pass 3σ, 0/16 pass Bonferroni
+[23:08:40] [exp12]   waveform half: 0 pass 3σ, 0 pass Bonferroni
+[23:08:40] [persist] summary.json
+[23:08:40] [exp12] done

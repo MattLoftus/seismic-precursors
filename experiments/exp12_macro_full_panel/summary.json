@@ -1,0 +1,311 @@
+{
+  "experiment": "exp12_macro_full_panel",
+  "timestamp_utc": "2026-04-30T06:08:40.922948Z",
+  "pre_reg_v1_sha": "a4f1c6fa093ecea8bd00077fb8dbcab008c70eaa",
+  "pra2_sha": "05a4b0f4f7d26b076fc5169c5cda493e9f343652",
+  "qualifying_regions": [
+    "California",
+    "Cascadia",
+    "Italy",
+    "Turkey"
+  ],
+  "n_features_total": 8,
+  "n_catalog_features": 5,
+  "n_waveform_features": 3,
+  "bonferroni_n_tests": 128,
+  "bonferroni_alpha": 0.000390625,
+  "macro_auc_table": [
+    {
+      "feature": "b",
+      "null": "null_A",
+      "is_waveform": false,
+      "macro_auc": 0.7223536737235369,
+      "ci_lo": 0.36706102117061024,
+      "ci_hi": 1.0,
+      "perm_z": 3.4056486581599446,
+      "perm_p": 0.0006600706601573858,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.8,
+        1.0,
+        NaN,
+        0.36706102117061024
+      ]
+    },
+    {
+      "feature": "b",
+      "null": "null_B",
+      "is_waveform": false,
+      "macro_auc": 0.4432541980312681,
+      "ci_lo": 0.4432541980312681,
+      "ci_hi": 0.4432541980312681,
+      "perm_z": -0.8744160582961403,
+      "perm_p": 0.3818917153909105,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        NaN,
+        NaN,
+        NaN,
+        0.4432541980312681
+      ]
+    },
+    {
+      "feature": "b_drift_per_day",
+      "null": "null_A",
+      "is_waveform": false,
+      "macro_auc": 0.35119047619047616,
+      "ci_lo": 0.25,
+      "ci_hi": 0.4523809523809524,
+      "perm_z": -2.238393194151573,
+      "perm_p": 0.025195425468735655,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.25,
+        NaN,
+        NaN,
+        0.4523809523809524
+      ]
+    },
+    {
+      "feature": "b_drift_per_day",
+      "null": "null_B",
+      "is_waveform": false,
+      "macro_auc": 0.5166040100250626,
+      "ci_lo": 0.5166040100250626,
+      "ci_hi": 0.5166040100250626,
+      "perm_z": 0.2153790907839926,
+      "perm_p": 0.8294717706118562,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        NaN,
+        NaN,
+        NaN,
+        0.5166040100250626
+      ]
+    },
+    {
+      "feature": "benioff_total_log10",
+      "null": "null_A",
+      "is_waveform": false,
+      "macro_auc": 0.5050812687687687,
+      "ci_lo": 0.4654027777777777,
+      "ci_hi": 0.5544097222222222,
+      "perm_z": 0.23163335703735455,
+      "perm_p": 0.816822796855988,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.5072972972972973,
+        0.5822222222222222,
+        0.47097222222222224,
+        0.4598333333333333
+      ]
+    },
+    {
+      "feature": "benioff_total_log10",
+      "null": "null_B",
+      "is_waveform": false,
+      "macro_auc": 0.5308237612612612,
+      "ci_lo": 0.490375,
+      "ci_hi": 0.5712725225225225,
+      "perm_z": 1.2609565179333242,
+      "perm_p": 0.20732451364032123,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.5533783783783783,
+        0.5891666666666666,
+        0.4845833333333333,
+        0.49616666666666664
+      ]
+    },
+    {
+      "feature": "benioff_curv",
+      "null": "null_A",
+      "is_waveform": false,
+      "macro_auc": 0.5087456831831831,
+      "ci_lo": 0.43909722222222225,
+      "ci_hi": 0.5783941441441441,
+      "perm_z": 0.39121130813317834,
+      "perm_p": 0.6956410503828918,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.5366216216216216,
+        0.43041666666666667,
+        0.4477777777777778,
+        0.6201666666666666
+      ]
+    },
+    {
+      "feature": "benioff_curv",
+      "null": "null_B",
+      "is_waveform": false,
+      "macro_auc": 0.5058070570570571,
+      "ci_lo": 0.4322222222222222,
+      "ci_hi": 0.5921875000000001,
+      "perm_z": 0.25485235061898726,
+      "perm_p": 0.7988371399292706,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.5187837837837838,
+        0.4156944444444444,
+        0.44875,
+        0.64
+      ]
+    },
+    {
+      "feature": "n_above_mc",
+      "null": "null_A",
+      "is_waveform": false,
+      "macro_auc": 0.5143271396396396,
+      "ci_lo": 0.473597972972973,
+      "ci_hi": 0.5615146396396397,
+      "perm_z": 0.22884789414216003,
+      "perm_p": 0.8189871402604352,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.4918918918918919,
+        0.5847222222222223,
+        0.5131944444444444,
+        0.4675
+      ]
+    },
+    {
+      "feature": "n_above_mc",
+      "null": "null_B",
+      "is_waveform": false,
+      "macro_auc": 0.5412072072072073,
+      "ci_lo": 0.49699774774774774,
+      "ci_hi": 0.5888738738738739,
+      "perm_z": 1.365224911721785,
+      "perm_p": 0.17218237086954935,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.49716216216216214,
+        0.6194444444444445,
+        0.5513888888888889,
+        0.49683333333333335
+      ]
+    },
+    {
+      "feature": "wf_spectral_slope",
+      "null": "null_A",
+      "is_waveform": true,
+      "macro_auc": 0.45253998900936854,
+      "ci_lo": 0.3914641147667769,
+      "ci_hi": 0.49305106658047837,
+      "perm_z": -1.7137376955539296,
+      "perm_p": 0.08657691055445538,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.5,
+        0.3639503846757733,
+        0.47220426632191337,
+        0.47400530503978777
+      ]
+    },
+    {
+      "feature": "wf_spectral_slope",
+      "null": "null_B",
+      "is_waveform": true,
+      "macro_auc": 0.4714033504304997,
+      "ci_lo": 0.410460687960688,
+      "ci_hi": 0.5235329338836126,
+      "perm_z": -1.024944346232936,
+      "perm_p": 0.3053894483901707,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.4845945945945946,
+        0.3857493857493858,
+        0.5394311570782159,
+        0.47583826429980275
+      ]
+    },
+    {
+      "feature": "wf_waveform_entropy",
+      "null": "null_A",
+      "is_waveform": true,
+      "macro_auc": 0.45508099112227907,
+      "ci_lo": 0.38770658631219435,
+      "ci_hi": 0.5055959253728017,
+      "perm_z": -1.5638460676828303,
+      "perm_p": 0.11785372265197935,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.4564864864864865,
+        0.3526456272570262,
+        0.4928894634776988,
+        0.5183023872679046
+      ]
+    },
+    {
+      "feature": "wf_waveform_entropy",
+      "null": "null_B",
+      "is_waveform": true,
+      "macro_auc": 0.48393578019143635,
+      "ci_lo": 0.4184520884520885,
+      "ci_hi": 0.5494194719307841,
+      "perm_z": -0.4941871356594244,
+      "perm_p": 0.6211740241220545,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.46,
+        0.3769041769041769,
+        0.5544602456367163,
+        0.5443786982248521
+      ]
+    },
+    {
+      "feature": "wf_hht_imf1_if_median_hz",
+      "null": "null_A",
+      "is_waveform": true,
+      "macro_auc": 0.48550221360059087,
+      "ci_lo": 0.4617268262957918,
+      "ci_hi": 0.5071619556913675,
+      "perm_z": -0.5004230485349005,
+      "perm_p": 0.6167772275218595,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.4516216216216216,
+        0.5151515151515151,
+        0.4831932773109244,
+        0.4920424403183024
+      ]
+    },
+    {
+      "feature": "wf_hht_imf1_if_median_hz",
+      "null": "null_B",
+      "is_waveform": true,
+      "macro_auc": 0.4909505903680112,
+      "ci_lo": 0.47202440643617116,
+      "ci_hi": 0.5147107388453542,
+      "perm_z": -0.26988466489698104,
+      "perm_p": 0.7872489852006261,
+      "passes_3sigma": false,
+      "passes_bonferroni": false,
+      "per_region_aucs": [
+        0.4737837837837838,
+        0.4914004914004914,
+        0.4702650290885585,
+        0.528353057199211
+      ]
+    }
+  ],
+  "n_pass_3sigma": 0,
+  "n_pass_bonferroni": 0,
+  "n_pass_3sigma_waveform": 0,
+  "n_pass_bonferroni_waveform": 0
+}

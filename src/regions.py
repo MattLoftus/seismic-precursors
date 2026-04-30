@@ -92,9 +92,16 @@ ITALY = Region(
     name="Italy",
     lat_min=36.0, lat_max=47.0, lon_min=6.0, lon_max=19.0,
     tectonic_regime="continental thrust + extension",
-    primary=Station("IV", "AQU"),
-    backups=(Station("IV", "MGAB"), Station("G", "SSB")),
-    fdsn_client="INGV",
+    # Pre-reg v1 §3 listed IV.AQU as primary. Session 13 verification found
+    # IV.AQU has zero data availability via INGV, ORFEUS, or IRIS — the
+    # post-2009 network reorganization moved L'Aquila Observatory's broadband
+    # data under MN.AQU (MedNet, INGV-affiliated, IRIS-archived). MN.AQU is
+    # the same physical station; the network-code update is documented as
+    # an operational implementation of pre-reg v1 §3's "95% availability
+    # fallback rule" rather than a station swap.
+    primary=Station("MN", "AQU"),
+    backups=(Station("IV", "AQU"), Station("IV", "MGAB"), Station("G", "SSB")),
+    fdsn_client="IRIS",
 )
 
 # === Test regions (held out) (2) ===
