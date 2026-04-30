@@ -1,0 +1,309 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage[round,authoryear]{natbib}
+\usepackage{xurl}
+\usepackage{caption}
+
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue}
+\bibliographystyle{plainnat}
+
+\title{Pre-Registered Cross-Regional Earthquake Precursor Search:\\
+A Four-Failure-Mode Catalogue}
+\author{Matthew Loftus\\\small Cedar Loop LLC, Bremerton, WA, USA\\\small \texttt{matthew.a.loftus@gmail.com}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\textit{[Abstract — to be drafted Round E2.]}
+\end{abstract}
+
+% =============================================================================
+\section{Introduction}
+\label{sec:intro}
+
+\textit{[Introduction — to be drafted Round E2 after the Mizrahi 2024 review is fully read.]}
+
+% =============================================================================
+\section{Pre-Registration Protocol}
+\label{sec:prereg}
+
+\textit{[Pre-registration protocol summary — to be drafted Round E2.
+Will reproduce the locked v1 commitments \citep{loftus2026prereg} and
+the PRA-2 amendments \citep{loftus2026pra2} grounded in
+exp06 evidence, with explicit chain-of-custody to the public commit
+SHAs.]}
+
+% =============================================================================
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Catalog and station data}
+\label{sec:methods-catalog}
+
+We use the International Seismological Centre (ISC) global bulletin
+accessed via \texttt{obspy.clients.fdsn.Client} \citep{beyreuther2010}
+for all six training regions and both test regions, with magnitude cutoff
+$M \ge 2.5$ over 2000-01-01 to 2024-12-31. ISC merges contributions from
+130+ regional network operators (JMA, IPOC, AFAD, INGV, SSN, AEC, NCSN/SCSN,
+PNSN), giving region-specific completeness consistent with local
+instrumentation density. Catalog ingestion at $M \ge 1.5$ specified in the
+pre-registration is replaced here by $M \ge 2.5$ for computational
+practicality, an explicit deviation flagged in the data-availability note.
+
+The eight pre-registered region polygons span six tectonic regimes
+(strike-slip, thrust, subduction, continental extension) and are taken
+verbatim from \citep{loftus2026prereg}. Six are training regions; Mexico and
+Alaska are held out as the test set.
+
+\subsection{Magnitude of completeness per region}
+\label{sec:methods-mc}
+
+Per-region $M_c$ is estimated by maximum-curvature on the binned
+frequency-magnitude distribution, plus the Woessner-Wiemer +0.20 correction
+\citep{wiemer2000,woessner2005}, then iterated upward in 0.20-step
+increments until the $b$-vs-$M_c$ curve plateaus, defined as
+$|\Delta b| < 0.02$ between consecutive $M_c$ values. The plateau check is
+itself a pre-registered diagnostic; the chosen $M_c$ is recorded as an
+artifact and not retuned downstream.
+
+\subsection{Declustering}
+\label{sec:methods-decluster}
+
+We apply the Zaliapin-Ben-Zion 2013 nearest-neighbor declustering algorithm
+\citep{zaliapin2013} with the published default parameters
+$b_{\text{ZBZ}}=1.0$, $d_f=1.6$, $p=q=0.5$, threshold
+$\log_{10}\eta_0 = -5.0$. The auto-KDE-based threshold finder is computed
+in parallel as a sensitivity check but does not enter the headline result.
+Declustering is applied to both the full catalog (for catalog-derived
+features) and to the target set itself (M $\ge$ 4.5 events kept only if
+parent-less in the ZBZ proximity graph), per
+\citep{loftus2026prereg} \S 1.4.
+
+\subsection{Features}
+\label{sec:methods-features}
+
+Five catalog-derived features are computed per 30-day window:
+\begin{enumerate}
+  \item \textbf{$b$-value} (Aki MLE \citep{aki1965} at the per-region $M_c$,
+        with the Shi-Bolt 1982 standard-error formulation \citep{shibolt1982}
+        and a minimum sample size $N \ge 30$ events at or above $M_c$).
+  \item \textbf{$b$-value drift}: the slope of $b$ across three equal-time
+        sub-windows, requiring $\ge 10$ events $\ge M_c$ per sub-window.
+  \item \textbf{Benioff strain accumulation}: $\Sigma \sqrt{E_J}$ over events
+        in the window, with $\log_{10} E_J = 1.5 M + 4.8$ \citep{bowman1998}.
+  \item \textbf{Benioff curvature}: the second-order coefficient of a
+        quadratic fit to the cumulative $\Sigma \sqrt{E_J}(t)$ curve;
+        positive corresponds to AMR \citep{bowman1998}.
+  \item \textbf{Number of events $\ge M_c$} per window.
+\end{enumerate}
+Three waveform-derived features (spectral slope $\alpha$ following Brune's
+$f^{-2}$ \citep{brune1970}, whitened-spectrogram Shannon entropy
+\citep{bensen2007}, and HHT IMF1 instantaneous frequency \citep{huang1998})
+are defined and implemented in code but deferred from this paper to a
+follow-up Round-C waveform sub-protocol; this is acknowledged as a
+limitation. The pre-registered repeating-event-rate feature
+\citep[Nadeau-McEvilly]{loftus2026prereg} is also deferred.
+
+\subsection{Null windows}
+\label{sec:methods-null}
+
+We define two null window types per region. Null A samples 200 random 30-day
+windows that do not overlap any other target's $[t', t'+60]$ buffer
+(aftershock-free) and are at least 30 days before any target's origin time;
+the buffer is reduced from the v1 90-day zone to PRA-2's 60-day post-event
+side only. Null B samples 200 random 30-day windows excluding only a 7-day
+post-event window for any $M \ge 4.5$ event in the catalog. The colored-noise
+synthetic null C is waveform-only and is not exercised in this paper.
+
+\subsection{Evaluation protocol}
+\label{sec:methods-eval}
+
+For each (region, feature, null-type) we compute the receiver-operating-
+characteristic area-under-curve (ROC-AUC) via the Mann-Whitney U statistic.
+For each (feature, null-type) we then compute a macro-AUC across the
+qualifying training regions (a region qualifies if it has $\ge 8$ kept
+precursor windows after declustering and overlap rejection, per PRA-2
+amendment 3).
+
+Significance for the macro-AUC is assessed by three concurrent gates: (a)
+the cross-region bootstrap CI95 lower bound exceeds 0.5, (b) the absolute
+effect size $|AUC - 0.5|$ exceeds 0.05, and (c) the permutation $z$-score
+(shuffling precursor/null labels independently within each region, 1000
+permutations) exceeds 3 in magnitude. The pre-registered test-region step
+applies the same protocol to Mexico and Alaska, then reports the test-region
+macro-AUC as the headline result. The Bonferroni-corrected significance
+threshold is $\alpha = 0.05 / (5 \text{ features} \times 2 \text{ nulls}
+\times 2 \text{ test regions} \times n_\text{qualifying})$, adjusted post hoc
+to the realized panel size per PRA-2 amendment 3.
+
+% =============================================================================
+\section{Results}
+\label{sec:results}
+
+\subsection{Per-region panel and the first three failure modes}
+\label{sec:results-panel}
+
+Table~\ref{tab:per-region} summarizes the per-region catalog ingestion,
+$M_c$, declustered targets, kept precursor windows after pre-registered
+overlap rejection, and qualifying status under PRA-2 amendment 3.
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lrrrrr}
+\toprule
+Region & $M_c$ & Declustered M$\ge$4.5 & Kept precursor & Null A kept & Qualifies?\\
+\midrule
+California & 3.50 & 68 & 37 & 200 & Yes\\
+Cascadia & 3.50 & 119 & 36 & 200 & Yes\\
+Japan & 3.50 & 1{,}950 & 1 & 0 & No\\
+Chile & 3.50 & 2{,}058 & 1 & 0 & No\\
+Turkey & 3.10 & 147 & 30 & 200 & Yes\\
+Italy & 3.50 & 62 & 36 & 200 & Yes\\
+\midrule
+Mexico (test) & 3.95 & 843 & 1 & 0 & No\\
+Alaska (test) & 3.10 & 847 & 1 & 0 & No\\
+\bottomrule
+\end{tabular}
+\caption{Per-region panel under PRA-2 protocol. Four of six training
+regions qualify for the macro pool; both test regions drop because every
+30-day window overlaps some other declustered target's $[t', t'+60]$ zone.}
+\label{tab:per-region}
+\end{table}
+
+\paragraph{Failure mode \#1 (overlap-rule density).} The pre-registered
+overlap rejection rule was calibrated against California-scale event density
+($\sim 5$ declustered M$\ge$4.5/year). At Cascadia (11/yr), Turkey
+($\sim 6$/yr), and Italy ($\sim 2.5$/yr) the rule is workable, recovering
+panels of size 36, 30, and 36 respectively after PRA-2 amendment 2 (drop
+the pre-event side of the v1 forbidden zone). At Japan (78/yr) and Chile
+(82/yr), 200+ overlapping forbidden zones cover the entire 9{,}131-day
+calendar, leaving 1 window in each. The recovery from v1 to PRA-2 is
+$3.2\times$ in pooled qualifying $N_\text{precursor}$, but Japan and
+Chile are permanently dropped.
+
+\paragraph{Failure mode \#2 (catalog $\times$ non-US $M_c$).} Under v1's ANSS
+ComCat catalog, Japan $M_c = 4.55$ and Chile $M_c = 4.45$ — both at the
+M$\ge$4.5 target threshold, rendering b-value features structurally
+uncomputable in those regions. Switching to ISC under PRA-2 brings both
+$M_c$ values down to 3.50, demonstrating that ISC's regional-network
+merging fixes the teleseismic-only gap. The tradeoff: California $M_c$
+rises from 2.75 to 3.50 because ISC has a coverage gap relative to
+ComCat for US data. Net effect on California is positive (37 kept
+precursor windows under PRA-2 vs 25 under v1).
+
+\paragraph{Failure mode \#3 (b-feature $\times$ window-Mc incompatibility).}
+At PRA-2's per-region $M_c$ values combined with 30-day windows, the median
+$n$ of events $\ge M_c$ is 4-5 in California, Cascadia, and Italy and 76 in
+Turkey. The $b$-value MLE's $N \ge 30$ floor is therefore satisfied in only
+3\% of windows for the first three regions and 73\% in Turkey. The
+\citet{gulia2019} b-drop precursor signal does not transfer to short windows
+at moderate $M_c$ because $b$ is structurally uncomputable. The b-value
+macro-AUC reported in Section~\ref{sec:results-macro} is therefore based
+on degenerate per-region samples and does not constitute a clean test.
+
+\subsection{Macro-AUC across qualifying training regions}
+\label{sec:results-macro}
+
+Macro-AUCs for the genuinely-computable features (Benioff total, Benioff
+curvature, $n$ above $M_c$) lie within $\pm 0.05$ of 0.5 across both null
+types, with permutation $z$-scores in $[-1.0, +1.4]$ and $p$-values all
+exceeding the Bonferroni-corrected threshold. Table~\ref{tab:macro-auc}
+reports the values.
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lrrrrcc}
+\toprule
+Feature & Null & Macro AUC & CI95 & $z$ & $p$ & 3$\sigma$/Bonf\\
+\midrule
+$n \ge M_c$ & A & 0.514 & [0.48, 0.56] & +0.27 & 0.79 & n/n\\
+$n \ge M_c$ & B & 0.541 & [0.50, 0.59] & +1.33 & 0.19 & n/n\\
+Benioff total & A & 0.505 & [0.47, 0.55] & +0.20 & 0.84 & n/n\\
+Benioff total & B & 0.531 & [0.49, 0.57] & +1.19 & 0.23 & n/n\\
+Benioff curv. & A & 0.509 & [0.44, 0.58] & +0.36 & 0.72 & n/n\\
+Benioff curv. & B & 0.506 & [0.43, 0.59] & +0.23 & 0.81 & n/n\\
+\midrule
+$b$ & A & 0.722 & [0.37, 1.00] & \textbf{+3.41} & 6.6e-4 & n/n\\
+$b$ & B & 0.443 & [0.44, 0.44] & $-$0.87 & 0.38 & n/n\\
+$b$-drift & A & 0.351 & [0.25, 0.45] & $-$2.24 & 0.025 & n/n\\
+$b$-drift & B & 0.517 & [0.52, 0.52] & +0.22 & 0.83 & n/n\\
+\bottomrule
+\end{tabular}
+\caption{Cross-regional macro-AUC under PRA-2. Top block: features
+computable in every window. Bottom block: features whose AUC is computed
+on the degenerate sample identified as failure mode \#3. The $b$-vs-Null A
+$z = +3.41$ fails the CI95 gate ($\text{CI}_\text{lo} < 0.5$) and is
+attributable to a Cascadia per-region AUC of 1.00 computed on 1 precursor
+$\times$ 2 null A finite values.}
+\label{tab:macro-auc}
+\end{table}
+
+The $b$ vs Null A row in Table~\ref{tab:macro-auc} appears suggestive but
+fails the pre-registered CI95 gate. Per-region: California 0.80, Cascadia
+1.00, Turkey 0.37, Italy NaN. The Cascadia 1.00 is computed on 1 precursor
+$\times$ 2 null A finite $b$-values (separation 0.007). We label this as
+exploratory and not headline. A single-region exception is Turkey:
+$b$-vs-Null A $\text{AUC} = 0.37$ ($z = -1.20$, sub-3$\sigma$), with
+precursor $b$ lower than null A — directionally consistent with
+\citet{gulia2019} foreshock prediction but underpowered.
+
+\subsection{Test-region results: failure mode \#4}
+\label{sec:results-test}
+
+Applying the same PRA-2 protocol to the held-out test regions: Mexico
+(843 declustered M$\ge$4.5; 1 kept precursor window) and Alaska
+(847 declustered; 1 kept). Both fail PRA-2 amendment 3's $N \ge 8$
+minimum. \textbf{Zero of two test regions qualify}, and the cross-regional
+test-region claim is therefore structurally inaccessible under the
+pre-registered protocol.
+
+This is failure mode \#4: the subduction-density structural issue
+identified in failure mode \#1 extends to both pre-registered test regions.
+The same regime-level incompatibility between high-rate subduction-zone
+seismicity and the precursor-window framework that knocked Japan and Chile
+out of training also knocks Mexico and Alaska out of test. The fact that
+the failure mode replicates on a held-out test set is what gives it its
+weight — it is not a training-curation artifact.
+
+The strongest defensible cross-regional upper bound on precursor signal is
+therefore the training-panel-only macro AUC of approximately
+$0.51 \pm 0.05$ on the genuinely-computable features (Benioff total,
+Benioff curvature, $n \ge M_c$). No test-region strengthening of this
+bound is possible under PRA-2.
+
+% =============================================================================
+\section{Discussion}
+\label{sec:discussion}
+
+\textit{[Discussion — to be drafted Round E2.]}
+
+% =============================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+\textit{[Conclusion — to be drafted Round E2.]}
+
+\section*{Acknowledgements}
+The author thanks the ISC for maintaining the global bulletin used in this
+work. ObsPy \citep{beyreuther2010} and \texttt{usgs-libcomcat} provided the
+data-access infrastructure. The pre-registration protocol and amendment
+were prepared with assistance from Anthropic Claude (per arXiv co-authorship
+policy: Claude is acknowledged but not a co-author).
+
+\section*{Data and code availability}
+All code, pre-registration documents, amendments, and per-region cached
+catalogs are publicly available at the project repository
+\citep{loftus2026repo}. The pre-registration commit
+\citep{loftus2026prereg} and amendment commit \citep{loftus2026pra2} are
+the canonical reference points for protocol commitments; subsequent commits
+follow the chain of custody.
+
+\bibliography{references}
+\end{document}

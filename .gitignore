@@ -25,3 +25,11 @@ catalog_*.csv
 chains/
 bootstrap_cache/
 .matplotlib/
+# LaTeX build outputs (regenerable via tectonic)
+*.pdf
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
