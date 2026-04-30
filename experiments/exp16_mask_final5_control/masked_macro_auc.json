@@ -1,0 +1,23 @@
+{
+  "experiment": "exp16_mask_final5_control",
+  "timestamp_utc": "2026-04-30T18:49:18.051729Z",
+  "purpose": "Re-run exp14 Benioff TLS with sub-window 5 (days 25-30) masked out. Tests whether any signal exists in days 0-25.",
+  "exp14_unmasked_macro_auc": 0.704,
+  "exp14_unmasked_z": 8.01,
+  "exp16_masked_macro_auc": 0.5132644957466896,
+  "exp16_masked_ci": [
+    0.493757722007722,
+    0.5410580043435691
+  ],
+  "exp16_masked_z": 0.4871456406092523,
+  "exp16_masked_p_two": 0.626155124565863,
+  "exp16_masked_passes_3sigma": false,
+  "exp16_masked_passes_bonferroni": false,
+  "per_region_aucs": {
+    "California": 0.5069594594594595,
+    "Cascadia": 0.4893571428571429,
+    "Turkey": 0.55374531835206,
+    "Italy": 0.5029960623180962
+  },
+  "verdict": "ENTIRELY FORESHOCK-DRIVEN: signal collapses to chance when days 25-30 are masked"
+}

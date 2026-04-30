@@ -1,0 +1,39 @@
+{
+  "experiment": "exp17_per_magnitude_breakdown",
+  "timestamp_utc": "2026-04-30T18:50:54.512557Z",
+  "magnitude_bins": [
+    [
+      4.5,
+      5.0
+    ],
+    [
+      5.0,
+      10.0
+    ]
+  ],
+  "rows": [
+    {
+      "magnitude_bin": "M[4.5,5.0)",
+      "n_precursor": 91,
+      "macro_auc": 0.6241615079061782,
+      "per_region_aucs": {
+        "California": 0.6328571428571429,
+        "Cascadia": 0.7258695652173912,
+        "Turkey": 0.5645998023715415,
+        "Italy": 0.5733195211786372
+      }
+    },
+    {
+      "magnitude_bin": "M[5.0,10.0)",
+      "n_precursor": 48,
+      "macro_auc": 0.8133440615241413,
+      "per_region_aucs": {
+        "California": 0.8090625,
+        "Cascadia": 0.8500000000000001,
+        "Turkey": 0.718070652173913,
+        "Italy": 0.876243093922652
+      }
+    }
+  ],
+  "interpretation": "If macro AUC scales with target M, larger events have stronger foreshock signals (consistent with Helmstetter+ 2003 ETAS theory). If invariant, the signal is M-independent over our range."
+}

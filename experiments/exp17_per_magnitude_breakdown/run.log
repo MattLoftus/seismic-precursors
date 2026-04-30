@@ -1,0 +1,23 @@
+[11:50:53] [exp17] start — per-target-magnitude breakdown of exp14 Benioff TLS
+[11:50:53] [exp17] computing Benioff trajectories...
+[11:50:54] [exp17] precursor target_M distribution:
+[11:50:54]   mean = 4.97, median = 4.75, max = 7.08
+[11:50:54]   M=[4.5, 5.0): n=91
+[11:50:54]   M=[5.0, 10.0): n=48
+
+[11:50:54] [exp17] === M[4.5,5.0): 91 precursor, 800 null A ===
+[11:50:54]   M[4.5,5.0) test=California   AUC=0.633
+[11:50:54]   M[4.5,5.0) test=Cascadia     AUC=0.726
+[11:50:54]   M[4.5,5.0) test=Turkey       AUC=0.565
+[11:50:54]   M[4.5,5.0) test=Italy        AUC=0.573
+[11:50:54] [exp17] M[4.5,5.0) macro AUC = 0.624
+
+[11:50:54] [exp17] === M[5.0,10.0): 48 precursor, 800 null A ===
+[11:50:54]   M[5.0,10.0) test=California   AUC=0.809
+[11:50:54]   M[5.0,10.0) test=Cascadia     AUC=0.850
+[11:50:54]   M[5.0,10.0) test=Turkey       AUC=0.718
+[11:50:54]   M[5.0,10.0) test=Italy        AUC=0.876
+[11:50:54] [exp17] M[5.0,10.0) macro AUC = 0.813
+[11:50:54] [plot] per_mag_plot.png
+[11:50:54] [persist] summary.json
+[11:50:54] [exp17] done
