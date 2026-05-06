@@ -1,0 +1,41 @@
+[22:15:19] [exp20] start — trivial-scalar M-scaling
+[22:15:19] [exp20] computing trivial scalar per window...
+[22:15:19] [exp20] precursor target_M: mean=4.97  median=4.75  max=7.08  n=139
+
+[22:15:19] [exp20] === 2-bin M-scaling ===
+[22:15:22]   M=[4.5,5.0)     n_pre= 91  macro=0.731  CI=[0.640, 0.829]
+[22:15:22]     California   AUC=0.756  CI=[0.607, 0.889]  n_pre=21
+[22:15:22]     Cascadia     AUC=0.886  CI=[0.790, 0.968]  n_pre=23
+[22:15:22]     Turkey       AUC=0.659  CI=[0.503, 0.805]  n_pre=22
+[22:15:22]     Italy        AUC=0.621  CI=[0.488, 0.762]  n_pre=25
+[22:15:22]   M>=5.0          n_pre= 48  macro=0.879  CI=[0.811, 0.927]
+[22:15:22]     California   AUC=0.884  CI=[0.769, 0.984]  n_pre=16
+[22:15:22]     Cascadia     AUC=0.940  CI=[0.857, 0.997]  n_pre=13
+[22:15:22]     Turkey       AUC=0.777  CI=[0.547, 0.941]  n_pre=8
+[22:15:22]     Italy        AUC=0.914  CI=[0.772, 1.000]  n_pre=11
+
+[22:15:22] [exp20] === 3-bin M-scaling ===
+[22:15:26]   M=[4.5,4.8)     n_pre= 72  macro=0.701  CI=[0.608, 0.815]
+[22:15:26]   M=[4.8,5.2)     n_pre= 33  macro=0.837  CI=[0.759, 0.915]
+[22:15:26]   M>=5.2          n_pre= 34  macro=0.893  CI=[0.807, 0.955]
+
+[22:15:26] [exp20] === trend tests ===
+[22:15:26]   Mann-Kendall (2-bin): tau=-1.000  p=1.000
+[22:15:26]   Mann-Kendall (3-bin): tau=1.000  p=0.333
+/Users/Loftus/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_linear_loss.py:200: RuntimeWarning: divide by zero encountered in matmul
+  raw_prediction = X @ weights + intercept
+/Users/Loftus/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_linear_loss.py:200: RuntimeWarning: overflow encountered in matmul
+  raw_prediction = X @ weights + intercept
+/Users/Loftus/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_linear_loss.py:200: RuntimeWarning: invalid value encountered in matmul
+  raw_prediction = X @ weights + intercept
+[22:15:26]   logistic on (scalar + target_M):
+[22:15:26]     coef[scalar]   = +0.2250
+[22:15:26]     coef[target_M] = +1.6110
+[22:15:26] [plot] m_scaling_plot.png
+
+[22:15:26] [exp20] HEADLINE
+[22:15:26]   2-bin M-scaling under trivial scalar:
+[22:15:26]     M=[4.5,5.0)     macro=0.731  CI=[0.640, 0.829]  n=91
+[22:15:26]     M>=5.0          macro=0.879  CI=[0.811, 0.927]  n=48
+[22:15:26]   Trend monotonicity (Mann-Kendall): tau=-1.00 p=1.00
+[22:15:26] [exp20] done

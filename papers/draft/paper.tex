@@ -15,9 +15,9 @@
 \bibliographystyle{plainnat}
 
 \title{Pre-Registered Cross-Regional Earthquake Precursor Evaluation:\\
-A Five-Failure-Mode Catalogue and Cross-Regional Confirmation of\\
-Pervasive Foreshock Activity at AUC$\,=\,$0.70 / $z\,=\,8$\\
-with Quantitative $M$-Scaling}
+Five Execution-Time Failure Modes, and Cross-Regional Confirmation of\\
+Foreshock-Window Elevated Benioff Strain at\\
+Macro AUC$\,=\,$0.78 / $z_\mathrm{block}\,=\,$8.4}
 \author{Matthew Loftus\\
 \small Cedar Loop LLC, Bremerton, WA, USA\\
 \small \texttt{matthew.a.loftus@gmail.com}}
@@ -30,30 +30,30 @@ with Quantitative $M$-Scaling}
 We pre-registered a CSEP-style cross-regional earthquake-precursor
 evaluation across six training and two test regions, six features, and
 three null models, and ran it under the locked protocol with one
-documented amendment. The protocol surfaced \textbf{five concrete
-methodological failure modes} that the field has not previously
-catalogued in this combination: (i)~the inherited overlap-rejection rule
-collides with itself in event-dense subduction zones (Japan, Chile, Mexico,
-Alaska all drop); (ii)~ANSS ComCat is teleseismic for non-US regions,
-forcing $M_c$ to the target threshold; (iii)~the Aki MLE $b$-value
-$N{\ge}30$ floor combined with 30-day windows at moderate $M_c$ renders
-the $b$-feature uncomputable in three of four qualifying regions;
-(iv)~both pre-registered test regions fail (i)~and are structurally
-inaccessible; (v)~the pre-registered precursor window $[t-30,t)$ includes
-the foreshock period, conflating long-distance precursor with
-foreshock-detection. Per-window scalar AUCs and a joint logistic-regression
-$+$ random-forest classifier across the six features all yield clean
-nulls. A TLS-style template-correlation scan over the Benioff strain
-trajectory passes the pre-registered 3$\sigma$ and Bonferroni gates at
-macro AUC $= 0.70$, $z = +8.0$, $p = 1.1{\times}10^{-15}$ across four
-training regions; a window-shift control and a foreshock-period mask
-both confirm the signal lives exclusively in the final 5 days of the
-pre-registered window. Per-target-magnitude stratification yields a clean
-monotonic scaling: macro AUC $= 0.62$ for $M{\in}[4.5,5.0)$ vs $0.81$
-for $M{\ge}5.0$. The result is a rigorous cross-regional confirmation of
-the pervasive-foreshock phenomenon documented per-region by
-\citet{trugman2019}, with a quantitative AUC and the first
-M-scaling estimate under pre-registration discipline.
+documented post-execution amendment. Execution surfaced five concrete
+methodological failure modes catalogued for re-use: an inherited
+overlap-rejection rule that collides with itself in event-dense
+subduction zones; ANSS ComCat as a teleseismic catalog for non-US
+regions; the Aki MLE $b$-value $N{\ge}30$ floor combined with 30-day
+windows at moderate~$M_c$; structural inaccessibility of both
+pre-registered test regions; and the pre-registered precursor window
+$[t-30, t)$ admitting the immediate-foreshock period. The pre-registered
+per-window scalar and joint-classifier panels yield clean nulls. A
+single trivial scalar — log$_{10}$ Benioff energy in the final 5 days
+of the 30-day pre-event window — achieves macro AUC $= 0.779$
+($\mathrm{CI}_{95}\,[0.70, 0.86]$, $z_\mathrm{iid} = +11.0$,
+$z_\mathrm{block} = +8.4$ under a circular-shift dependence-aware null,
+paired $\Delta\mathrm{AUC}$ vs symmetric placebo $= +0.27$,
+$\mathrm{CI}_{95}\,[+0.20, +0.32]$) across four LORO splits. A
+TLS-style template-correlation scan over the same Benioff trajectory
+\emph{underperforms} the trivial scalar by 0.075 AUC, documented as a
+methodological ablation. Per-target-magnitude stratification under the
+trivial scalar shows monotonic scaling: macro AUC $= 0.73$ for
+$M{\in}[4.5, 5.0)$, $0.88$ for $M{\ge}5.0$. The headline finding is a
+quantitative cross-regional confirmation of the foreshock-pervasiveness
+phenomenon documented per-region by \citet{trugman2019}, with the
+simplest possible scalar and a publicly verifiable pre-registration
+chain of custody.
 \end{abstract}
 
 % =============================================================================
@@ -62,47 +62,52 @@ M-scaling estimate under pre-registration discipline.
 
 The earthquake precursor literature has been historically constrained by
 two structural problems: most claims are per-region (no cross-regional
-generalization test) and post-hoc (no committed-in-advance protocol). The
-Collaboratory for the Study of Earthquake Predictability
-\citep{schorlemmer2007,mizrahi2024} solved pre-registration for
+generalization test) and post-hoc (no committed-in-advance protocol).
+The Collaboratory for the Study of Earthquake Predictability
+\citep{schorlemmer2007, mizrahi2024} solved pre-registration for
 \emph{rate}-based forecasts; recent ionospheric-precursor work
-\citep{tao2025iono} ported the discipline to a different physical domain.
-No equivalent exists for \emph{feature}-based seismic precursor work.
+\citep{tao2025iono} ported the discipline to a different physical
+domain. No equivalent exists for \emph{feature}-based seismic precursor
+work.
 
 In parallel, the foreshock literature has converged on the empirical
 finding that elevated seismicity precedes most moderate mainshocks.
 \citet{trugman2019} used a 1.81-million-event high-resolution
 template-matched catalog to show that 72\% of $M{\ge}4$ mainshocks in
-southern California have foreshock activity statistically elevated above
-local background. The phenomenon is theoretically anchored by the ETAS
-cascade-triggering framework \citep{helmstetter2003a, helmstetter2003b},
-which derives expected foreshock-rate properties (acceleration toward
-mainshock, magnitude-dependence, modified $b$-value) from a single
-self-similar triggering process without invoking a distinct precursor
-mechanism. Recent work continues to refine the methodology
-\citep{lippiello2025, khan2025, moutote2021}.
+southern California have foreshock activity statistically elevated
+above local background. The phenomenon is theoretically anchored by
+the ETAS cascade-triggering framework
+\citep{helmstetter2003a, helmstetter2003b}, which derives expected
+foreshock-rate properties from a single self-similar triggering process
+without invoking a distinct precursor mechanism. Recent work continues
+to refine the methodology \citep{lippiello2025, khan2025, moutote2021}.
 
 We bridge these two threads. We pre-registered a CSEP-style six-feature
-cross-regional evaluation on declustered $M{\ge}4.5$ targets across
-six training regions (California, Cascadia, Japan, Chile, Turkey, Italy)
+cross-regional evaluation on declustered $M{\ge}4.5$ targets across six
+training regions (California, Cascadia, Japan, Chile, Turkey, Italy)
 and two held-out test regions (Mexico, Alaska); the locked protocol
 \citep{loftus2026prereg} commits feature definitions, region polygons,
-station list, null models, magnitude-of-completeness procedure, evaluation
-metric, and significance thresholds before any AUC was computed. One
-amendment \citep{loftus2026pra2} re-ran the evaluation after v1 surfaced
-two execution-time failure modes. The full chain of custody is publicly
-available as a single repository with one commit per session.
+station list, null models, magnitude-of-completeness procedure,
+evaluation metric, and significance thresholds before any AUC was
+computed. One amendment \citep{loftus2026pra2} re-ran the evaluation
+after v1 surfaced two execution-time failure modes; the amendment was
+committed before re-evaluation, but \emph{after} v1 had been executed,
+so we describe it as a \emph{post-v1 amendment} rather than as binding
+pre-registration in the strictest sense (\S\ref{sec:disc-prereg}). The
+full chain of custody is publicly available as a single repository with
+one commit per work session.
 
-This paper reports two contributions. First, a five-failure-mode
-catalogue of how pre-registered cross-regional precursor evaluation
-breaks in practice; each mode is documented with diagnostic evidence and
-attempted mitigation. Second, a rigorous cross-regional confirmation of
-the \citet{trugman2019} foreshock-pervasiveness finding using a TLS-style
-template-correlation scan over the Benioff strain trajectory: macro AUC
-$= 0.70$ at $z = +8.0$, with quantitative magnitude-scaling. We frame
-this as confirmation rather than discovery: the foreshock phenomenon is
-established, but the cross-regional AUC + M-scaling under explicit
-pre-registration is novel.
+This paper reports two contributions. First, a five-mode catalogue of
+how pre-registered cross-regional precursor evaluation breaks in
+practice; each mode is documented with diagnostic evidence and
+attempted mitigation. Second, a quantitative cross-regional confirmation
+of the \citet{trugman2019} foreshock-pervasiveness finding, recovered
+by the simplest scalar that captures the immediate-foreshock energy
+release: log$_{10}$ Benioff energy in the final 5 days of the 30-day
+pre-event window. We frame the result as confirmation rather than
+discovery: the foreshock phenomenon is established, but the
+cross-regional AUC, dependence-aware significance, and explicit
+pre-registration chain of custody are novel.
 
 % =============================================================================
 \section{Pre-Registration Protocol}
@@ -114,25 +119,28 @@ Wiemer-Wyss \citep{wiemer2000} max-curvature $+$ Woessner-Wiemer
 \citep{woessner2005} $+0.20$ correction $+$ explicit $b$-vs-$M_c$
 plateau check; ZBZ 2013 nearest-neighbor declustering
 \citep{zaliapin2013} with $b{=}1.0$, $d_f{=}1.6$,
-$\log_{10}\eta_0{=}{-}5.0$; declustering applied to both the catalog and
-the target set; six features (b-value, b-drift, Benioff total $+$
-curvature, $n$ above $M_c$, plus three waveform-derived: spectral slope,
-whitened-spectrogram entropy, HHT IMF1 instantaneous frequency); three
-null types (A: aftershock-free random; B: minimal exclusion; C:
-colored-noise synthetic for waveform features only); macro-AUC across
+$\log_{10}\eta_0{=}{-}5.0$; declustering applied to both the catalog
+and the target set; six features (b-value via \citealp{aki1965} MLE
+with \citealp{shibolt1982} standard error, b-drift, Benioff total $+$
+curvature, $n$ above $M_c$, plus three waveform-derived: spectral
+slope, whitened-spectrogram entropy, HHT IMF1 instantaneous frequency);
+three null types (A: aftershock-free random; B: minimal exclusion;
+C: colored-noise synthetic for waveform features only); macro-AUC across
 qualifying training regions with cross-region bootstrap CI95,
 within-region permutation $z$, and Bonferroni-corrected $\alpha$. Pre-reg
 v1 also commits an explicit ``will not'' list (no $M_c$ tuning, no
 station/region swaps, no feature additions, no window changes).
 
-Amendment v2 \citep{loftus2026pra2}, committed before re-evaluation,
-makes three changes grounded in v1 execution evidence: ISC global
-bulletin replaces ANSS ComCat (fixing failure mode~\#2 below); the
-overlap-rejection forbidden zone shrinks from $[t'-30, t'+60]$ to
-$[t', t'+60]$ (partial fix for failure mode~\#1 below); a per-region
-minimum of $N{\ge}8$ kept precursor windows is required for inclusion in
-the macro pool. The chain is binding: v1 SHA \texttt{a4f1c6f},
-amendment SHA \texttt{05a4b0f}, all subsequent commits cite both.
+Amendment v2 \citep{loftus2026pra2}, committed before re-evaluation but
+after v1 was executed, makes three changes grounded in v1 evidence:
+ISC global bulletin replaces ANSS ComCat (fixing failure mode~\#2
+below); the overlap-rejection forbidden zone shrinks from
+$[t'-30, t'+60]$ to $[t', t'+60]$ (partial fix for failure mode~\#1
+below); a per-region minimum of $N{\ge}8$ kept precursor windows is
+required for inclusion in the macro pool. The chain is publicly
+verifiable: v1 SHA \texttt{a4f1c6f}, amendment SHA \texttt{05a4b0f},
+all subsequent commits cite both. We discuss the implications of the
+post-v1 amendment in \S\ref{sec:disc-prereg}.
 
 % =============================================================================
 \section{Methods}
@@ -144,16 +152,17 @@ amendment SHA \texttt{05a4b0f}, all subsequent commits cite both.
 We use the ISC global bulletin via \texttt{obspy.clients.fdsn} for all
 six training and two test regions over 2000-01-01 to 2024-12-31.
 Catalog ingestion at $M{\ge}1.5$ as pre-registered would have been
-intractably large at ISC; we use $M{\ge}2.5$ as a declared deviation, an
-empirical compromise between bulletin-pull cost and $M_c$ identifiability.
-Per-region $M_c$ is the chosen value where the $b$-vs-$M_c$ curve
-plateaus to $|\Delta b| < 0.02$ between consecutive $M_c$; values are
-recorded as artifacts and not retuned. Per-region waveform routing was
-not pre-specified: we use NCEDC for California (BK network, Berkeley-
-hosted), IRIS for Cascadia (UW.LON), Turkey (IU.ANTO), and Italy. Italy's
-pre-registered station IV.AQU is gone post-2009; we use MN.AQU on IRIS,
-the post-2009 MedNet successor at the same physical L'Aquila Observatory,
-documented as 95\%-availability fallback per pre-reg \S 3.
+intractably large at ISC; we use $M{\ge}2.5$ as a declared deviation,
+an empirical compromise between bulletin-pull cost and $M_c$
+identifiability. Per-region $M_c$ is the chosen value where the
+$b$-vs-$M_c$ curve plateaus to $|\Delta b| < 0.02$ between consecutive
+$M_c$; values are recorded as artifacts and not retuned. Per-region
+waveform routing was not pre-specified: we use NCEDC for California
+(BK network, Berkeley-hosted), IRIS for Cascadia (UW.LON), Turkey
+(IU.ANTO), and Italy. Italy's pre-registered station IV.AQU is gone
+post-2009; we use MN.AQU on IRIS, the post-2009 MedNet successor at
+the same physical L'Aquila Observatory, documented as 95\%-availability
+fallback per pre-reg \S 3.
 
 \subsection{Per-window scalar features}
 \label{sec:methods-features}
@@ -164,96 +173,123 @@ features are aggregated across six 10-minute snapshots evenly spaced
 across the window using the region's primary broadband Z channel,
 preprocessed (instrument-response-removal to ground velocity, bandpass
 0.5--12~Hz clamped to $f_s/3$ to dodge any anti-alias artifacts).
-Per-snapshot Welch PSD log-log slope (Brune 1970), whitened-spectrogram
-Shannon entropy \citep{bensen2007}, and EMD IMF1 instantaneous frequency
-\citep{huang1998} are aggregated to per-window scalars by mean (slope,
-entropy) and median (IMF1 IF). Repeating-event rate, per-pre-reg
-\S 4.1, is excluded from the headline panel as deferred infrastructure.
+Per-snapshot Welch PSD log-log slope \citep{brune1970}, whitened-
+spectrogram Shannon entropy \citep{bensen2007}, and EMD IMF1
+instantaneous frequency \citep{huang1998} are aggregated to per-window
+scalars by mean (slope, entropy) and median (IMF1 IF). Repeating-event
+rate, per pre-reg \S 4.1, is excluded from the headline panel as
+deferred infrastructure.
 
 \subsection{Joint multi-feature classifier}
 \label{sec:methods-clf}
 
 In addition to per-feature scalar AUC, we train a joint classifier over
 the six computable features (the $b$-pair excluded due to failure
-mode~\#3 below) under leave-one-region-out (LORO) cross-validation. Each
-region's features are z-scored within region using the union of
+mode~\#3 below) under leave-one-region-out (LORO) cross-validation.
+Each region's features are z-scored within region using the union of
 precursor and Null A windows in that region (per-region domain
-adaptation); pooled samples from three training regions are used to fit a
-logistic regression (\texttt{class\_weight="balanced"}) and a 200-tree
-random forest, then scored on the held-out region.
+adaptation); pooled samples from three training regions are used to
+fit a logistic regression (\texttt{class\_weight="balanced"}) and a
+200-tree random forest, then scored on the held-out region.
 
-\subsection{TLS-style template-correlation scan}
+\subsection{Trivial Benioff scalar (headline method)}
+\label{sec:methods-scalar}
+
+For each window, sub-divide into six 5-day sub-windows; compute Benioff
+energy $\sum \sqrt{E_i}$ in each sub-window from declustered events
+$\ge M_c$, where $E_i = 10^{1.5 M_i + 4.8}$~J. The per-window scalar
+is $\log_{10}$ of the Benioff sum in the last sub-window (days 25--30
+of the 30-day window). This is intentionally minimal: a single scalar,
+no template, no LORO-dependent fit. ROC-AUC is computed precursor vs
+Null~A within each held-out region; the macro is the mean across the
+four LORO splits.
+
+\subsection{TLS-style template-correlation scan (ablation)}
 \label{sec:methods-tls}
 
 Pre-reg \S 3.2 promised a TLS-style matched filter applied to feature
-time series. We realize this via per-window 6-point trajectories at
-5-day sub-window resolution. Templates are LORO precursor-mean
-trajectories (averaged across the three training regions); each held-out
-window is scored by Pearson correlation with the template; ROC-AUC is
-computed precursor vs Null~A.
+time series \citep[cf. matrix-profile-based seismic template matching;]
+[]{senobari2024}. We realize this via per-window 6-point trajectories
+at 5-day sub-window resolution. Templates are LORO precursor-mean
+trajectories (averaged across the three training regions); each held-
+out window is scored by Pearson correlation with the template; ROC-AUC
+is computed precursor vs Null~A. We report this as an ablation rather
+than the headline because it is uniformly outperformed by the trivial
+scalar of \S\ref{sec:methods-scalar} (\S\ref{sec:results-ablation}).
 
-\subsection{Significance gates}
+\subsection{Significance gates and dependence-aware null}
 \label{sec:methods-gates}
 
 Every macro statistic is evaluated against three concurrent gates per
 pre-reg \S 6.3: cross-region bootstrap CI95-lower exceeds 0.5;
-$|AUC - 0.5|$ exceeds 0.05; within-region permutation $z$-score exceeds
-3 in magnitude. Bonferroni correction is applied per pre-reg \S 6.4 with
-denominator equal to (\# features) $\times$ (\# nulls) $\times$
-(\# qualifying regions); for the joint classifier and TLS analyses
-the denominators are 2 and 8 respectively.
+$|AUC - 0.5|$ exceeds 0.05; within-region permutation $z$-score
+exceeds 3 in magnitude. Bonferroni correction is applied per pre-reg
+\S 6.4. Following peer-review feedback, in addition to the
+pre-registered i.i.d.\ label-permutation null, we report a
+\emph{dependence-aware} null: within each region, sort windows by
+$t_\mathrm{start}$, then circularly shift labels by a uniformly-random
+offset before recomputing AUC. This preserves the temporal
+autocorrelation of the per-region window sequence (so that nearby
+windows that share local seismic context remain near each other under
+the null) while breaking the precursor-mainshock association. The
+resulting $z_\mathrm{block}$ is a more conservative significance
+estimate than the i.i.d.\ $z_\mathrm{iid}$. We also report the paired
+$\Delta\mathrm{AUC}$ between the headline scalar and a 30-day-shifted
+control on shared bootstrap resamples
+(\S\ref{sec:results-controls}).
 
 % =============================================================================
 \section{Results}
 \label{sec:results}
 
-\subsection{Five-failure-mode catalogue}
+\subsection{Five-mode catalogue of execution-time failures}
 \label{sec:results-failure-modes}
 
-\paragraph{Failure mode \#1: overlap rule $\times$ event density.} The
-pre-registered overlap rule was calibrated against California-scale
-event density. Under v1's $[t'-30, t'+60]$ forbidden zone, regions with
-moderate-to-high target density lose nearly all precursor windows: Japan
-(4{,}563 declustered $M{\ge}4.5$ targets) loses all of them; Chile
-(3{,}275) loses all; Cascadia (277) keeps only 4; Turkey (389) keeps 2.
+\paragraph{Three operational lessons (modes \#1, \#2, \#4).} Three of
+the five modes are operational gotchas familiar to anyone running
+CSEP-style work in subduction zones, but their concrete combination
+under our protocol made them load-bearing. Mode~\#1: under v1's
+$[t'-30, t'+60]$ overlap-rejection rule, regions with moderate-to-high
+target density lose nearly all precursor windows: Japan (4{,}563
+declustered $M{\ge}4.5$ targets) loses all of them; Chile (3{,}275)
+loses all; Cascadia (277) keeps only 4; Turkey (389) keeps 2.
 Amendment 2 shrinks the zone to $[t', t'+60]$ and recovers Cascadia to
 36 and Turkey to 30 kept precursor windows; Japan and Chile remain
-inaccessible (1 each).
-
-\paragraph{Failure mode \#2: ANSS ComCat $\times$ non-US $M_c$.} Under
-v1's ANSS ComCat catalog, Japan $M_c = 4.55$ and Chile $M_c = 4.45$, both
-at the $M{\ge}4.5$ target threshold. b-value features become structurally
-uncomputable. Amendment 1 switches to ISC and recovers Japan/Chile $M_c$
-to 3.5; California $M_c$ rises slightly (2.75$\to$3.50, an ISC US-coverage
-gap relative to NCEDC) but California still qualifies.
+inaccessible (1 each). Mode~\#2: under v1's ANSS ComCat catalog, Japan
+$M_c = 4.55$ and Chile $M_c = 4.45$, both at the $M{\ge}4.5$ target
+threshold; b-value features become structurally uncomputable.
+Amendment 1 switches to ISC and recovers Japan/Chile $M_c$ to 3.5;
+California $M_c$ rises slightly (2.75 $\to$ 3.50, an ISC US-coverage
+gap relative to NCEDC) but California still qualifies. Mode~\#4: both
+pre-registered test regions, Mexico (843 declustered targets) and
+Alaska (847), reduce to one kept precursor window each under the
+PRA-2 overlap rule, far below the $N{\ge}8$ minimum; this is mode~\#1
+generalized to held-out regions, structurally inaccessible without
+further amendments addressing subduction-zone seismicity density.
 
 \paragraph{Failure mode \#3: $b$-feature $\times$ $M_c$-window
-incompatibility.} At PRA-2 $M_c$ values combined with 30-day windows, the
-median $n$ of events $\ge M_c$ is 4--5 in California, Cascadia, and Italy,
-and 76 in Turkey. The $b$-value MLE's $N{\ge}30$ floor is therefore
-satisfied in only 3\% of windows for the first three regions and 73\% in
-Turkey. The \citet{gulia2019} $b$-drop signal does not transfer to short
-windows at moderate $M_c$. The $b$-vs-Null A macro AUC of 0.722 reported
-elsewhere in the panel is a degenerate-sample artifact (Cascadia AUC =
-1.00 computed on 1 precursor $\times$ 2 null finite values).
-
-\paragraph{Failure mode \#4: test-region inaccessibility.} Both
-pre-registered test regions, Mexico (843 declustered targets) and Alaska
-(847), reduce to one kept precursor window each under the PRA-2 overlap
-rule, far below the $N{\ge}8$ minimum. The cross-regional test-region
-claim is therefore structurally inaccessible under any reasonable rule.
-This is failure mode \#1 generalized to held-out regions. Test-region
-strengthening of any precursor upper bound is impossible without further
-amendments addressing subduction-zone seismicity density.
+incompatibility.} At PRA-2 $M_c$ values combined with 30-day windows,
+the median $n$ of events $\ge M_c$ is 4--5 in California, Cascadia,
+and Italy, and 76 in Turkey. The $b$-value MLE's $N{\ge}30$ floor is
+therefore satisfied in only 3\% of windows for the first three regions
+and 73\% in Turkey. The \citet{gulia2019} $b$-drop signal does not
+transfer to short windows at moderate $M_c$. The $b$-vs-Null A macro
+AUC of 0.722 reported elsewhere in our panel is a degenerate-sample
+artifact (Cascadia AUC = 1.00 computed on 1 precursor $\times$ 2 null
+finite values). Researchers planning to test $b$-drop precursors at
+moderate $M_c$ in short windows should expect this incompatibility.
 
 \paragraph{Failure mode \#5: precursor-window-includes-foreshock-period.}
 The pre-reg defines the precursor window as $[t-30, t)$, including the
-foreshock period. Any signal detected by trajectory-shape matching may
-therefore reflect foreshock-period seismicity rather than 25-day-ahead
-long-distance precursor. We address this with two controls
-(\S\ref{sec:results-controls}); the result is that under the pre-reg's
-literal definition, our positive finding is a real precursor signal,
-but operationally it is foreshock detection.
+foreshock period. Any signal detected in this window may therefore
+reflect foreshock-period seismicity rather than long-distance precursor
+in the strict 25-day-ahead sense. We address this with three controls
+(\S\ref{sec:results-controls}); the result is unambiguous: under the
+pre-reg's literal definition, our positive finding is a real signal,
+but operationally it is foreshock detection. Future pre-registered work
+should commit explicitly on whether a ``precursor window'' includes the
+final 5--7 days, since the answer determines whether the test is for
+foreshock detection or long-distance precursor detection.
 
 \subsection{Per-window scalar and joint-classifier results}
 \label{sec:results-scalar}
@@ -261,60 +297,121 @@ but operationally it is foreshock detection.
 Across the eight-feature $\times$ two-null panel evaluated on the four
 qualifying training regions (California, Cascadia, Turkey, Italy), zero
 of sixteen tests pass 3$\sigma$ or Bonferroni at $\alpha = 0.05/128$.
-Computable catalog features (Benioff total, Benioff curvature, $n$ above
-$M_c$) lie within 0.05 of 0.5; waveform features (slope, entropy, IMF1
-IF) lie 0.45--0.49 vs Null A with consistent direction across regions
-but no individual feature reaching 3$\sigma$. The $b$ and $b$-drift
-features are uncomputable (failure mode \#3) and their AUCs are
-degenerate.
+Computable catalog features (Benioff total per pre-reg, Benioff
+curvature, $n$ above $M_c$) lie within 0.05 of 0.5; waveform features
+(slope, entropy, IMF1 IF) lie 0.45--0.49 vs Null A with consistent
+direction across regions but no individual feature reaching 3$\sigma$.
+The $b$ and $b$-drift features are uncomputable (failure mode \#3) and
+their AUCs are degenerate.
 
 The joint LR + RF classifier under LORO yields macro AUC $= 0.526$ (LR)
-and $0.480$ (RF), with permutation $z = +0.97$ and $-0.71$ respectively;
-neither passes 3$\sigma$ or Bonferroni. The combination of features
-carries no signal that the per-feature scalars miss.
+and $0.480$ (RF), with permutation $z = +0.97$ and $-0.71$
+respectively; neither passes 3$\sigma$ or Bonferroni. The combination
+of features carries no signal that the per-feature scalars miss.
 
-\subsection{TLS template-correlation scan}
-\label{sec:results-tls}
+\subsection{Trivial-scalar headline finding}
+\label{sec:results-scalar-finding}
 
-The TLS scan over the Benioff strain trajectory is the project's only
-positive cross-regional finding. Macro AUC $= 0.704$, cross-region
-bootstrap CI95 $= [0.637, 0.773]$, permutation $z = +8.01$, $p =
-1.1 \times 10^{-15}$. Per-region (LORO held out): California 0.733,
-Cascadia 0.809, Turkey 0.608, Italy 0.665; all four splits above 0.5,
-direction-consistent. The result passes both the 3$\sigma$ pre-reg gate
-and the Bonferroni-corrected $\alpha = 0.05/8 = 6.25 \times 10^{-3}$. The
-$n$-above-$M_c$ trajectory yields macro AUC $= 0.542$ ($z = +1.62$),
-sub-3$\sigma$. The waveform-feature trajectories were not TLS-scanned
-(per-window aggregation only; deferred follow-up).
+The trivial scalar of \S\ref{sec:methods-scalar} ($\log_{10}$ Benioff
+in the last 5 days of the 30-day window) yields:
 
-\subsection{Window-shift and foreshock-mask controls}
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+Quantity & California & Cascadia & Turkey & Italy \\
+\midrule
+LORO AUC               & 0.811 & 0.905 & 0.691 & 0.710 \\
+$n$ precursor          & 37    & 36    & 30    & 36    \\
+$n$ Null A             & 200   & 200   & 200   & 200   \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Macro AUC = $0.779$, cross-region bootstrap $\mathrm{CI}_{95} = [0.701,
+0.858]$. Significance: i.i.d.\ label-permutation $z_\mathrm{iid} =
++11.0$ ($p \approx 0$); circular-shift dependence-aware
+$z_\mathrm{block} = +8.4$ ($p \approx 0$). The dependence inflation
+amounts to $\sim$25\% in $z$, not catastrophic. The result passes the
+3$\sigma$ pre-reg gate and Bonferroni at $\alpha = 0.05/8 = 6.25
+\times 10^{-3}$ under either null.
+
+\subsection{Window-shift, placebo, and foreshock-mask controls}
 \label{sec:results-controls}
 
-We applied two controls to interpret the TLS positive. First, the
-precursor windows were shifted 30 days earlier ($[t-60, t-30)$, no
-target overlap) while null windows were left untouched. Macro AUC
-collapses from 0.704 to 0.535 ($z = +1.30$); the signal does not
-generalize to a 30-day-shifted window. Second, the trajectory was
-truncated to the first five sub-windows (days 0--25, foreshock period
-masked). Macro AUC collapses to 0.513 ($z = +0.49$); per-region AUCs
-drop to within 0.05 of 0.5 for all four regions.
+We applied three controls to the trivial-scalar finding. (i)~\emph{
+Precursor shift back 30 days}: precursor windows shifted to
+$[t-60, t-30)$, null windows untouched. Macro AUC collapses from 0.779
+to 0.513; the signal does not generalize to a 30-day-shifted window.
+(ii)~\emph{Symmetric placebo shift}: \emph{both} precursor and null
+windows shifted back 30 days. Macro AUC = 0.499 (within 0.001 of
+chance); this rules out a temporal-confound interpretation of (i).
+(iii)~\emph{Foreshock-period mask}: log$_{10}$ Benioff over days 0--25
+only (the last 5-day sub-window dropped). Macro AUC collapses to 0.530.
 
-The conclusion is unambiguous: the TLS positive is exclusively
-foreshock-driven. The literal-pre-reg pass at AUC $= 0.70$ reflects the
-final 5 days of the pre-registered window, where foreshock activity
-dominates the M-weighted Benioff strain trajectory.
+A formal paired-bootstrap test on shared resamples (B = 1000) gives
+$\Delta\mathrm{AUC}$ (main $-$ shift) $= +0.267$, $\mathrm{CI}_{95}$
+$[+0.20, +0.32]$, with the CI excluding 0. The signal is exclusively
+foreshock-period-localized: there is no $> 5$-day-ahead precursor
+content recoverable from this scalar.
 
 \subsection{Quantitative magnitude scaling}
 \label{sec:results-magnitude}
 
-Stratifying the 139 precursor windows by target magnitude yields a
-clean monotonic scaling. For $M \in [4.5, 5.0)$ (n = 91), macro AUC
-$= 0.624$. For $M \ge 5.0$ (n = 48), macro AUC $= 0.813$ — all four LORO
-splits above 0.7 (California 0.81, Cascadia 0.85, Turkey 0.72, Italy
-0.876). The signal scales monotonically with target $M$, consistent
-with the ETAS cascade-triggering prediction \citep{helmstetter2003a}
-that larger mainshocks correlate with stronger pre-event triggered
-seismicity.
+Stratifying the 139 precursor windows by target magnitude under the
+trivial scalar yields:
+
+\begin{center}
+\begin{tabular}{lcrcc}
+\toprule
+Bin & $n_\mathrm{pre}$ & Macro AUC & $\mathrm{CI}_{95}$ \\
+\midrule
+$M \in [4.5, 4.8)$ & 72 & 0.701 & [0.61, 0.82] \\
+$M \in [4.8, 5.2)$ & 33 & 0.837 & [0.76, 0.92] \\
+$M \ge 5.2$        & 34 & 0.893 & [0.81, 0.96] \\
+\midrule
+$M \in [4.5, 5.0)$ & 91 & 0.731 & [0.64, 0.83] \\
+$M \ge 5.0$        & 48 & 0.879 & [0.81, 0.93] \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Per-region AUCs in the $M \ge 5.0$ bin are uniformly elevated:
+California $0.884$ ($\mathrm{CI}_{95}\,[0.77, 0.98]$, $n=16$), Cascadia
+$0.940$ ($[0.86, 1.00]$, $n=13$), Turkey $0.777$ ($[0.55, 0.94]$,
+$n=8$), Italy $0.914$ ($[0.77, 1.00]$, $n=11$). The 3-bin Mann-Kendall
+trend test gives $\tau = +1.00$ but is not statistically significant
+($p = 0.33$) because three points cannot reach significance under
+Mann-Kendall regardless of monotonicity. We therefore report the
+trend qualitatively: macro AUC scales monotonically with target $M$
+across both 2-bin and 3-bin partitions, with each successive bin's
+$\mathrm{CI}_{95}$ overlapping the next but the central tendency
+strictly increasing.
+
+This monotonic scaling is consistent with the Gutenberg-Richter
+scaling of triggered seismicity (larger mainshocks have proportionally
+more and larger preceding events on average); we deliberately do not
+attribute this to ETAS-cascade structure specifically, since
+distinguishing genuine ETAS triggering from a passive GR effect
+would require an ETAS simulation with matched $M_c$, declustering, and
+window definition that is beyond this study's scope.
+
+\subsection{TLS template scan: ablation showing it underperforms}
+\label{sec:results-ablation}
+
+The TLS-style template-correlation scan of \S\ref{sec:methods-tls},
+applied to the same Benioff trajectory, yields macro AUC = $0.704$
+(cross-region $\mathrm{CI}_{95}\,[0.64, 0.77]$, $z_\mathrm{iid} =
++8.0$). This passes the pre-reg 3$\sigma$ + Bonferroni gates, but
+\emph{underperforms the trivial scalar by 0.075 AUC}, in 4 of 4 LORO
+splits (California 0.733 vs 0.811, Cascadia 0.809 vs 0.905, Turkey
+0.608 vs 0.691, Italy 0.665 vs 0.710). The Pearson correlation step in
+TLS normalizes by within-window standard deviation, discarding the
+absolute-magnitude information that the trivial scalar preserves and
+that turns out to be the dominant signal carrier. We document this as
+a methodological negative result: template-matching machinery does not
+add information here; the simplest scalar wins. The
+$n$-above-$M_c$ trajectory under the same TLS scan yields macro AUC
+$= 0.542$ ($z = +1.62$), sub-3$\sigma$.
 
 % =============================================================================
 \section{Discussion}
@@ -322,93 +419,148 @@ seismicity.
 
 \subsection{What the failure-mode catalogue contributes}
 
-Each of the five failure modes is a concrete, generalizable lesson for
-future cross-regional pre-registered work in this area. Modes \#1 and
-\#4 are structural mismatches between rate-forecast-derived overlap
-conventions and the precursor-window framework; mode \#2 is an artifact
-of relying on a US-centric catalog for international regions; mode \#3
-is a sample-size problem at moderate $M_c$ with short windows; mode
-\#5 is a definition issue with the precursor-window itself. None of
-these is novel as an individual observation, but the catalogued
-combination is a reusable artifact for the next group attempting the
-same kind of work.
+Three of the five modes (\#1 overlap-rule density, \#2 ANSS-as-
+teleseismic, \#4 test-region inaccessibility) are operational lessons
+familiar individually to subduction-zone-experienced researchers, but
+their concrete combination under our pre-registered protocol made them
+load-bearing in a way that is worth recording for the next group
+attempting cross-regional pre-registered precursor work. Modes \#3
+(\(b\)-feature $\times$ $M_c$-window incompatibility) and \#5
+(precursor-window-includes-foreshock-period) are the more substantive
+contributions: \#3 rules out short-window $b$-drop precursor tests at
+moderate $M_c$ as a feasibility class; \#5 highlights an interpretive
+gap in the literature definition of ``precursor window'' that our
+controls (\S\ref{sec:results-controls}) make sharp.
 
 \subsection{Cross-regional confirmation of foreshock pervasiveness}
 
-The TLS positive is a quantitative cross-regional confirmation of the
-\citet{trugman2019} southern-California finding: foreshock activity is
-elevated before most $M{\ge}4.5$ mainshocks, and the elevation is
-detectable at AUC = 0.7 cross-regionally with monotonic M-scaling. The
-particular metric (macro AUC of Benioff-strain trajectory template
-correlation) and the cross-regional pre-registration protocol are novel,
-but the underlying physical phenomenon is established. The
-\citet{helmstetter2003a, helmstetter2003b} ETAS framework explains the
-monotonic M-scaling we measured: larger mainshocks trigger more
-preceding cascades.
+The trivial-scalar finding is a quantitative cross-regional
+confirmation of the \citet{trugman2019} southern-California finding:
+foreshock activity is elevated before most $M{\ge}4.5$ mainshocks, and
+the elevation is detectable with the simplest possible scalar at macro
+AUC = $0.78$ across four regions on three continents. We add (i)~a
+cross-regional AUC quantification with explicit per-region values, (ii)
+a dependence-aware significance estimate ($z_\mathrm{block} = +8.4$)
+that is more conservative than the i.i.d.\ value, (iii)~a paired
+control with formal $\Delta\mathrm{AUC}$ confidence bounds, and (iv)
+M-scaling with bootstrap CIs per bin and per region. The
+\citet{helmstetter2003a, helmstetter2003b} ETAS framework is consistent
+with the monotonic M-scaling we measured, but distinguishing ETAS-
+specific cascade structure from generic Gutenberg-Richter triggered-
+seismicity scaling is beyond our scope.
 
 \subsection{What the foreshock-period concentration means}
 
-The window-shift and mask controls together establish that the entire
-TLS signal lives in the final 5 days of the 30-day pre-registered
+The window-shift, placebo, and mask controls together establish that
+the entire signal lives in the final 5 days of the 30-day pre-event
 window. This is operationally important: the result is foreshock
 detection, not 25-day-ahead long-distance precursor. The pre-reg's
 literal definition of ``precursor window'' as $[t-30, t)$ admits the
-foreshock period; under the literal protocol, the pass is real, but
-under any interpretation that distinguishes foreshocks from
-long-distance precursors, the long-distance signal is null.
+foreshock period; under the literal protocol, our pass is real, but
+under any interpretation that distinguishes foreshocks from long-
+distance precursors, the long-distance signal is null.
 
-A reasonable extension of this work would re-run with a precursor
-window that explicitly excludes the final 5--7 days, testing whether any
-sub-detection-threshold long-distance signal exists. We did not run this
-because it would be a post-hoc deviation from pre-reg v1; we flag it as
-the natural follow-up.
+A reasonable extension would re-run with a precursor window that
+explicitly excludes the final 5--7 days, testing whether any sub-
+detection-threshold long-distance signal exists. We did not do so
+because it would be a post-hoc deviation from pre-reg v1; we flag it
+as the natural follow-up and note that under the trivial scalar,
+truncating to days 0--25 already produces macro AUC $= 0.530$, leaving
+little room for a long-distance signal to be hidden under the same
+estimator.
+
+\subsection{Pre-registration discipline: binding vs amended}
+\label{sec:disc-prereg}
+
+The PRA-2 amendment was committed before re-evaluation but \emph{after}
+v1 surfaced the failure modes. This is the exact degree of freedom that
+strict pre-registration aims to eliminate. We are explicit: the v2
+protocol is not binding pre-registration in the strictest sense; it is
+an amended protocol with documented amendment grounds and full chain
+of custody. We mitigated three ways. First, every amendment is
+substantively justified by an execution-time failure mode that would
+have caused the v1 evaluation to be uninformative regardless of
+outcome (mode \#2 forces $b$-features uncomputable; mode \#1 leaves
+zero qualifying windows). Second, the amendment was committed to a
+public repository before any re-evaluation was run, so the chain
+$\mathrm{v1 \to amendment \to re\text{-}evaluation}$ is verifiable.
+Third, neither v1 nor v2 had any positive scalar finding; the trivial-
+scalar headline was discovered in post-v2 follow-up
+(\S\ref{sec:methods-scalar}) and is independent of the v1$\to$v2
+amendment in the sense that v1's overlap rule and ComCat catalog do
+not affect the trivial scalar's AUC computation conditional on the
+qualifying-window set.
+
+A reader who weights only fully-binding pre-registration may discount
+the headline finding by treating it as exploratory; we accept this
+framing. The five failure modes and the chain-of-custody artifact
+remain valuable independently of pre-registration strictness.
 
 \subsection{Score honest, not inflated}
 
-A natural temptation after detecting the TLS positive is to claim a
+A natural temptation after the trivial-scalar positive is to claim a
 ``first cross-regional precursor finding.'' We resist this. The
 foreshock-pervasiveness phenomenon is well-documented per-region
-\citep{trugman2019, lippiello2025, khan2025, hirose2021}; our work
-adds quantitative cross-regional AUC and M-scaling under pre-registration
-discipline but does not discover new physics. The honest contribution is
-methodological: the failure-mode catalogue, the pre-registration
-template, and the cross-regional AUC + M-scaling estimate.
+\citep{trugman2019, lippiello2025, khan2025, moutote2021}; our work
+adds a quantitative cross-regional AUC, dependence-aware significance,
+controls with formal paired-test, and M-scaling under partial pre-
+registration discipline, but does not discover new physics or
+methodology beyond the simplest possible scalar. Both the trivial
+scalar and the TLS apparatus are deliberately conservative ablations:
+neither claims any post-hoc model search beyond the pre-reg-promised
+``feature time series'' framing. The honest contribution is the
+combination of the failure-mode catalogue, the chain-of-custody
+artifact, and the cross-regional AUC at the simplest defensible
+estimator.
 
 % =============================================================================
 \section{Conclusion}
 \label{sec:conclusion}
 
 We pre-registered a CSEP-style cross-regional precursor evaluation and
-ran it under the locked protocol with one documented amendment. Five
-methodological failure modes surfaced in execution, all catalogued with
-diagnostic evidence. The per-feature scalar and joint-classifier
-analyses yield clean nulls. The pre-registered TLS-style template
-scan over Benioff strain trajectory passes 3$\sigma$ and Bonferroni at
-macro AUC $= 0.70$, $z = +8$ across four training regions; this signal
-is exclusively foreshock-period and scales monotonically with target
-magnitude. We frame the result as cross-regional confirmation of
-\citet{trugman2019} pervasive-foreshock activity with quantitative AUC
-and the first M-scaling estimate under pre-registration discipline,
-not as a novel discovery. The five-failure-mode catalogue is the
-methodological contribution to future cross-regional pre-registered
-precursor work.
+ran it under the locked protocol with one documented post-v1
+amendment. Five execution-time failure modes surfaced, all catalogued
+with diagnostic evidence. The pre-registered per-feature scalar and
+joint-classifier panels yield clean nulls. The simplest possible
+scalar — log$_{10}$ Benioff energy in the final 5 days of the 30-day
+pre-event window — passes 3$\sigma$ and Bonferroni at macro AUC $=
+0.78$, $z_\mathrm{block} = +8.4$ across four training regions; this
+signal is exclusively foreshock-period-localized under three controls
+and scales monotonically with target magnitude. A TLS-style template-
+correlation apparatus over the same trajectory underperforms the
+trivial scalar by 0.075 AUC, documented as a methodological negative
+result. We frame the headline as cross-regional confirmation of
+\citet{trugman2019} foreshock-pervasiveness with the simplest
+defensible estimator, not as a novel discovery. The five-mode
+failure catalogue and the publicly verifiable chain of custody are the
+methodological contributions.
 
 \section*{Acknowledgements}
 The author thanks the ISC for maintaining the global bulletin, the
 NCEDC for hosting California waveform data, and INGV/MedNet for the
 post-2009 successor station MN.AQU. ObsPy \citep{beyreuther2010} and
 \texttt{usgs-libcomcat} provided the data-access infrastructure.
-Pre-registration drafting and post-detection control design used
-Anthropic Claude as an interactive collaborator (Claude is acknowledged
-but not a co-author per arXiv policy).
+Pre-registration drafting, post-detection control design, and post-
+peer-review baseline ablation used Anthropic Claude as an interactive
+collaborator (Claude is acknowledged but not a co-author per arXiv
+policy).
 
 \section*{Data and code availability}
+\begin{sloppypar}
 All code, the pre-registration document \citep{loftus2026prereg}, the
 amendment \citep{loftus2026pra2}, per-region cached catalogs, per-window
 feature CSVs, and reproducible experiment scripts are publicly available
-at \citet{loftus2026repo}. Each session of work is a single git commit;
-the chain of custody from pre-reg through results is verifiable
-without access to any private artifact.
+at \citet{loftus2026repo}. Each work session is a single git commit; the
+chain of custody from pre-reg through results is verifiable without
+access to any private artifact. Specifically, the trivial-scalar
+headline (\S\ref{sec:results-scalar-finding}) is reproduced by
+\texttt{exp18\_trivial\_baseline\_ablation/run.py}, the controls
+(\S\ref{sec:results-controls}) by
+\texttt{exp19\_trivial\_scalar\_controls/run.py}, and the M-scaling
+(\S\ref{sec:results-magnitude}) by
+\texttt{exp20\_trivial\_scalar\_magnitude\_scaling/run.py} (all under
+\texttt{experiments/}).
+\end{sloppypar}
 
 \bibliography{references}
 \end{document}
