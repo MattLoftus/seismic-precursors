@@ -1,0 +1,109 @@
+{
+  "experiment": "exp18_trivial_baseline_ablation",
+  "timestamp_utc": "2026-05-02T19:07:12.741577Z",
+  "tls_reference_auc_exp14": 0.704,
+  "baselines_evaluated": [
+    "A1_n_last5d",
+    "A2_blog_last5d",
+    "B1_n_total",
+    "B2_blog_total",
+    "C1_n_increment_last",
+    "C2_blog_increment_last"
+  ],
+  "best_baseline": "A2_blog_last5d",
+  "best_baseline_macro": 0.7794792605105105,
+  "best_baseline_per_region": {
+    "California": 0.8114864864864866,
+    "Cascadia": 0.9052777777777778,
+    "Turkey": 0.6906666666666665,
+    "Italy": 0.7104861111111112
+  },
+  "delta_tls_minus_best_baseline": -0.07547926051051057,
+  "verdict": "TLS_ORNAMENTAL \u2014 best trivial baseline matches TLS within 0.02; TLS template adds no information",
+  "macro_table": [
+    {
+      "macro": 0.6615768581081082,
+      "ci_lo": 0.592420608108108,
+      "ci_hi": 0.738625,
+      "perm_z": 6.518135830736969,
+      "perm_p": 7.118661216054534e-11,
+      "per_region_aucs": {
+        "California": 0.6424324324324324,
+        "Cascadia": 0.7929166666666666,
+        "Turkey": 0.57575,
+        "Italy": 0.6352083333333334
+      },
+      "baseline": "A1_n_last5d"
+    },
+    {
+      "macro": 0.7794792605105105,
+      "ci_lo": 0.7005763888888887,
+      "ci_hi": 0.8583821321321323,
+      "perm_z": 11.254507036682952,
+      "perm_p": 0.0,
+      "per_region_aucs": {
+        "California": 0.8114864864864866,
+        "Cascadia": 0.9052777777777778,
+        "Turkey": 0.6906666666666665,
+        "Italy": 0.7104861111111112
+      },
+      "baseline": "A2_blog_last5d"
+    },
+    {
+      "macro": 0.5725186749249249,
+      "ci_lo": 0.5127608858858859,
+      "ci_hi": 0.6191319444444443,
+      "perm_z": 2.869266109574123,
+      "perm_p": 0.004114254919672877,
+      "per_region_aucs": {
+        "California": 0.48081081081081084,
+        "Cascadia": 0.6296527777777777,
+        "Turkey": 0.571,
+        "Italy": 0.608611111111111
+      },
+      "baseline": "B1_n_total"
+    },
+    {
+      "macro": 0.7794792605105105,
+      "ci_lo": 0.7005763888888887,
+      "ci_hi": 0.8583821321321323,
+      "perm_z": 11.368674234815446,
+      "perm_p": 0.0,
+      "per_region_aucs": {
+        "California": 0.8114864864864866,
+        "Cascadia": 0.9052777777777778,
+        "Turkey": 0.6906666666666665,
+        "Italy": 0.7104861111111112
+      },
+      "baseline": "B2_blog_total"
+    },
+    {
+      "macro": 0.6488663663663663,
+      "ci_lo": 0.599329954954955,
+      "ci_hi": 0.7338541666666666,
+      "perm_z": 5.65997316608475,
+      "perm_p": 1.5139666631469595e-08,
+      "per_region_aucs": {
+        "California": 0.6082432432432432,
+        "Cascadia": 0.7693055555555555,
+        "Turkey": 0.5904166666666668,
+        "Italy": 0.6275
+      },
+      "baseline": "C1_n_increment_last"
+    },
+    {
+      "macro": 0.7352387387387387,
+      "ci_lo": 0.6745929054054054,
+      "ci_hi": 0.8098263888888888,
+      "perm_z": 9.081320279203082,
+      "perm_p": 0.0,
+      "per_region_aucs": {
+        "California": 0.7391216216216216,
+        "Cascadia": 0.8452777777777777,
+        "Turkey": 0.6530833333333332,
+        "Italy": 0.7034722222222223
+      },
+      "baseline": "C2_blog_increment_last"
+    }
+  ]
+}

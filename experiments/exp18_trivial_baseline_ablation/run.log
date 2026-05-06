@@ -1,0 +1,68 @@
+[12:07:02] [exp18] start — trivial-baseline ablation for TLS Benioff
+[12:07:02] [exp18] 939 windows in qualifying regions × {precursor, null_A}
+[12:07:02] [exp18] per-region: California: 237, Cascadia: 236, Turkey: 230, Italy: 236
+[12:07:02] [exp18] loaded catalogs: California=37777, Cascadia=9945, Turkey=6894, Italy=8179
+[12:07:02] [exp18] computing 6-point trajectories per window...
+[12:07:02]   trajectories: 50/939 done
+[12:07:02]   trajectories: 100/939 done
+[12:07:02]   trajectories: 150/939 done
+[12:07:02]   trajectories: 200/939 done
+[12:07:02]   trajectories: 250/939 done
+[12:07:03]   trajectories: 300/939 done
+[12:07:03]   trajectories: 350/939 done
+[12:07:03]   trajectories: 400/939 done
+[12:07:03]   trajectories: 450/939 done
+[12:07:03]   trajectories: 500/939 done
+[12:07:03]   trajectories: 550/939 done
+[12:07:03]   trajectories: 600/939 done
+[12:07:03]   trajectories: 650/939 done
+[12:07:03]   trajectories: 700/939 done
+[12:07:03]   trajectories: 750/939 done
+[12:07:03]   trajectories: 800/939 done
+[12:07:03]   trajectories: 850/939 done
+[12:07:03]   trajectories: 900/939 done
+[12:07:03] [exp18] trajectories complete
+[12:07:03] [exp18] 6 baselines defined: ['A1_n_last5d', 'A2_blog_last5d', 'B1_n_total', 'B2_blog_total', 'C1_n_increment_last', 'C2_blog_increment_last']
+
+[12:07:03] [exp18] === per-baseline LORO scan ===
+[12:07:03]   A1_n_last5d                 test=California   AUC=0.642  (n_pre=37, n_null=200)
+[12:07:03]   A1_n_last5d                 test=Cascadia     AUC=0.793  (n_pre=36, n_null=200)
+[12:07:03]   A1_n_last5d                 test=Turkey       AUC=0.576  (n_pre=30, n_null=200)
+[12:07:03]   A1_n_last5d                 test=Italy        AUC=0.635  (n_pre=36, n_null=200)
+[12:07:03]   A2_blog_last5d              test=California   AUC=0.811  (n_pre=37, n_null=200)
+[12:07:03]   A2_blog_last5d              test=Cascadia     AUC=0.905  (n_pre=36, n_null=200)
+[12:07:03]   A2_blog_last5d              test=Turkey       AUC=0.691  (n_pre=30, n_null=200)
+[12:07:03]   A2_blog_last5d              test=Italy        AUC=0.710  (n_pre=36, n_null=200)
+[12:07:03]   B1_n_total                  test=California   AUC=0.481  (n_pre=37, n_null=200)
+[12:07:03]   B1_n_total                  test=Cascadia     AUC=0.630  (n_pre=36, n_null=200)
+[12:07:03]   B1_n_total                  test=Turkey       AUC=0.571  (n_pre=30, n_null=200)
+[12:07:03]   B1_n_total                  test=Italy        AUC=0.609  (n_pre=36, n_null=200)
+[12:07:03]   B2_blog_total               test=California   AUC=0.811  (n_pre=37, n_null=200)
+[12:07:03]   B2_blog_total               test=Cascadia     AUC=0.905  (n_pre=36, n_null=200)
+[12:07:03]   B2_blog_total               test=Turkey       AUC=0.691  (n_pre=30, n_null=200)
+[12:07:03]   B2_blog_total               test=Italy        AUC=0.710  (n_pre=36, n_null=200)
+[12:07:03]   C1_n_increment_last         test=California   AUC=0.608  (n_pre=37, n_null=200)
+[12:07:03]   C1_n_increment_last         test=Cascadia     AUC=0.769  (n_pre=36, n_null=200)
+[12:07:03]   C1_n_increment_last         test=Turkey       AUC=0.590  (n_pre=30, n_null=200)
+[12:07:03]   C1_n_increment_last         test=Italy        AUC=0.627  (n_pre=36, n_null=200)
+[12:07:03]   C2_blog_increment_last      test=California   AUC=0.739  (n_pre=37, n_null=200)
+[12:07:03]   C2_blog_increment_last      test=Cascadia     AUC=0.845  (n_pre=36, n_null=200)
+[12:07:03]   C2_blog_increment_last      test=Turkey       AUC=0.653  (n_pre=30, n_null=200)
+[12:07:03]   C2_blog_increment_last      test=Italy        AUC=0.703  (n_pre=36, n_null=200)
+
+[12:07:03] [exp18] === macro AUC per baseline ===
+[12:07:05] [headline] A1_n_last5d                 macro=0.662  CI=[0.592, 0.739]  z=+6.52  p=7.12e-11
+[12:07:06] [headline] A2_blog_last5d              macro=0.779  CI=[0.701, 0.858]  z=+11.25  p=0.00e+00
+[12:07:08] [headline] B1_n_total                  macro=0.573  CI=[0.513, 0.619]  z=+2.87  p=4.11e-03
+[12:07:09] [headline] B2_blog_total               macro=0.779  CI=[0.701, 0.858]  z=+11.37  p=0.00e+00
+[12:07:11] [headline] C1_n_increment_last         macro=0.649  CI=[0.599, 0.734]  z=+5.66  p=1.51e-08
+[12:07:12] [headline] C2_blog_increment_last      macro=0.735  CI=[0.675, 0.810]  z=+9.08  p=0.00e+00
+[12:07:12] [plot] baseline_comparison_plot.png
+[12:07:12] [persist] summary.json
+
+[12:07:12] [exp18] HEADLINE
+[12:07:12]   TLS exp14 reference macro AUC: 0.704
+[12:07:12]   Best trivial baseline:        A2_blog_last5d = 0.779
+[12:07:12]   Δ (TLS − best baseline):      -0.075
+[12:07:12]   VERDICT: TLS_ORNAMENTAL — best trivial baseline matches TLS within 0.02; TLS template adds no information
+[12:07:12] [exp18] done

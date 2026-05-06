@@ -1,0 +1,98 @@
+{
+  "experiment": "exp19_trivial_scalar_controls",
+  "timestamp_utc": "2026-05-02T19:14:17.466382Z",
+  "main_baseline_recomputed_macro": 0.7794792605105105,
+  "main_baseline_exp18_macro": 0.779,
+  "controls": {
+    "MAIN_A2_blog_last5d": {
+      "macro": 0.7794792605105105,
+      "ci_lo": 0.7005763888888887,
+      "ci_hi": 0.8583821321321323,
+      "perm_z": 11.001227951460217,
+      "perm_p": 0.0,
+      "perm_method": "iid",
+      "per_region_aucs": {
+        "California": 0.8114864864864866,
+        "Cascadia": 0.9052777777777778,
+        "Turkey": 0.6906666666666665,
+        "Italy": 0.7104861111111112
+      },
+      "control": "MAIN_A2_blog_last5d"
+    },
+    "C1_precursor_shift_-30d": {
+      "macro": 0.5127270082582582,
+      "ci_lo": 0.4998151276276276,
+      "ci_hi": 0.526661036036036,
+      "perm_z": 0.512828656014881,
+      "perm_p": 0.6080711827112801,
+      "perm_method": "iid",
+      "per_region_aucs": {
+        "California": 0.5008108108108108,
+        "Cascadia": 0.5352777777777777,
+        "Turkey": 0.516,
+        "Italy": 0.4988194444444444
+      },
+      "control": "C1_precursor_shift_-30d"
+    },
+    "C2_both_shift_-30d_placebo": {
+      "macro": 0.49909515765765766,
+      "ci_lo": 0.4742708333333333,
+      "ci_hi": 0.5251993243243244,
+      "perm_z": -0.03739904841151713,
+      "perm_p": 0.9701668313990348,
+      "perm_method": "iid",
+      "per_region_aucs": {
+        "California": 0.4897972972972973,
+        "Cascadia": 0.5058333333333334,
+        "Turkey": 0.537,
+        "Italy": 0.46375
+      },
+      "control": "C2_both_shift_-30d_placebo"
+    },
+    "C3_mask_last5d_use_days0-25": {
+      "macro": 0.5298388701201201,
+      "ci_lo": 0.4870061936936938,
+      "ci_hi": 0.5617986111111111,
+      "perm_z": 1.0930304317449888,
+      "perm_p": 0.27438043856371674,
+      "perm_method": "iid",
+      "per_region_aucs": {
+        "California": 0.46270270270270275,
+        "Cascadia": 0.5330555555555555,
+        "Turkey": 0.5599166666666667,
+        "Italy": 0.5636805555555555
+      },
+      "control": "C3_mask_last5d_use_days0-25"
+    },
+    "C4_main_block_permutation_null": {
+      "macro": 0.7794792605105105,
+      "ci_lo": 0.7005763888888887,
+      "ci_hi": 0.8583821321321323,
+      "perm_z": 8.37490499093187,
+      "perm_p": 0.0,
+      "perm_method": "block",
+      "per_region_aucs": {
+        "California": 0.8114864864864866,
+        "Cascadia": 0.9052777777777778,
+        "Turkey": 0.6906666666666665,
+        "Italy": 0.7104861111111112
+      },
+      "control": "C4_main_block_permutation_null"
+    }
+  },
+  "paired_delta_main_minus_c1": {
+    "mean": 0.2667280833243462,
+    "ci95_lo": 0.199903341068467,
+    "ci95_hi": 0.3220618816504081,
+    "p_two_sided": 0.0
+  },
+  "control_pass_flags": {
+    "C1_precursor_shift_collapses": true,
+    "C2_placebo_no_effect": true,
+    "C3_mask_signal_in_last5d": true,
+    "C4_block_perm_z_above_3": true,
+    "C5_paired_delta_excludes_0": true
+  },
+  "n_controls_passed": 5,
+  "verdict": "ALL_5_CONTROLS_PASS \u2014 trivial scalar finding is robust; reframe paper (Path A)"
+}

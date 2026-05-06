@@ -1,0 +1,34 @@
+[12:14:02] [exp19] start — controls on exp18 trivial-scalar finding
+[12:14:02] [exp19] 939 windows loaded
+
+[12:14:02] [exp19] === MAIN: A2_blog_last5d (re-derive exp18) ===
+[12:14:05] [headline] MAIN_A2_blog_last5d               macro=0.779  CI=[0.701, 0.858]  z=+11.00  p=0.00e+00
+
+[12:14:05] [exp19] === C1: precursor windows shifted back 30 days ===
+[12:14:07] [headline] C1_precursor_shift_-30d           macro=0.513  CI=[0.500, 0.527]  z=+0.51  p=6.08e-01
+
+[12:14:07] [exp19] === C2: BOTH classes shifted back 30 days (placebo) ===
+[12:14:10] [headline] C2_both_shift_-30d_placebo        macro=0.499  CI=[0.474, 0.525]  z=-0.04  p=9.70e-01
+
+[12:14:10] [exp19] === C3: mask last 5 days, use days 0-25 only ===
+[12:14:11] [headline] C3_mask_last5d_use_days0-25       macro=0.530  CI=[0.487, 0.562]  z=+1.09  p=2.74e-01
+
+[12:14:11] [exp19] === C4: block-permutation null on MAIN ===
+[12:14:13] [headline] C4_main_block_permutation_null    macro=0.779  (same point est.)  z_block=+8.37  p=0.00e+00
+[12:14:13]   compare: z_iid=+11.00 → z_block=+8.37
+
+[12:14:13] [exp19] === C5: paired ΔAUC bootstrap (main − C1) ===
+[12:14:17] [headline] paired ΔAUC (main − C1) = +0.267  CI=[+0.200, +0.322]  p=0.00e+00
+[12:14:17] [plot] controls_plot.png
+[12:14:17] [plot] paired_delta_dist.png
+[12:14:17] [persist] summary.json
+
+[12:14:17] [exp19] HEADLINE
+[12:14:17]   main         AUC = 0.779  z_iid=+11.00
+[12:14:17]   C1 shift     AUC = 0.513  (collapse? Y)
+[12:14:17]   C2 placebo   AUC = 0.499  (≈ C1? Y)
+[12:14:17]   C3 masked    AUC = 0.530  (collapse? Y)
+[12:14:17]   C4 z_block   = +8.37  (>3? Y)
+[12:14:17]   C5 ΔAUC      = +0.267  CI=[+0.200,+0.322]  (>0? Y)
+[12:14:17]   VERDICT: ALL_5_CONTROLS_PASS — trivial scalar finding is robust; reframe paper (Path A)
+[12:14:17] [exp19] done
